@@ -34,18 +34,26 @@ public class EasyRVendorPageTest extends TestBase{
 			System.out.println("vendrpg.verifyPageTitle(): " + vendrpg.verifyPageTitle());
 			Assert.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
 			System.out.println("vendrpg.verifyVendorText(): " + vendrpg.verifyVendorText());
-			vendrpg.clickOnCreateVendorBtn();
-			vendrpg.clickOnVendorLogoSelectFile();
-			vendrpg.sendFileToVendorLogoField(prop.getProperty("Vendor_logo"));
-			vendrpg.clickOnSaveImageBtn();
-			vendrpg.clickOnProfileSelectFile();
-			vendrpg.sendVendorProfileField(prop.getProperty("Vendor_profile"));
-			vendrpg.clickOnSaveImageVendorProfile();
-			
-			vendrpg.enterVendorName(prop.getProperty("Vendor_Name"));
-			vendrpg.enterCName(prop.getProperty("Vendor_company"));
-			vendrpg.enterEmail(prop.getProperty("vEmail"));
-			vendrpg.enterPhone(prop.getProperty("vPhone"));
+			//			vendrpg.clickOnCreateVendorBtn();
+			//			vendrpg.clickOnVendorLogoSelectFile();
+			//			vendrpg.sendFileToVendorLogoField(prop.getProperty("Vendor_logo"));
+			//			vendrpg.clickOnSaveImageBtn();
+			//			vendrpg.clickOnProfileSelectFile();
+			//			vendrpg.sendVendorProfileField(prop.getProperty("Vendor_profile"));
+			//			vendrpg.clickOnSaveImageVendorProfile();
+			//
+			//			vendrpg.enterVendorName(prop.getProperty("Vendor_Name"));
+			//			vendrpg.enterCName(prop.getProperty("Vendor_company"));
+			//			vendrpg.enterEmail(prop.getProperty("vEmail"));
+			//			vendrpg.enterPhone(prop.getProperty("vPhone"));
+			//			vendrpg.selectAddress();
+			//			vendrpg.selectCategory();
+			//			vendrpg.enterCompanyWebsite();
+			//			vendrpg.enterDisplayLink();
+			//			vendrpg.enterDescription();
+			//			vendrpg.enterTags();
+			//			vendrpg.clickOnAddVendor();
+			vendrpg.clickOnVisibleVendorDrpDwn();
 
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
