@@ -20,10 +20,7 @@ public class EasyRLoginPage extends TestBase{
 	WebElement rememberMeToggle;
 	@FindBy(xpath = "//button[text()='Login']")
 	WebElement LoginBtn;
-	@FindBy(xpath = "//span[text()='dashboard']")
-	WebElement verifyDashboardPageText;
-	@FindBy(xpath = "//div[text()='Welcome Super Admin to EasyR Admin']")
-	WebElement verifyLoginSuccessfullyMessage;
+
 
 
 	public EasyRLoginPage() {
@@ -51,7 +48,9 @@ public class EasyRLoginPage extends TestBase{
 		rememberMeToggle.click();
 	}
 	
-	public EasyRDashboardPage clickOnLoginbtn() {
+	public EasyRDashboardPage clickOnLoginbtn(String email, String pwd) {
+		enterEmail.sendKeys(email);
+		EasyrPwd.sendKeys(pwd);
 		LoginBtn.click();
 		return new EasyRDashboardPage();
 	}

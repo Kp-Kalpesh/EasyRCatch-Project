@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-08T12:36:15 IST" name="Default suite" finished-at="2025-09-08T12:36:17 IST" duration-ms="1778">
+  <suite started-at="2025-09-08T16:25:21 IST" name="Default suite" finished-at="2025-09-08T16:25:29 IST" duration-ms="8031">
     <groups>
     </groups>
-    <test started-at="2025-09-08T12:36:15 IST" name="Default test" finished-at="2025-09-08T12:36:17 IST" duration-ms="1778">
-      <class name="easyr.qa.testCases.EasyRLoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@173ed316]" started-at="2025-09-08T12:36:15 IST" name="setUp" finished-at="2025-09-08T12:36:17 IST" duration-ms="1394" status="PASS">
+    <test started-at="2025-09-08T16:25:21 IST" name="Default test" finished-at="2025-09-08T16:25:29 IST" duration-ms="8031">
+      <class name="easyr.qa.testCases.EasyRVendorPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@173ed316]" started-at="2025-09-08T16:25:21 IST" name="setUp" finished-at="2025-09-08T16:25:23 IST" duration-ms="2448" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifySignInText()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@173ed316]" started-at="2025-09-08T12:36:17 IST" name="verifySignInText" finished-at="2025-09-08T12:36:17 IST" duration-ms="270" status="PASS">
+        <test-method signature="verifyCreatVendor()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@173ed316]" started-at="2025-09-08T16:25:23 IST" name="verifyCreatVendor" finished-at="2025-09-08T16:25:29 IST" duration-ms="5559" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySignInText -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@173ed316]" started-at="2025-09-08T12:36:17 IST" name="tearDown" finished-at="2025-09-08T12:36:17 IST" duration-ms="93" status="PASS">
+        </test-method> <!-- verifyCreatVendor -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@173ed316]" started-at="2025-09-08T16:25:29 IST" name="tearDown" finished-at="2025-09-08T16:25:29 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- easyr.qa.testCases.EasyRLoginTest -->
+      </class> <!-- easyr.qa.testCases.EasyRVendorPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

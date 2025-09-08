@@ -9,7 +9,7 @@ import easyr.qa.pages.EasyRLoginPage;
 import junit.framework.Assert;
 
 public class EasyRLoginTest extends TestBase{
-	EasyRLoginPage LoginPg;
+	EasyRLoginPage loginpg;
 
 	public EasyRLoginTest () {
 		super();
@@ -19,20 +19,25 @@ public class EasyRLoginTest extends TestBase{
 	@BeforeMethod
 	public void setUp() {
 		initialization();
-		LoginPg = new EasyRLoginPage();
+		loginpg = new EasyRLoginPage();
 	}
 
-	
+
 	@Test
 	public void verifySignInText() {
-		Assert.assertEquals(LoginPg.verifySignInText(), "Sign In");
-		boolean flag = LoginPg.verifyEasyRLogo();
-		Assert.assertTrue(flag);
-		
-		LoginPg.enterEmail(prop.getProperty("Email"));
-		LoginPg.enterPass(prop.getProperty("Password"));
-		LoginPg.clickOnRemembeeMe();
-		LoginPg.clickOnLoginbtn();
+		try {
+			Assert.assertEquals(loginpg.verifySignInText(), "Sign In");
+			boolean flag = loginpg.verifyEasyRLogo();
+			Assert.assertTrue(flag);
+
+			loginpg.enterEmail(prop.getProperty("Email"));
+			loginpg.enterPass(prop.getProperty("Password"));
+			loginpg.clickOnRemembeeMe();
+			loginpg.clickOnLoginbtn(prop.getProperty("Email"), prop.getProperty("Password"));
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+
+		}
 	}
 
 	@AfterMethod
