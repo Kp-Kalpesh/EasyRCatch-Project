@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-09T17:27:50 IST" name="Default suite" finished-at="2025-09-09T17:28:19 IST" duration-ms="29010">
+  <suite started-at="2025-09-09T19:13:35 IST" name="Default suite" finished-at="2025-09-09T19:14:32 IST" duration-ms="56830">
     <groups>
     </groups>
-    <test started-at="2025-09-09T17:27:50 IST" name="Default test" finished-at="2025-09-09T17:28:19 IST" duration-ms="29010">
+    <test started-at="2025-09-09T19:13:35 IST" name="Default test" finished-at="2025-09-09T19:14:32 IST" duration-ms="56830">
       <class name="easyr.qa.testCases.EasyROffersAndDealsPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@173ed316]" started-at="2025-09-09T17:27:50 IST" name="setUp" finished-at="2025-09-09T17:27:52 IST" duration-ms="2699" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@25ce9dc4]" started-at="2025-09-09T19:13:35 IST" name="setUp" finished-at="2025-09-09T19:13:38 IST" duration-ms="2650" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyOffersAndDealsFlow()[pri:0, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@173ed316]" started-at="2025-09-09T17:27:52 IST" name="verifyOffersAndDealsFlow" finished-at="2025-09-09T17:28:18 IST" duration-ms="26132" status="PASS">
+        <test-method signature="verifyOffersAndDealsFlow()[pri:1, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@25ce9dc4]" started-at="2025-09-09T19:13:38 IST" name="verifyOffersAndDealsFlow" finished-at="2025-09-09T19:14:12 IST" duration-ms="33845" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyOffersAndDealsFlow -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@173ed316]" started-at="2025-09-09T17:28:18 IST" name="tearDown" finished-at="2025-09-09T17:28:19 IST" duration-ms="147" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@25ce9dc4]" started-at="2025-09-09T19:14:12 IST" name="tearDown" finished-at="2025-09-09T19:14:12 IST" duration-ms="139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@25ce9dc4]" started-at="2025-09-09T19:14:12 IST" name="setUp" finished-at="2025-09-09T19:14:14 IST" duration-ms="1903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyDataAfterOfferCreation()[pri:2, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@25ce9dc4]" started-at="2025-09-09T19:14:14 IST" name="verifyDataAfterOfferCreation" finished-at="2025-09-09T19:14:32 IST" duration-ms="18140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDataAfterOfferCreation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@25ce9dc4]" started-at="2025-09-09T19:14:32 IST" name="tearDown" finished-at="2025-09-09T19:14:32 IST" duration-ms="115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -33,7 +33,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		offerpg = vendrpg.clickOnOffersAndDeals();
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void verifyOffersAndDealsFlow() {
 		try {
 			Assert.assertEquals(offerpg.verifyOffersAndDealsText(), "OFFERS AND DEALS");
@@ -71,6 +71,27 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		}
 	}
 
+
+	@Test(priority = 2)
+	public void verifyDataAfterOfferCreation() {
+		try {
+			String actOffTitle = offerpg.verifyOfferTitle();
+			System.out.println("actOffTitle = " + offerpg.verifyOfferTitle());
+			Assert.assertEquals(actOffTitle, prop.getProperty("titleInEnglish"));
+	
+			String actOffType = offerpg.verifyOfferType();
+			System.out.println("actOffType = " + offerpg.verifyOfferType());
+			Assert.assertEquals(actOffType, prop.getProperty("offer_Type"));
+			
+			String actOffVendorName = offerpg.verifyOfferVendorName();
+			System.out.println("actOffVendorName = " + offerpg.verifyOfferVendorName());
+			Assert.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));
+			
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+
+		}
+	}
 
 	@AfterMethod
 	public void tearDown() {

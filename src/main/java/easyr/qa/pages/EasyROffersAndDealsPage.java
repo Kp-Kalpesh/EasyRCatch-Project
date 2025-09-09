@@ -111,10 +111,15 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement createOffer;
 
 
-
-
-
-
+	@FindBy(xpath = "(//a[@rel='noreferrer'])[1]")
+	WebElement createdOfferTitle;
+	@FindBy(xpath = "(//div[contains(@class,'py-1 px-2 text-xs rounded-')])[1]")
+	WebElement createdOfferType;
+	@FindBy(xpath = "(//div[contains(@class,'dark:bg-none dark:border-none dark:!text-[#EF9C66]')])[1]")
+	WebElement createdVendorName;
+	
+	
+	
 	//intialization
 	public EasyROffersAndDealsPage() {
 		PageFactory.initElements(driver, this);
@@ -252,9 +257,12 @@ public class EasyROffersAndDealsPage extends TestBase{
 		WebDriverWait wait = new WebDriverWait(driver, (10));
 		act.sendKeys(upperTab, Keys.ARROW_UP).perform();
 
+		Thread.sleep(4000);
 		try {
 			WebElement element = wait.until(
-					ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[text()='Offer Sub Details']")));
+					ExpectedConditions.visibilityOfElementLocated(By.xpath("//li//span[text()='Offer Sub Details']")));
+//			ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Next']")));
+
 			act.click(element).perform();
 		} catch (TimeoutException e) {
 			System.out.println("Element was not found within the timeout period.");
@@ -288,7 +296,25 @@ public class EasyROffersAndDealsPage extends TestBase{
 		descInArabic.sendKeys(descAra);
 	}
 
-	public void clickOnCreateOfferbtn() {
+	public void clickOnCreateOfferbtn() throws InterruptedException {
 		createOffer.click();
+		Thread.sleep(5000);
+	}
+
+	public String verifyOfferTitle() throws InterruptedException {
+		Thread.sleep(3000);
+		return createdOfferTitle.getText();
+	}
+
+	public String verifyOfferType() throws InterruptedException {
+		Thread.sleep(3000);
+
+		return createdOfferType.getText();
+	}
+	
+	public String verifyOfferVendorName() throws InterruptedException {
+		Thread.sleep(3000);
+
+		return createdVendorName.getText();
 	}
 }
