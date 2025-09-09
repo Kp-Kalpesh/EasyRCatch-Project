@@ -42,6 +42,11 @@ public class EasyRVendorPage extends TestBase{
 	WebElement selectAddress;
 	@FindBy(xpath = "//input[@id='vendor_category_id']")
 	WebElement selectCategory;
+	@FindBy(xpath = "//div[text()='Subcategory']")
+	WebElement selectSubCategory;
+	
+	
+	
 	@FindBy(xpath = "//input[@placeholder='Company Website']")
 	WebElement companyWebsite;
 	@FindBy(xpath = "//input[@placeholder='Display Link']")
@@ -72,8 +77,10 @@ public class EasyRVendorPage extends TestBase{
 	WebElement vendorCompanyAfterCreation;
 	@FindBy(xpath = "(//tbody/tr/td/div)[3]")
 	WebElement vendorEmailAfterCreation;
-
-
+	@FindBy(xpath = "(//a[@aria-expanded='true'])[4]")
+	WebElement OffersAndDeals;
+	
+	
 	public EasyRVendorPage() {
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
@@ -148,6 +155,13 @@ public class EasyRVendorPage extends TestBase{
 		selectCategory.sendKeys(Keys.ARROW_DOWN);
 		selectCategory.sendKeys(Keys.ENTER);
 	}
+	
+	public void selectSubCategory(String subCat) throws InterruptedException {
+		Thread.sleep(2000);
+		act.sendKeys(selectSubCategory, subCat).perform();
+		act.sendKeys(Keys.ENTER).perform();
+
+	}
 
 	public void enterCompanyWebsite(String compWebsite) {
 		companyWebsite.sendKeys(compWebsite);
@@ -203,20 +217,8 @@ public class EasyRVendorPage extends TestBase{
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public EasyROffersAndDealsPage clickOnOffersAndDeals(){
+		OffersAndDeals.click();
+		return new EasyROffersAndDealsPage();
+	}
 }

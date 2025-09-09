@@ -1,0 +1,79 @@
+package easyr.qa.testCases;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import easyr.qa.base.TestBase;
+import easyr.qa.pages.EasyRDashboardPage;
+import easyr.qa.pages.EasyRLoginPage;
+import easyr.qa.pages.EasyROffersAndDealsPage;
+import easyr.qa.pages.EasyRVendorPage;
+import junit.framework.Assert;
+
+public class EasyROffersAndDealsPageTest extends TestBase{
+	EasyRLoginPage loginpg;
+	EasyRDashboardPage dashpg;
+	EasyRVendorPage vendrpg;
+	EasyROffersAndDealsPage offerpg;
+
+
+
+	public EasyROffersAndDealsPageTest() {
+		super();
+	}
+
+
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginpg = new EasyRLoginPage();
+		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("Email"), prop.getProperty("Password"));
+		vendrpg = dashpg.clickOnVendors();
+		offerpg = vendrpg.clickOnOffersAndDeals();
+	}
+
+	@Test
+	public void verifyOffersAndDealsFlow() {
+		try {
+			Assert.assertEquals(offerpg.verifyOffersAndDealsText(), "OFFERS AND DEALS");
+			offerpg.clickOnCreateOffer();
+			offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
+			offerpg.clickOnDisplayedVendor();
+			Assert.assertEquals(offerpg.verifySelectedVendorName(), prop.getProperty("Vendor_Name"));
+			Assert.assertEquals(offerpg.verifySelectVendorCompanyName(), prop.getProperty("Vendor_company"));			
+			offerpg.clickOnAddOfferDetailsBtn();
+			offerpg.selectOfferType(prop.getProperty("offer_Type"));
+			offerpg.selectOfferDepartment(prop.getProperty("Offer_Dept"));
+			offerpg.selectOfferCategory(prop.getProperty("offer_category"));
+			offerpg.selectSubCategory(prop.getProperty("offer_subCategory"));
+			offerpg.selectStartDate();
+			offerpg.selectExpiryDate();
+			offerpg.enterDonationPerRedemption(prop.getProperty("donationPer_redemption"));
+			offerpg.enterCommissionPerRedemption(prop.getProperty("commissionPer_redemption"));
+			offerpg.enterRewardCoins(prop.getProperty("Reward_coins"));
+			offerpg.enterRedemptionLimit(prop.getProperty("redemption_limit"));
+			offerpg.selectDiscountType(prop.getProperty("discount_Type"));
+			offerpg.enterDiscount(prop.getProperty("discount_Price"));
+			offerpg.enterClickCommission(prop.getProperty("click_commission"));
+			offerpg.enterWebLink(prop.getProperty("offer_Link"));
+			offerpg.clickOnOfferimagebtn();
+			offerpg.selectImageFile(prop.getProperty("offer_Img"));
+			offerpg.clickOnsaveImageBtn();
+			offerpg.clickOnNextBtn();
+			offerpg.enterSubDetailsInEnglish(prop.getProperty("titleInEnglish"), prop.getProperty("shortDescInEnglish"), prop.getProperty("termsInEnglish"), prop.getProperty("descInEnglish"));
+			offerpg.enterSubDetailsInDanish(prop.getProperty("titleInDanish"), prop.getProperty("shortDescInDanish"), prop.getProperty("termsInDanish"), prop.getProperty("descInDanish"));
+			offerpg.enterSubDetailsInArabic(prop.getProperty("titleInArabic"), prop.getProperty("shortDescInArabic"), prop.getProperty("termsInArabic"), prop.getProperty("descInArabic"));
+			offerpg.clickOnCreateOfferbtn();
+
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
+}

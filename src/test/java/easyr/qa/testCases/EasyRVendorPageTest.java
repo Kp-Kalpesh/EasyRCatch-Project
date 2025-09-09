@@ -34,6 +34,7 @@ public class EasyRVendorPageTest extends TestBase{
 			System.out.println("vendrpg.verifyPageTitle(): " + vendrpg.verifyPageTitle());
 			Assert.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
 			System.out.println("vendrpg.verifyVendorText(): " + vendrpg.verifyVendorText());
+
 			/*
 			 * vendrpg.clickOnCreateVendorBtn(); vendrpg.clickOnVendorLogoSelectFile();
 			 * vendrpg.sendFileToVendorLogoField(prop.getProperty("Vendor_logo"));
@@ -47,12 +48,14 @@ public class EasyRVendorPageTest extends TestBase{
 			 * vendrpg.enterPhone(prop.getProperty("vPhone"));
 			 * vendrpg.selectAddress(prop.getProperty("vAddress"));
 			 * vendrpg.selectCategory(prop.getProperty("Category"));
+			 * vendrpg.selectSubCategory(prop.getProperty("SubCategory"));
 			 * vendrpg.enterCompanyWebsite(prop.getProperty("CompWebsite"));
 			 * vendrpg.enterDisplayLink(prop.getProperty("DisplayLink"));
 			 * vendrpg.enterDescription(prop.getProperty("EnglishDesc"),
 			 * prop.getProperty("DanishDesc"), prop.getProperty("Arabicdesc"));
-			 * vendrpg.enterTags(prop.getProperty("Tags")); vendrpg.clickOnAddVendor();
-			 */
+			 * vendrpg.enterTags(prop.getProperty("Tags"));
+			 */vendrpg.clickOnAddVendor();
+
 			vendrpg.clickOnVisibleVendorDrpDwn();
 
 			Assert.assertEquals(vendrpg.CreatedVendorName(), prop.getProperty("Vendor_Name"));
@@ -68,6 +71,6 @@ public class EasyRVendorPageTest extends TestBase{
 
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+		//		driver.quit();
 	}
 }
