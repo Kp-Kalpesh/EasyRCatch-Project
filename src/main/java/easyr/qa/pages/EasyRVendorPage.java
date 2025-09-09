@@ -11,6 +11,8 @@ import easyr.qa.base.TestBase;
 
 public class EasyRVendorPage extends TestBase{
 
+	Actions act;
+
 	@FindBy(xpath = "//span[@class='uppercase tracking-wider hover:scale-102 cursor-pointer']")
 	WebElement vendorPageText;
 	@FindBy(xpath="//button[contains(text(),'Create Vendor')]")
@@ -64,16 +66,17 @@ public class EasyRVendorPage extends TestBase{
 	WebElement vendorDrpDwn;
 	@FindBy(xpath = "//input[@id='status']")
 	WebElement invisible;
-	//	@FindBy(xpath = "(//div[@class='css-180fuia-control'])[1]")
-	//	WebElement vendorDrpDwn;
-	//	@FindBy(xpath = "(//div[@class='css-180fuia-control'])[1]")
-	//	WebElement vendorDrpDwn;
-	//	@FindBy(xpath = "(//div[@class='css-180fuia-control'])[1]")
-	//	WebElement vendorDrpDwn;
+	@FindBy(xpath = "(//tbody/tr/td/div/a[contains(@class,'whitespace-normal break-words capitalize')])[1]")
+	WebElement vendorNameAfterCreation;
+	@FindBy(xpath = "(//tbody/tr/td/div)[2]")
+	WebElement vendorCompanyAfterCreation;
+	@FindBy(xpath = "(//tbody/tr/td/div)[3]")
+	WebElement vendorEmailAfterCreation;
 
 
 	public EasyRVendorPage() {
 		PageFactory.initElements(driver, this);
+		act = new Actions(driver);
 	}
 
 	public String verifyPageTitle() {
@@ -132,44 +135,44 @@ public class EasyRVendorPage extends TestBase{
 		Phone.sendKeys(phone);
 	}
 
-	public void selectAddress() throws InterruptedException {
-		selectAddress.sendKeys("Dallas");
+	public void selectAddress(String city) throws InterruptedException {
+		selectAddress.sendKeys(city);
 		Thread.sleep(2000);
 		selectAddress.sendKeys(Keys.ARROW_DOWN);
 		selectAddress.sendKeys(Keys.ENTER);
 	}
 
-	public void selectCategory() throws InterruptedException {
-		selectCategory.sendKeys("Sports");
+	public void selectCategory(String category) throws InterruptedException {
+		selectCategory.sendKeys(category);
 		Thread.sleep(2000);
 		selectCategory.sendKeys(Keys.ARROW_DOWN);
 		selectCategory.sendKeys(Keys.ENTER);
 	}
 
-	public void enterCompanyWebsite() {
-		companyWebsite.sendKeys("https://lenskart.com");
+	public void enterCompanyWebsite(String compWebsite) {
+		companyWebsite.sendKeys(compWebsite);
 	}
 
-	public void enterDisplayLink() {
-		displayLink.sendKeys("https://google.com");
+	public void enterDisplayLink(String displayWebsite) {
+		displayLink.sendKeys(displayWebsite);
 	}
 
-	public void enterDescription() throws InterruptedException {
+	public void enterDescription(String engDesc, String danDesc, String arabDesc) throws InterruptedException {
 		DescInEnglish.sendKeys(Keys.PAGE_DOWN);
 		Thread.sleep(1000);
-		DescInEnglish.sendKeys("Test Data");
+		DescInEnglish.sendKeys(engDesc);
 		danishBtn.click();
 		Thread.sleep(1000);
 
-		DescInDanish.sendKeys("Test Data");
+		DescInDanish.sendKeys(danDesc);
 		arabicBtn.click();
 		Thread.sleep(1000);
 
-		DescInArabic.sendKeys("Test data");
+		DescInArabic.sendKeys(arabDesc);
 	}
 
-	public void enterTags() {
-		enterTags.sendKeys("Test Data");
+	public void enterTags(String tags) {
+		enterTags.sendKeys(tags);
 		enterTags.sendKeys(Keys.ENTER);
 	}
 
@@ -178,9 +181,42 @@ public class EasyRVendorPage extends TestBase{
 	}
 
 	public void clickOnVisibleVendorDrpDwn() throws InterruptedException {
-		vendorDrpDwn.click();
-		Thread.sleep(1000);		
-		Actions act = new Actions(driver);
+		Thread.sleep(5000);
+		act.click(vendorDrpDwn).perform();
+		Thread.sleep(2000);		
 		act.sendKeys("invisible", Keys.ENTER).perform();
 	}
+		
+	public String CreatedVendorName() throws InterruptedException {
+		Thread.sleep(2000);
+		return vendorNameAfterCreation.getText();
+	}
+	
+	public String CreatedVendorComapnyName() throws InterruptedException {
+		Thread.sleep(2000);
+		return vendorCompanyAfterCreation.getText();
+	}
+	
+	public String CreatedVendorEmail() throws InterruptedException {
+		Thread.sleep(2000);
+		return vendorEmailAfterCreation.getText();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
