@@ -77,6 +77,7 @@ public class EasyRVendorPage extends TestBase{
 	WebElement vendorCompanyAfterCreation;
 	@FindBy(xpath = "(//tbody/tr/td/div)[3]")
 	WebElement vendorEmailAfterCreation;
+	
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[4]")
 	WebElement OffersAndDeals;
 	
@@ -221,4 +222,6 @@ public class EasyRVendorPage extends TestBase{
 		OffersAndDeals.click();
 		return new EasyROffersAndDealsPage();
 	}
+	
+
 }

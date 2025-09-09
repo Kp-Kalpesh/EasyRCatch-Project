@@ -117,7 +117,8 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement createdOfferType;
 	@FindBy(xpath = "(//div[contains(@class,'dark:bg-none dark:border-none dark:!text-[#EF9C66]')])[1]")
 	WebElement createdVendorName;
-	
+	@FindBy(xpath = "(//a[@aria-expanded='true'])[5]")
+	WebElement EasyRCatchShop;
 	
 	
 	//intialization
@@ -316,5 +317,10 @@ public class EasyROffersAndDealsPage extends TestBase{
 		Thread.sleep(3000);
 
 		return createdVendorName.getText();
+	}
+	
+	public EasyRCatchShopPage clickOnProductStore() {
+		EasyRCatchShop.click();
+		return new EasyRCatchShopPage();
 	}
 }
