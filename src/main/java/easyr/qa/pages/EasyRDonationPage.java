@@ -74,11 +74,11 @@ public class EasyRDonationPage extends TestBase{
 	@FindBy(xpath = "//button[text()='Create Donation']")
 	WebElement CreateDonationBtn;
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "(//a[contains(@rel,'noreferrer')])[1]")
 	WebElement verifyCreatedDonationName;
-	@FindBy(xpath = "")
+	@FindBy(xpath = "(//div[contains(@Class,'py-1 px-2 text-xs rounded-1.8 whit')])[1]")
 	WebElement verifyCreatedDonationOrg;
-	@FindBy(xpath = "")
+	@FindBy(xpath = "(//div[contains(@Class,'break-words whitespace-normal flex just')])[1]")
 	WebElement verifyCreatedDonationCat;
 
 
@@ -101,8 +101,8 @@ public class EasyRDonationPage extends TestBase{
 		createDonationBtn.click();
 	}
 
-	public void enterOrgName() {
-		enterOrgName.sendKeys("circle of hope");
+	public void enterOrgName(String orgName) {
+		enterOrgName.sendKeys(orgName);
 	}
 	
 	public void clickOnViewOrg() {
@@ -121,11 +121,11 @@ public class EasyRDonationPage extends TestBase{
 		clickOnAddDonationDetailsBtn.click();
 	}
 	
-	public void enterDatainEnglish() {
-		titleInEng.sendKeys("test");
-		shortDescInEng.sendKeys("test");
-		whoAreWrInEng.sendKeys("test");
-		whatWeNeedInEng.sendKeys("test");
+	public void enterDatainEnglish(String orgTitleEng, String orgShortDescEng, String orgWhoAreWeEng, String orgWhatWeNeedEng) {
+		titleInEng.sendKeys(orgTitleEng);
+		shortDescInEng.sendKeys(orgShortDescEng);
+		whoAreWrInEng.sendKeys(orgWhoAreWeEng);
+		whatWeNeedInEng.sendKeys(orgWhatWeNeedEng);
 
 	}
 	
@@ -133,53 +133,66 @@ public class EasyRDonationPage extends TestBase{
 		nxtForDanish.click();
 	}
 	
-	public void enterDanishData() {
-		titleInDan.sendKeys("test");
-		shortDescInDan.sendKeys("test");
-		whoAreWrInDan.sendKeys("test");
-		whatWeNeedInDan.sendKeys("test");
+	public void enterDanishData(String orgTitleDan, String orgShortDescDan, String orgWhoAreWeDan, String orgWhatWeNeedDan) {
+		titleInDan.sendKeys(orgTitleDan);
+		shortDescInDan.sendKeys(orgShortDescDan);
+		whoAreWrInDan.sendKeys(orgWhoAreWeDan);
+		whatWeNeedInDan.sendKeys(orgWhatWeNeedDan);
 	}
 	
 	public void clickOnNxtForArabicBtn() {
 		nxtForArabic.click();
 	}
 	
-	public void enterDataInArabic() {
-		titleInArab.sendKeys("test");
-		shortDescInArab.sendKeys("test");
-		whoAreWrInArab.sendKeys("test");
-		whatWeNeedInArab.sendKeys("test");
+	public void enterDataInArabic(String orgTitleArab, String orgShortDescArab, String orgWhoAreWeArab, String orgWhatWeNeedArab) {
+		titleInArab.sendKeys(orgTitleArab);
+		shortDescInArab.sendKeys(orgShortDescArab);
+		whoAreWrInArab.sendKeys(orgWhoAreWeArab);
+		whatWeNeedInArab.sendKeys(orgWhatWeNeedArab);
 	}
 
 	public void clickOnNextstep() {
 		nxtStep.click();
 	}
 
-	public void enterDonationImage() {
-		chooseDonationImgFile.sendKeys("D:/GIFs/easyR_images/istockphoto-1041987488-612x612.jpg");
+	public void enterDonationImage(String DonationImg) {
+		chooseDonationImgFile.sendKeys(DonationImg);
 	}
 	
-	public void selectDonateCate() throws InterruptedException {
-		act.sendKeys(donateCate, "CharityHub").perform();
+	public void selectDonateCate(String DonateCat) throws InterruptedException {
+		act.sendKeys(donateCate, DonateCat).perform();
 		Thread.sleep(2000);
 		act.sendKeys(Keys.ARROW_DOWN, Keys.ENTER).build().perform();
 
 	}
 	
-	public void enterMinDonation() {
-		minDonation.sendKeys("100");
+	public void enterMinDonation(String minDonate) {
+		minDonation.sendKeys(minDonate);
 	}
 	
-	public void enterMaxDonation() {
-		maxDonation.sendKeys("5000");
+	public void enterMaxDonation(String maxDonate) {
+		maxDonation.sendKeys(maxDonate);
 	}
 	
-	public void enterDonationTarget() {
-		donationTarget.sendKeys("100000");
+	public void enterDonationTarget(String targetDonate) {
+		donationTarget.sendKeys(targetDonate);
 	}
 	
-	public void clickOnCreateDonationBtn() {
+	public void clickOnCreateDonationBtn() throws InterruptedException {
 		createDonationBtn.click();
+		Thread.sleep(5000);
+	}
+	
+	public String verifyDonationTitle() {
+		return verifyCreatedDonationName.getText();
+	}
+	
+	public String verifyDonationOrganization() {
+		return verifyCreatedDonationOrg.getText();
+	}
+	
+	public String verifyDonationCategory() {
+		return verifyCreatedDonationCat.getText();
 	}
 
 }

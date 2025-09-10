@@ -5,9 +5,9 @@
     <classes>
       <class name="easyr.qa.testCases.EasyRDonationPageTest">
         <methods>
+          <include name="verifyCreatedDonationData"/>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="createDonation"/>
         </methods>
       </class> <!-- easyr.qa.testCases.EasyRDonationPageTest -->
     </classes>

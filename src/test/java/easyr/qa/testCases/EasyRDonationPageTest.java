@@ -39,29 +39,29 @@ public class EasyRDonationPageTest extends TestBase{
 		donpg = orgpg.clickOnDonationTab();
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void createDonation() {
 		try {
 			Assert.assertEquals(donpg.verifyDonationTextOnMenuBar(), "Donations");
 			Assert.assertEquals(donpg.verifyDonationTextOnPage(), "DONATIONS");
 
 			donpg.clickOncreateDonationBtn();
-			donpg.enterOrgName();
+			donpg.enterOrgName(prop.getProperty("Organization_Name"));
 			donpg.clickOnViewOrg();
 			donpg.verifyOrgName();
 			donpg.verifyOrgEmail();
 			donpg.clickOnAddDonationDetails();
-			donpg.enterDatainEnglish();
+			donpg.enterDatainEnglish(prop.getProperty("orgTitleEnglish"),prop.getProperty("orgShortDescEnglish"), prop.getProperty("orgWhoAreWeEnglish"), prop.getProperty("orgWhatWeNeedEnglish"));
 			donpg.clickOnNxtForDanishBtn();
-			donpg.enterDanishData();
+			donpg.enterDanishData(prop.getProperty("orgTitleDanish"),prop.getProperty("orgShortDescDanish"), prop.getProperty("orgWhoAreWeDanish"), prop.getProperty("orgWhatWeNeedDanish"));
 			donpg.clickOnNxtForArabicBtn();
-			donpg.enterDataInArabic();
+			donpg.enterDataInArabic(prop.getProperty("orgTitleArabic"),prop.getProperty("orgShortDescArabic"), prop.getProperty("orgWhoAreWeArabic"), prop.getProperty("orgWhatWeNeedArabic"));
 			donpg.clickOnNextstep();
-			donpg.enterDonationImage();
-			donpg.selectDonateCate();
-			donpg.enterMinDonation();
-			donpg.enterMaxDonation();
-			donpg.enterDonationTarget();
+			donpg.enterDonationImage(prop.getProperty("donation_Image"));
+			donpg.selectDonateCate(prop.getProperty("DonationCategory"));
+			donpg.enterMinDonation(prop.getProperty("MinimumDonation"));
+			donpg.enterMaxDonation(prop.getProperty("MaximumDonation"));
+			donpg.enterDonationTarget(prop.getProperty("DonationTargetedAmount"));
 			donpg.clickOncreateDonationBtn();
 
 		}catch (Exception e) {
@@ -70,8 +70,21 @@ public class EasyRDonationPageTest extends TestBase{
 		}
 	}
 
+	@Test(priority = 2)
+	public void verifyCreatedDonationData() {
+		try {
+			Assert.assertEquals(donpg.verifyDonationTitle(), prop.getProperty("orgTitleEnglish"));
+			Assert.assertEquals(donpg.verifyDonationOrganization(), prop.getProperty("CreatedDonationOrg"));
+			Assert.assertEquals(donpg.verifyDonationCategory(), prop.getProperty("DonationCategory"));
+		} catch (Exception e){
+			System.out.println("Element not found within timeout: " + e.getMessage());
+
+		}
+	}
+
 	@AfterMethod
-	public void tearDown() {
+	public void tearDown() throws InterruptedException {
+		Thread.sleep(3000);
 		driver.quit();
 	}
 }
