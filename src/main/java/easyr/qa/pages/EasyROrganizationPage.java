@@ -52,6 +52,8 @@ public class EasyROrganizationPage extends TestBase{
 	@FindBy(xpath = "(//div[contains(@class,'whitespace-normal')])[1]")
 	WebElement createdOrgEmail;
 
+	@FindBy(xpath = "(//a[@aria-expanded='true'])[8]")
+	WebElement Donation;
 
 
 
@@ -141,4 +143,10 @@ public class EasyROrganizationPage extends TestBase{
 	public String verifyCreatedOrgEmail() {
 		return createdOrgEmail.getText();
 	}
+	
+	public EasyRDonationPage clickOnDonationTab() {
+		Donation.click();
+		return new EasyRDonationPage();
+	}
+	
 }

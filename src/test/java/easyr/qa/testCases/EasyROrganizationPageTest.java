@@ -22,8 +22,6 @@ public class EasyROrganizationPageTest extends TestBase{
 	EasyRCatchShopPage shoppg;
 	EasyROrganizationPage orgpg;
 
-
-
 	public EasyROrganizationPageTest() {
 		super();
 	}
@@ -75,8 +73,6 @@ public class EasyROrganizationPageTest extends TestBase{
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
-
-
 
 
 	@AfterMethod

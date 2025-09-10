@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="easyr.qa.testCases.EasyROrganizationPageTest">
+      <class name="easyr.qa.testCases.EasyRDonationPageTest">
         <methods>
-          <include name="verifyCreatedOrganization"/>
-          <include name="setup"/>
           <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="createDonation"/>
         </methods>
-      </class> <!-- easyr.qa.testCases.EasyROrganizationPageTest -->
+      </class> <!-- easyr.qa.testCases.EasyRDonationPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
