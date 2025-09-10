@@ -61,9 +61,9 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 			offerpg.selectImageFile(prop.getProperty("offer_Img"));
 			offerpg.clickOnsaveImageBtn();
 			offerpg.clickOnNextBtn();
-			offerpg.enterSubDetailsInEnglish(prop.getProperty("titleInEnglish"), prop.getProperty("shortDescInEnglish"), prop.getProperty("termsInEnglish"), prop.getProperty("descInEnglish"));
-			offerpg.enterSubDetailsInDanish(prop.getProperty("titleInDanish"), prop.getProperty("shortDescInDanish"), prop.getProperty("termsInDanish"), prop.getProperty("descInDanish"));
-			offerpg.enterSubDetailsInArabic(prop.getProperty("titleInArabic"), prop.getProperty("shortDescInArabic"), prop.getProperty("termsInArabic"), prop.getProperty("descInArabic"));
+			offerpg.enterSubDetailsInEnglish(prop.getProperty("OfftitleInEnglish"), prop.getProperty("OffshortDescInEnglish"), prop.getProperty("OfftermsInEnglish"), prop.getProperty("OffdescInEnglish"));
+			offerpg.enterSubDetailsInDanish(prop.getProperty("OfftitleInDanish"), prop.getProperty("OffshortDescInDanish"), prop.getProperty("OfftermsInDanish"), prop.getProperty("OffdescInDanish"));
+			offerpg.enterSubDetailsInArabic(prop.getProperty("OfftitleInArabic"), prop.getProperty("OffshortDescInArabic"), prop.getProperty("OfftermsInArabic"), prop.getProperty("OffdescInArabic"));
 			offerpg.clickOnCreateOfferbtn();
 
 		}catch (Exception e) {

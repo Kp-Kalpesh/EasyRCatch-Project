@@ -35,26 +35,26 @@ public class EasyRVendorPageTest extends TestBase{
 			Assert.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
 			System.out.println("vendrpg.verifyVendorText(): " + vendrpg.verifyVendorText());
 
-			/*
-			 * vendrpg.clickOnCreateVendorBtn(); vendrpg.clickOnVendorLogoSelectFile();
-			 * vendrpg.sendFileToVendorLogoField(prop.getProperty("Vendor_logo"));
-			 * vendrpg.clickOnSaveImageBtn(); vendrpg.clickOnProfileSelectFile();
-			 * vendrpg.sendVendorProfileField(prop.getProperty("Vendor_profile"));
-			 * vendrpg.clickOnSaveImageVendorProfile();
-			 * 
-			 * vendrpg.enterVendorName(prop.getProperty("Vendor_Name"));
-			 * vendrpg.enterCName(prop.getProperty("Vendor_company"));
-			 * vendrpg.enterEmail(prop.getProperty("vEmail"));
-			 * vendrpg.enterPhone(prop.getProperty("vPhone"));
-			 * vendrpg.selectAddress(prop.getProperty("vAddress"));
-			 * vendrpg.selectCategory(prop.getProperty("Category"));
-			 * vendrpg.selectSubCategory(prop.getProperty("SubCategory"));
-			 * vendrpg.enterCompanyWebsite(prop.getProperty("CompWebsite"));
-			 * vendrpg.enterDisplayLink(prop.getProperty("DisplayLink"));
-			 * vendrpg.enterDescription(prop.getProperty("EnglishDesc"),
-			 * prop.getProperty("DanishDesc"), prop.getProperty("Arabicdesc"));
-			 * vendrpg.enterTags(prop.getProperty("Tags"));
-			 */vendrpg.clickOnAddVendor();
+
+			vendrpg.clickOnCreateVendorBtn(); vendrpg.clickOnVendorLogoSelectFile();
+			vendrpg.sendFileToVendorLogoField(prop.getProperty("Vendor_logo"));
+			vendrpg.clickOnSaveImageBtn(); vendrpg.clickOnProfileSelectFile();
+			vendrpg.sendVendorProfileField(prop.getProperty("Vendor_profile"));
+			vendrpg.clickOnSaveImageVendorProfile();
+
+			vendrpg.enterVendorName(prop.getProperty("Vendor_Name"));
+			vendrpg.enterCName(prop.getProperty("Vendor_company"));
+			vendrpg.enterEmail(prop.getProperty("vEmail"));
+			vendrpg.enterPhone(prop.getProperty("vPhone"));
+			vendrpg.selectAddress(prop.getProperty("vAddress"));
+			vendrpg.selectCategory(prop.getProperty("Category"));
+			vendrpg.selectSubCategory(prop.getProperty("SubCategory"));
+			vendrpg.enterCompanyWebsite(prop.getProperty("CompWebsite"));
+			vendrpg.enterDisplayLink(prop.getProperty("DisplayLink"));
+			vendrpg.enterDescription(prop.getProperty("EnglishDesc"),
+					prop.getProperty("DanishDesc"), prop.getProperty("Arabicdesc"));
+			vendrpg.enterTags(prop.getProperty("Tags"));
+			vendrpg.clickOnAddVendor();
 
 			vendrpg.clickOnVisibleVendorDrpDwn();
 
@@ -71,6 +71,6 @@ public class EasyRVendorPageTest extends TestBase{
 
 	@AfterMethod
 	public void tearDown() {
-		//		driver.quit();
+		driver.quit();
 	}
 }
