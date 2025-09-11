@@ -121,7 +121,6 @@ public class EasyRDonationPage extends TestBase{
 		shortDescInEng.sendKeys(orgShortDescEng);
 		whoAreWrInEng.sendKeys(orgWhoAreWeEng);
 		whatWeNeedInEng.sendKeys(orgWhatWeNeedEng);
-
 	}
 	
 	public void clickOnNxtForDanishBtn() {
@@ -158,7 +157,6 @@ public class EasyRDonationPage extends TestBase{
 		act.sendKeys(donateCate, DonateCat).perform();
 		Thread.sleep(2000);
 		act.sendKeys(Keys.ARROW_DOWN, Keys.ENTER).build().perform();
-
 	}
 	
 	public void enterMinDonation(String minDonate) {

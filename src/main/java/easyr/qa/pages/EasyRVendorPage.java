@@ -44,9 +44,9 @@ public class EasyRVendorPage extends TestBase{
 	WebElement selectCategory;
 	@FindBy(xpath = "//div[text()='Subcategory']")
 	WebElement selectSubCategory;
-	
-	
-	
+
+
+
 	@FindBy(xpath = "//input[@placeholder='Company Website']")
 	WebElement companyWebsite;
 	@FindBy(xpath = "//input[@placeholder='Display Link']")
@@ -77,11 +77,11 @@ public class EasyRVendorPage extends TestBase{
 	WebElement vendorCompanyAfterCreation;
 	@FindBy(xpath = "(//tbody/tr/td/div)[3]")
 	WebElement vendorEmailAfterCreation;
-	
+
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[4]")
 	WebElement OffersAndDeals;
-	
-	
+
+
 	public EasyRVendorPage() {
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
@@ -156,12 +156,11 @@ public class EasyRVendorPage extends TestBase{
 		selectCategory.sendKeys(Keys.ARROW_DOWN);
 		selectCategory.sendKeys(Keys.ENTER);
 	}
-	
+
 	public void selectSubCategory(String subCat) throws InterruptedException {
 		Thread.sleep(2000);
 		act.sendKeys(selectSubCategory, subCat).perform();
 		act.sendKeys(Keys.ENTER).perform();
-
 	}
 
 	public void enterCompanyWebsite(String compWebsite) {
@@ -182,7 +181,6 @@ public class EasyRVendorPage extends TestBase{
 		DescInDanish.sendKeys(danDesc);
 		arabicBtn.click();
 		Thread.sleep(1000);
-
 		DescInArabic.sendKeys(arabDesc);
 	}
 
@@ -201,27 +199,24 @@ public class EasyRVendorPage extends TestBase{
 		Thread.sleep(2000);		
 		act.sendKeys("invisible", Keys.ENTER).perform();
 	}
-		
+
 	public String CreatedVendorName() throws InterruptedException {
 		Thread.sleep(2000);
 		return vendorNameAfterCreation.getText();
 	}
-	
+
 	public String CreatedVendorComapnyName() throws InterruptedException {
 		Thread.sleep(2000);
 		return vendorCompanyAfterCreation.getText();
 	}
-	
+
 	public String CreatedVendorEmail() throws InterruptedException {
 		Thread.sleep(2000);
 		return vendorEmailAfterCreation.getText();
 	}
-	
-	
+
 	public EasyROffersAndDealsPage clickOnOffersAndDeals(){
 		OffersAndDeals.click();
 		return new EasyROffersAndDealsPage();
 	}
-	
-
 }

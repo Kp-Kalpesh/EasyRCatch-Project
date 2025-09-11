@@ -22,7 +22,6 @@ public class EasyRLoginPage extends TestBase{
 	WebElement LoginBtn;
 
 
-
 	public EasyRLoginPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -54,6 +53,4 @@ public class EasyRLoginPage extends TestBase{
 		LoginBtn.click();
 		return new EasyRDashboardPage();
 	}
-
-
 }

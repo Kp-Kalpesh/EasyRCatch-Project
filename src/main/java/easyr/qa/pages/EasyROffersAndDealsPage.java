@@ -127,9 +127,7 @@ public class EasyROffersAndDealsPage extends TestBase{
 		act = new Actions(driver);
 	}
 
-
 	//Actions
-
 	public String verifyOffersAndDealsText() {
 		return offersAndDealsPageText.getText();
 	}
@@ -160,7 +158,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 
 	public void selectOfferType(String offerType) {
 		act.sendKeys(selectOfferType, offerType, Keys.ENTER).perform();
-
 	}
 
 	public void selectOfferDepartment(String offerDept) {
