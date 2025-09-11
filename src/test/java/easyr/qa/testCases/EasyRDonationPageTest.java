@@ -66,7 +66,6 @@ public class EasyRDonationPageTest extends TestBase{
 
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
-
 		}
 	}
 
@@ -78,7 +77,6 @@ public class EasyRDonationPageTest extends TestBase{
 			Assert.assertEquals(donpg.verifyDonationCategory(), prop.getProperty("DonationCategory"));
 		} catch (Exception e){
 			System.out.println("Element not found within timeout: " + e.getMessage());
-
 		}
 	}
 

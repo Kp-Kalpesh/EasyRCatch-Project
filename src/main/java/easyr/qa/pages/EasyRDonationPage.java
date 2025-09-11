@@ -26,8 +26,7 @@ public class EasyRDonationPage extends TestBase{
 	@FindBy(xpath = "(//span[contains(@class,'font-semibold text-sla')])[2]")
 	WebElement verifyOrgEmail;
 	@FindBy(xpath = "//button[text()='Add Donation Details']")
-	WebElement clickOnAddDonationDetailsBtn;	
-	
+	WebElement clickOnAddDonationDetailsBtn;		
 	@FindBy(xpath = "//input[@placeholder='Title in English']")
 	WebElement titleInEng;
 	@FindBy(xpath = "//textarea[@placeholder='Short Description in English']")
@@ -38,7 +37,6 @@ public class EasyRDonationPage extends TestBase{
 	WebElement whatWeNeedInEng;
 	@FindBy(xpath = "//button[text()='Next For Danish']")
 	WebElement nxtForDanish;
-
 	@FindBy(xpath = "//input[@placeholder='Title in Danish']")
 	WebElement titleInDan;
 	@FindBy(xpath = "//textarea[@placeholder='Short Description in Danish']")
@@ -49,7 +47,6 @@ public class EasyRDonationPage extends TestBase{
 	WebElement whatWeNeedInDan;
 	@FindBy(xpath = "//button[text()='Next For Arabic']")
 	WebElement nxtForArabic;
-
 	@FindBy(xpath = "//input[@placeholder='Title in Arabic']")
 	WebElement titleInArab;
 	@FindBy(xpath = "//textarea[@placeholder='Short Description in Arabic']")
@@ -60,7 +57,6 @@ public class EasyRDonationPage extends TestBase{
 	WebElement whatWeNeedInArab;
 	@FindBy(xpath = "//button[text()='Next Step ']")
 	WebElement nxtStep;
-
 	@FindBy(xpath = "//input[@id='image']")
 	WebElement chooseDonationImgFile;
 	@FindBy(xpath = "//div[text()='Donate Category']")
@@ -73,7 +69,6 @@ public class EasyRDonationPage extends TestBase{
 	WebElement donationTarget;
 	@FindBy(xpath = "//button[text()='Create Donation']")
 	WebElement CreateDonationBtn;
-
 	@FindBy(xpath = "(//a[contains(@rel,'noreferrer')])[1]")
 	WebElement verifyCreatedDonationName;
 	@FindBy(xpath = "(//div[contains(@Class,'py-1 px-2 text-xs rounded-1.8 whit')])[1]")
