@@ -12,7 +12,6 @@ import easyr.qa.base.TestBase;
 public class EasyRVendorPage extends TestBase{
 
 	Actions act;
-
 	@FindBy(xpath = "//span[@class='uppercase tracking-wider hover:scale-102 cursor-pointer']")
 	WebElement vendorPageText;
 	@FindBy(xpath="//button[contains(text(),'Create Vendor')]")
@@ -29,7 +28,6 @@ public class EasyRVendorPage extends TestBase{
 	WebElement uploadVendorProfile;
 	@FindBy(xpath = "//button[text()='Save Image']")
 	WebElement SaveVendorProfile;
-
 	@FindBy(xpath = "//input[contains(@placeholder,'Vendor Name')]")
 	WebElement VendorName;
 	@FindBy(xpath = "//input[contains(@placeholder,'Company Name')]")
@@ -44,14 +42,10 @@ public class EasyRVendorPage extends TestBase{
 	WebElement selectCategory;
 	@FindBy(xpath = "//div[text()='Subcategory']")
 	WebElement selectSubCategory;
-
-
-
 	@FindBy(xpath = "//input[@placeholder='Company Website']")
 	WebElement companyWebsite;
 	@FindBy(xpath = "//input[@placeholder='Display Link']")
 	WebElement displayLink;
-
 	@FindBy(xpath = "//div[@class='ql-editor ql-blank']//p")
 	WebElement DescInEnglish;
 	@FindBy(xpath = "//button[@id='headlessui-tabs-tab-:r2:']")
@@ -66,7 +60,6 @@ public class EasyRVendorPage extends TestBase{
 	WebElement enterTags;
 	@FindBy(xpath = "//button[contains(text(),'Add Vendor')]")
 	WebElement addVendorBtn;
-
 	@FindBy(xpath = "(//div[@class='css-j1q5rd'])[1]")
 	WebElement vendorDrpDwn;
 	@FindBy(xpath = "//input[@id='status']")
@@ -77,7 +70,6 @@ public class EasyRVendorPage extends TestBase{
 	WebElement vendorCompanyAfterCreation;
 	@FindBy(xpath = "(//tbody/tr/td/div)[3]")
 	WebElement vendorEmailAfterCreation;
-
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[4]")
 	WebElement OffersAndDeals;
 

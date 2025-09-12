@@ -35,13 +35,11 @@ public class EasyRVendorPageTest extends TestBase{
 			Assert.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
 			System.out.println("vendrpg.verifyVendorText(): " + vendrpg.verifyVendorText());
 
-
 			vendrpg.clickOnCreateVendorBtn(); vendrpg.clickOnVendorLogoSelectFile();
 			vendrpg.sendFileToVendorLogoField(prop.getProperty("Vendor_logo"));
 			vendrpg.clickOnSaveImageBtn(); vendrpg.clickOnProfileSelectFile();
 			vendrpg.sendVendorProfileField(prop.getProperty("Vendor_profile"));
 			vendrpg.clickOnSaveImageVendorProfile();
-
 			vendrpg.enterVendorName(prop.getProperty("Vendor_Name"));
 			vendrpg.enterCName(prop.getProperty("Vendor_company"));
 			vendrpg.enterEmail(prop.getProperty("vEmail"));
@@ -55,19 +53,15 @@ public class EasyRVendorPageTest extends TestBase{
 					prop.getProperty("DanishDesc"), prop.getProperty("Arabicdesc"));
 			vendrpg.enterTags(prop.getProperty("Tags"));
 			vendrpg.clickOnAddVendor();
-
 			vendrpg.clickOnVisibleVendorDrpDwn();
 
 			Assert.assertEquals(vendrpg.CreatedVendorName(), prop.getProperty("Vendor_Name"));
 			Assert.assertEquals(vendrpg.CreatedVendorComapnyName(), prop.getProperty("Vendor_company"));
 			Assert.assertEquals(vendrpg.CreatedVendorEmail(), prop.getProperty("vEmail"));
-
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
-
-
 
 	@AfterMethod
 	public void tearDown() {

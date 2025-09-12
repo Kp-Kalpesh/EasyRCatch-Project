@@ -23,6 +23,7 @@ public class EasyRDonationPageTest extends TestBase{
 	EasyRCatchShopPage shoppg;
 	EasyROrganizationPage orgpg;
 	EasyRDonationPage donpg;
+
 	public EasyRDonationPageTest(){
 		super();
 	}
@@ -44,7 +45,6 @@ public class EasyRDonationPageTest extends TestBase{
 		try {
 			Assert.assertEquals(donpg.verifyDonationTextOnMenuBar(), "Donations");
 			Assert.assertEquals(donpg.verifyDonationTextOnPage(), "DONATIONS");
-
 			donpg.clickOncreateDonationBtn();
 			donpg.enterOrgName(prop.getProperty("Organization_Name"));
 			donpg.clickOnViewOrg();
@@ -63,7 +63,6 @@ public class EasyRDonationPageTest extends TestBase{
 			donpg.enterMaxDonation(prop.getProperty("MaximumDonation"));
 			donpg.enterDonationTarget(prop.getProperty("DonationTargetedAmount"));
 			donpg.clickOncreateDonationBtn();
-
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}

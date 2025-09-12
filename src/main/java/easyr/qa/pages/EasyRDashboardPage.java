@@ -34,5 +34,4 @@ public class EasyRDashboardPage extends TestBase{
 		VendorsText.click();
 		return new EasyRVendorPage();
 	}
-
 }

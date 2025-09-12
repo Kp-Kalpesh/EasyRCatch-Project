@@ -58,7 +58,6 @@ public class EasyROrganizationPageTest extends TestBase{
 			orgpg.enterDescInArab(prop.getProperty("OrgDescInArabic"));
 			orgpg.enterOrgWebsite(prop.getProperty("OrganizationWebsite"));
 			orgpg.clickOnAddOrganizationBtn();
-
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -73,7 +72,6 @@ public class EasyROrganizationPageTest extends TestBase{
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
-
 
 	@AfterMethod
 	public void tearDown() {

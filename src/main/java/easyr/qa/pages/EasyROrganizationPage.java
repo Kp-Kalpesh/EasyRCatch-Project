@@ -11,7 +11,6 @@ import easyr.qa.base.TestBase;
 public class EasyROrganizationPage extends TestBase{
 
 	Actions act;
-
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[7]")
 	WebElement Organizations;
 	@FindBy(xpath = "//span[text()='organizations']")
@@ -46,23 +45,18 @@ public class EasyROrganizationPage extends TestBase{
 	WebElement orgWebsite;
 	@FindBy(xpath = "//button[text()='Add Organization']")
 	WebElement clickOnAddOrgBtn;
-
 	@FindBy(xpath = "(//a[contains(@class,'whitespace-normal')])[1]")
 	WebElement createdOrgName;
 	@FindBy(xpath = "(//div[contains(@class,'whitespace-normal')])[1]")
 	WebElement createdOrgEmail;
-
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[8]")
 	WebElement Donation;
-
-
 
 
 	public EasyROrganizationPage() {
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
 	}
-
 
 	//Actions
 	public String verifyTextOnMenuBar() {
@@ -143,10 +137,9 @@ public class EasyROrganizationPage extends TestBase{
 	public String verifyCreatedOrgEmail() {
 		return createdOrgEmail.getText();
 	}
-	
+
 	public EasyRDonationPage clickOnDonationTab() {
 		Donation.click();
 		return new EasyRDonationPage();
 	}
-	
 }

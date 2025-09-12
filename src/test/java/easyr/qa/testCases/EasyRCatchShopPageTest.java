@@ -19,7 +19,6 @@ public class EasyRCatchShopPageTest extends TestBase{
 	EasyROffersAndDealsPage offerpg;
 	EasyRCatchShopPage shoppg;
 
-
 	public EasyRCatchShopPageTest() {
 		super();
 	}
@@ -64,7 +63,6 @@ public class EasyRCatchShopPageTest extends TestBase{
 			shoppg.enableAllowRedemptionLimit();
 			shoppg.enterValidityOfProductAfterPurchased(prop.getProperty("ProductValidityInDays"));
 			shoppg.clickOnCreateProduct();
-
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}

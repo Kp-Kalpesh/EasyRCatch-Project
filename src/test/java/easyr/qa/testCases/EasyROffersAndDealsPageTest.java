@@ -17,12 +17,9 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 	EasyRVendorPage vendrpg;
 	EasyROffersAndDealsPage offerpg;
 
-
-
 	public EasyROffersAndDealsPageTest() {
 		super();
 	}
-
 
 	@BeforeMethod
 	public void setUp() {
@@ -65,12 +62,10 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 			offerpg.enterSubDetailsInDanish(prop.getProperty("OfftitleInDanish"), prop.getProperty("OffshortDescInDanish"), prop.getProperty("OfftermsInDanish"), prop.getProperty("OffdescInDanish"));
 			offerpg.enterSubDetailsInArabic(prop.getProperty("OfftitleInArabic"), prop.getProperty("OffshortDescInArabic"), prop.getProperty("OfftermsInArabic"), prop.getProperty("OffdescInArabic"));
 			offerpg.clickOnCreateOfferbtn();
-
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
-
 
 	@Test(priority = 2)
 	public void verifyDataAfterOfferCreation() {
@@ -78,18 +73,16 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 			String actOffTitle = offerpg.verifyOfferTitle();
 			System.out.println("actOffTitle = " + offerpg.verifyOfferTitle());
 			Assert.assertEquals(actOffTitle, prop.getProperty("titleInEnglish"));
-	
+
 			String actOffType = offerpg.verifyOfferType();
 			System.out.println("actOffType = " + offerpg.verifyOfferType());
 			Assert.assertEquals(actOffType, prop.getProperty("offer_Type"));
-			
+
 			String actOffVendorName = offerpg.verifyOfferVendorName();
 			System.out.println("actOffVendorName = " + offerpg.verifyOfferVendorName());
-			Assert.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));
-			
+			Assert.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));		
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
-
 		}
 	}
 

@@ -187,5 +187,4 @@ public class EasyRDonationPage extends TestBase{
 	public String verifyDonationCategory() {
 		return verifyCreatedDonationCat.getText();
 	}
-
 }

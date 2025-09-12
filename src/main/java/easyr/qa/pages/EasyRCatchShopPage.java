@@ -11,7 +11,6 @@ import easyr.qa.base.TestBase;
 public class EasyRCatchShopPage extends TestBase{
 
 	Actions act;
-
 	@FindBy(xpath = "//span[text()='inventory products']")
 	WebElement shopTextOnPage;
 	@FindBy(xpath = "//button[text()='Create Product']")

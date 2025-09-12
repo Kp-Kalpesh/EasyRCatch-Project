@@ -19,7 +19,6 @@ import easyr.qa.base.TestBase;
 public class EasyROffersAndDealsPage extends TestBase{
 
 	Actions act;
-
 	@FindBy(xpath = "//span[text()='offers and deals']")
 	WebElement offersAndDealsPageText;
 	@FindBy(xpath = "//button[text()='Create Offer']")
@@ -76,7 +75,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement upperTab;
 	@FindBy(xpath = "//button[text()='OK']")
 	WebElement okBtn;
-
 	@FindBy(xpath = "//input[@placeholder='Offer Title in English']")
 	WebElement TitleInEnglish;
 	@FindBy(xpath = "//textarea[@placeholder='Short Description in English']")
@@ -87,7 +85,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement DescInEnglish;
 	@FindBy(xpath = "//button[text()='Next For Danish']")
 	WebElement nextForDanish;
-
 	@FindBy(xpath = "//input[@placeholder='Offer Title in Danish']")
 	WebElement TitleInDanish;
 	@FindBy(xpath = "//textarea[@placeholder='Short Description in Danish']")
@@ -98,7 +95,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement descInDanish;
 	@FindBy(xpath = "//button[text()='Next For Arabic']")
 	WebElement nextForArabic;
-
 	@FindBy(xpath = "//input[@placeholder='Offer Title in Arabic']")
 	WebElement TitleInArabic;
 	@FindBy(xpath = "//textarea[@placeholder='Short Description in Arabic']")
@@ -109,8 +105,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement descInArabic;
 	@FindBy(xpath = "//button[text()='Create Offer']")
 	WebElement createOffer;
-
-
 	@FindBy(xpath = "(//a[@rel='noreferrer'])[1]")
 	WebElement createdOfferTitle;
 	@FindBy(xpath = "(//div[contains(@class,'py-1 px-2 text-xs rounded-')])[1]")
@@ -119,9 +113,8 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement createdVendorName;
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[5]")
 	WebElement EasyRCatchShop;
-	
-	
-	//intialization
+
+	//intialization constructor
 	public EasyROffersAndDealsPage() {
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
@@ -180,12 +173,10 @@ public class EasyROffersAndDealsPage extends TestBase{
 
 		// Click on date picker input
 		selectStartDate.click();
-
 		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[1]"));
 		todayDate.click();
 
 		boolean isPastDateDisabled = driver.findElements(By.xpath("(//span[contains(@class,'flatpickr-day') and text()='" + (today.getDayOfMonth() - 1) + "'])[1]")).size() > 0;
-
 
 		if (isPastDateDisabled) {
 			System.out.println("Past dates are disabled, only current date is selectable.");
@@ -201,7 +192,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 
 		// Click on Expiry date picker input
 		selectExpiryDate.click();
-
 		WebElement todayDate = driver.findElement(By.xpath("(//span[@aria-label='September 9, 2025' and text()='" + currentDay + "'])[2]"));															
 		todayDate.click();
 	}
@@ -259,14 +249,12 @@ public class EasyROffersAndDealsPage extends TestBase{
 		try {
 			WebElement element = wait.until(
 					ExpectedConditions.visibilityOfElementLocated(By.xpath("//li//span[text()='Offer Sub Details']")));
-//			ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Next']")));
-
+			//			ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Next']")));
 			act.click(element).perform();
 		} catch (TimeoutException e) {
 			System.out.println("Element was not found within the timeout period.");
 			// Optional: Take screenshot or log error
 		}
-
 		Thread.sleep(2000);
 		act.click(okBtn).perform();
 	}
@@ -309,13 +297,13 @@ public class EasyROffersAndDealsPage extends TestBase{
 
 		return createdOfferType.getText();
 	}
-	
+
 	public String verifyOfferVendorName() throws InterruptedException {
 		Thread.sleep(3000);
 
 		return createdVendorName.getText();
 	}
-	
+
 	public EasyRCatchShopPage clickOnProductStore() {
 		EasyRCatchShop.click();
 		return new EasyRCatchShopPage();

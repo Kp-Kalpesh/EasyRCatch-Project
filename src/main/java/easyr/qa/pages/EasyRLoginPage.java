@@ -21,7 +21,7 @@ public class EasyRLoginPage extends TestBase{
 	@FindBy(xpath = "//button[text()='Login']")
 	WebElement LoginBtn;
 
-
+	//Constructor
 	public EasyRLoginPage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -30,23 +30,23 @@ public class EasyRLoginPage extends TestBase{
 	public String verifySignInText() {
 		return signInText.getText();
 	}
-	
+
 	public boolean verifyEasyRLogo() {
 		return EasyrLogo.isDisplayed();
 	}
-	
+
 	public void enterEmail(String email) {
 		enterEmail.sendKeys(email);
 	}
-	
+
 	public void enterPass(String pwd) {
 		EasyrPwd.sendKeys(pwd);
 	}
-	
+
 	public void clickOnRemembeeMe() {
 		rememberMeToggle.click();
 	}
-	
+
 	public EasyRDashboardPage clickOnLoginbtn(String email, String pwd) {
 		enterEmail.sendKeys(email);
 		EasyrPwd.sendKeys(pwd);
