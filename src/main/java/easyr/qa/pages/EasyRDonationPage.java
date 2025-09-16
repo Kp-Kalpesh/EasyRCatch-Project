@@ -75,7 +75,9 @@ public class EasyRDonationPage extends TestBase{
 	WebElement verifyCreatedDonationOrg;
 	@FindBy(xpath = "(//div[contains(@Class,'break-words whitespace-normal flex just')])[1]")
 	WebElement verifyCreatedDonationCat;
-
+	@FindBy(xpath = "(//a[@aria-expanded='true'])[11]")
+	WebElement surveyAndQuestions;
+	
 	//Logout
 	@FindBy(xpath = "//p[text()='Super Admin']")
 	WebElement clickOnSuperAdmintxt;
@@ -191,6 +193,11 @@ public class EasyRDonationPage extends TestBase{
 
 	public String verifyDonationCategory() {
 		return verifyCreatedDonationCat.getText();
+	}
+	
+	public EasyRSurveyPage clickOnSurveyTab() {
+		surveyAndQuestions.click();
+		return new EasyRSurveyPage();
 	}
 	
 	public void logout() throws InterruptedException {
