@@ -21,6 +21,12 @@ public class EasyRLoginPage extends TestBase{
 	@FindBy(xpath = "//button[text()='Login']")
 	WebElement LoginBtn;
 
+	//Logout
+	@FindBy(xpath = "//p[text()='Super Admin']")
+	WebElement clickOnSuperAdmintxt;
+	@FindBy(xpath = "//button[text()='Log Out']")
+	WebElement logouttxt;
+
 	//Constructor
 	public EasyRLoginPage() {
 		PageFactory.initElements(driver, this);
@@ -46,6 +52,10 @@ public class EasyRLoginPage extends TestBase{
 	public void clickOnRemembeeMe() {
 		rememberMeToggle.click();
 	}
+	
+	public void clickOnLoginButton() {
+		LoginBtn.click();
+	}
 
 	public EasyRDashboardPage clickOnLoginbtn(String email, String pwd) {
 		enterEmail.sendKeys(email);
@@ -53,4 +63,11 @@ public class EasyRLoginPage extends TestBase{
 		LoginBtn.click();
 		return new EasyRDashboardPage();
 	}
+
+	public void logout() throws InterruptedException {
+		clickOnSuperAdmintxt.click();
+		Thread.sleep(1000);
+		logouttxt.click();
+	}
 }
+

@@ -15,6 +15,12 @@ public class EasyRDashboardPage extends TestBase{
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[2]")
 	WebElement VendorsText;
 
+	//Logout
+	@FindBy(xpath = "//p[text()='Super Admin']")
+	WebElement clickOnSuperAdmintxt;
+	@FindBy(xpath = "//button[text()='Log Out']")
+	WebElement logouttxt;
+
 
 	public EasyRDashboardPage() {
 		PageFactory.initElements(driver, this);
@@ -22,7 +28,7 @@ public class EasyRDashboardPage extends TestBase{
 
 	//Actions
 	public String verifySuccessfulLoginToastMessage() throws InterruptedException {
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		return verifyLoginSuccessfullyMessage.getText();
 	}
 
@@ -33,5 +39,11 @@ public class EasyRDashboardPage extends TestBase{
 	public EasyRVendorPage clickOnVendors() {
 		VendorsText.click();
 		return new EasyRVendorPage();
+	}
+
+	public void logout() throws InterruptedException {
+		clickOnSuperAdmintxt.click();
+		Thread.sleep(1000);
+		logouttxt.click();
 	}
 }

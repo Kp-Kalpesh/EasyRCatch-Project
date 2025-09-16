@@ -52,6 +52,11 @@ public class EasyROrganizationPage extends TestBase{
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[8]")
 	WebElement Donation;
 
+	//Logout
+	@FindBy(xpath = "//p[text()='Super Admin']")
+	WebElement clickOnSuperAdmintxt;
+	@FindBy(xpath = "//button[text()='Log Out']")
+	WebElement logouttxt;
 
 	public EasyROrganizationPage() {
 		PageFactory.initElements(driver, this);
@@ -141,5 +146,11 @@ public class EasyROrganizationPage extends TestBase{
 	public EasyRDonationPage clickOnDonationTab() {
 		Donation.click();
 		return new EasyRDonationPage();
+	}
+
+	public void logout() throws InterruptedException {
+		clickOnSuperAdmintxt.click();
+		Thread.sleep(1000);
+		logouttxt.click();
 	}
 }

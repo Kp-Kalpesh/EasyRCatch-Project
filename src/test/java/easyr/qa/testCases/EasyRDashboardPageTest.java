@@ -22,7 +22,7 @@ public class EasyRDashboardPageTest extends TestBase{
 	public void setUp() {
 		initialization();
 		loginpg = new EasyRLoginPage();
-		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("Email"), prop.getProperty("Password"));
+		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("EmailQA"), prop.getProperty("PasswordQA"));
 	}
 
 	@Test
@@ -31,7 +31,8 @@ public class EasyRDashboardPageTest extends TestBase{
 			Assert.assertEquals(dashpg.verifySuccessfulLoginToastMessage(), "Welcome Super Admin to EasyR Admin");
 			System.out.println("dashpg.verifySuccessfulLoginToastMessage(): " + dashpg.verifySuccessfulLoginToastMessage());
 			Assert.assertEquals(dashpg.verifyDashboardTextOnPage(), "DASHBOARD");
-			dashpg.clickOnVendors();			
+			dashpg.clickOnVendors();
+			dashpg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}

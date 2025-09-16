@@ -98,7 +98,11 @@ public class EasyRCatchShopPage extends TestBase{
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[7]")
 	WebElement Organizations;
 
-
+	//Logout
+	@FindBy(xpath = "//p[text()='Super Admin']")
+	WebElement clickOnSuperAdmintxt;
+	@FindBy(xpath = "//button[text()='Log Out']")
+	WebElement logouttxt;
 
 	//constructor
 	public EasyRCatchShopPage() {
@@ -259,5 +263,11 @@ public class EasyRCatchShopPage extends TestBase{
 	public EasyROrganizationPage clickOnOrganization() {
 		Organizations.click();
 		return new EasyROrganizationPage();
+	}
+
+	public void logout() throws InterruptedException {
+		clickOnSuperAdmintxt.click();
+		Thread.sleep(1000);
+		logouttxt.click();
 	}
 }

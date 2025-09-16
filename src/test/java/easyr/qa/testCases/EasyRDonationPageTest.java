@@ -32,7 +32,7 @@ public class EasyRDonationPageTest extends TestBase{
 	public void setup() {
 		initialization();
 		loginpg = new EasyRLoginPage();
-		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("Email"), prop.getProperty("Password"));
+		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("EmailQA"), prop.getProperty("PasswordQA"));
 		vendrpg = dashpg.clickOnVendors();
 		offerpg = vendrpg.clickOnOffersAndDeals();
 		shoppg = offerpg.clickOnProductStore();
@@ -63,6 +63,7 @@ public class EasyRDonationPageTest extends TestBase{
 			donpg.enterMaxDonation(prop.getProperty("MaximumDonation"));
 			donpg.enterDonationTarget(prop.getProperty("DonationTargetedAmount"));
 			donpg.clickOncreateDonationBtn();
+			donpg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -74,6 +75,7 @@ public class EasyRDonationPageTest extends TestBase{
 			Assert.assertEquals(donpg.verifyDonationTitle(), prop.getProperty("orgTitleEnglish"));
 			Assert.assertEquals(donpg.verifyDonationOrganization(), prop.getProperty("CreatedDonationOrg"));
 			Assert.assertEquals(donpg.verifyDonationCategory(), prop.getProperty("DonationCategory"));
+			donpg.logout();
 		} catch (Exception e){
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -81,7 +83,7 @@ public class EasyRDonationPageTest extends TestBase{
 
 	@AfterMethod
 	public void tearDown() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		driver.quit();
 	}
 }

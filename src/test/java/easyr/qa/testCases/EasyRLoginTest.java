@@ -27,10 +27,11 @@ public class EasyRLoginTest extends TestBase{
 			Assert.assertEquals(loginpg.verifySignInText(), "Sign In");
 			boolean flag = loginpg.verifyEasyRLogo();
 			Assert.assertTrue(flag);
-			loginpg.enterEmail(prop.getProperty("Email"));
-			loginpg.enterPass(prop.getProperty("Password"));
+			loginpg.enterEmail(prop.getProperty("EmailQA"));
+			loginpg.enterPass(prop.getProperty("PasswordQA"));
 			loginpg.clickOnRemembeeMe();
-			loginpg.clickOnLoginbtn(prop.getProperty("Email"), prop.getProperty("Password"));
+			loginpg.clickOnLoginButton();
+			loginpg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}

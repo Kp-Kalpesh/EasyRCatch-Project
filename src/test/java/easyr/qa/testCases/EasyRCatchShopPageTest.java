@@ -27,7 +27,7 @@ public class EasyRCatchShopPageTest extends TestBase{
 	public void setup() {
 		initialization();
 		loginpg = new EasyRLoginPage();
-		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("Email"), prop.getProperty("Password"));
+		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("EmailQA"), prop.getProperty("PasswordQA"));
 		vendrpg = dashpg.clickOnVendors();
 		offerpg = vendrpg.clickOnOffersAndDeals();
 		shoppg = offerpg.clickOnProductStore();
@@ -63,6 +63,7 @@ public class EasyRCatchShopPageTest extends TestBase{
 			shoppg.enableAllowRedemptionLimit();
 			shoppg.enterValidityOfProductAfterPurchased(prop.getProperty("ProductValidityInDays"));
 			shoppg.clickOnCreateProduct();
+			shoppg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -74,6 +75,7 @@ public class EasyRCatchShopPageTest extends TestBase{
 			Assert.assertEquals(shoppg.verifyCreatedOfferTitle(), prop.getProperty("ProdTitleEnglish"));
 			Assert.assertEquals(shoppg.verifyCreatedOfferVName(), prop.getProperty("vendorNameAssertion"));
 			Assert.assertEquals(shoppg.verifyCreatedOfferCategory(), prop.getProperty("productCategory"));
+			shoppg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}

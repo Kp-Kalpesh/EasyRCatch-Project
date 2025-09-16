@@ -30,7 +30,7 @@ public class EasyROrganizationPageTest extends TestBase{
 	public void setup() {
 		initialization();
 		loginpg = new EasyRLoginPage();
-		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("Email"), prop.getProperty("Password"));
+		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("EmailQA"), prop.getProperty("PasswordQA"));
 		vendrpg = dashpg.clickOnVendors();
 		offerpg = vendrpg.clickOnOffersAndDeals();
 		shoppg = offerpg.clickOnProductStore();
@@ -58,6 +58,7 @@ public class EasyROrganizationPageTest extends TestBase{
 			orgpg.enterDescInArab(prop.getProperty("OrgDescInArabic"));
 			orgpg.enterOrgWebsite(prop.getProperty("OrganizationWebsite"));
 			orgpg.clickOnAddOrganizationBtn();
+			orgpg.logout();
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -68,6 +69,7 @@ public class EasyROrganizationPageTest extends TestBase{
 		try {
 			Assert.assertEquals(orgpg.verifyCreatedOrgName(), "People For Animals");
 			Assert.assertEquals(orgpg.verifyCreatedOrgEmail(), "peopleforanimals@easyr.ae");
+			orgpg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}

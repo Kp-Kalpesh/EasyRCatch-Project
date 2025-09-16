@@ -23,7 +23,7 @@ public class EasyRVendorPageTest extends TestBase{
 	public void setUp() {
 		initialization();
 		loginpg = new EasyRLoginPage();
-		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("Email"), prop.getProperty("Password"));
+		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("EmailQA"), prop.getProperty("PasswordQA"));
 		vendrpg = dashpg.clickOnVendors();
 	}
 
@@ -58,6 +58,7 @@ public class EasyRVendorPageTest extends TestBase{
 			Assert.assertEquals(vendrpg.CreatedVendorName(), prop.getProperty("Vendor_Name"));
 			Assert.assertEquals(vendrpg.CreatedVendorComapnyName(), prop.getProperty("Vendor_company"));
 			Assert.assertEquals(vendrpg.CreatedVendorEmail(), prop.getProperty("vEmail"));
+			vendrpg.logout();
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}

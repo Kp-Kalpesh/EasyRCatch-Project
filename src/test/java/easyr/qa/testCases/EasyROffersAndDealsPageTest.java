@@ -25,7 +25,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 	public void setUp() {
 		initialization();
 		loginpg = new EasyRLoginPage();
-		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("Email"), prop.getProperty("Password"));
+		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("EmailQA"), prop.getProperty("PasswordQA"));
 		vendrpg = dashpg.clickOnVendors();
 		offerpg = vendrpg.clickOnOffersAndDeals();
 	}
@@ -62,6 +62,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 			offerpg.enterSubDetailsInDanish(prop.getProperty("OfftitleInDanish"), prop.getProperty("OffshortDescInDanish"), prop.getProperty("OfftermsInDanish"), prop.getProperty("OffdescInDanish"));
 			offerpg.enterSubDetailsInArabic(prop.getProperty("OfftitleInArabic"), prop.getProperty("OffshortDescInArabic"), prop.getProperty("OfftermsInArabic"), prop.getProperty("OffdescInArabic"));
 			offerpg.clickOnCreateOfferbtn();
+			offerpg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -72,7 +73,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		try {
 			String actOffTitle = offerpg.verifyOfferTitle();
 			System.out.println("actOffTitle = " + offerpg.verifyOfferTitle());
-			Assert.assertEquals(actOffTitle, prop.getProperty("titleInEnglish"));
+			Assert.assertEquals(actOffTitle, prop.getProperty("OfftitleInEnglish"));
 
 			String actOffType = offerpg.verifyOfferType();
 			System.out.println("actOffType = " + offerpg.verifyOfferType());
@@ -80,7 +81,9 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 
 			String actOffVendorName = offerpg.verifyOfferVendorName();
 			System.out.println("actOffVendorName = " + offerpg.verifyOfferVendorName());
-			Assert.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));		
+			Assert.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));	
+			offerpg.logout();
+
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
@@ -88,6 +91,6 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+//		driver.quit();
 	}
 }

@@ -71,8 +71,10 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement saveImageBtn;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement nextBtn;
-	@FindBy(xpath = "//span[text()='Offer Sub Details']")
+	@FindBy(xpath = "(//span[@aria-current='step'])[3]")
 	WebElement upperTab;
+	//span[text()='Offer Sub Details']
+
 	@FindBy(xpath = "//button[text()='OK']")
 	WebElement okBtn;
 	@FindBy(xpath = "//input[@placeholder='Offer Title in English']")
@@ -113,6 +115,12 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement createdVendorName;
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[5]")
 	WebElement EasyRCatchShop;
+
+	//Logout
+	@FindBy(xpath = "//p[text()='Super Admin']")
+	WebElement clickOnSuperAdmintxt;
+	@FindBy(xpath = "//button[text()='Log Out']")
+	WebElement logouttxt;
 
 	//intialization constructor
 	public EasyROffersAndDealsPage() {
@@ -192,7 +200,8 @@ public class EasyROffersAndDealsPage extends TestBase{
 
 		// Click on Expiry date picker input
 		selectExpiryDate.click();
-		WebElement todayDate = driver.findElement(By.xpath("(//span[@aria-label='September 9, 2025' and text()='" + currentDay + "'])[2]"));															
+		//		Thread.sleep(4000);
+		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[2]"));															
 		todayDate.click();
 	}
 
@@ -288,24 +297,28 @@ public class EasyROffersAndDealsPage extends TestBase{
 	}
 
 	public String verifyOfferTitle() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		return createdOfferTitle.getText();
 	}
 
 	public String verifyOfferType() throws InterruptedException {
-		Thread.sleep(3000);
-
+		Thread.sleep(2000);
 		return createdOfferType.getText();
 	}
 
 	public String verifyOfferVendorName() throws InterruptedException {
-		Thread.sleep(3000);
-
+		Thread.sleep(2000);
 		return createdVendorName.getText();
 	}
 
 	public EasyRCatchShopPage clickOnProductStore() {
 		EasyRCatchShop.click();
 		return new EasyRCatchShopPage();
+	}
+
+	public void logout() throws InterruptedException {
+		clickOnSuperAdmintxt.click();
+		Thread.sleep(1000);
+		logouttxt.click();
 	}
 }

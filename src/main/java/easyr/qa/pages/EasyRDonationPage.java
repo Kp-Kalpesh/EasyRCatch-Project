@@ -76,6 +76,11 @@ public class EasyRDonationPage extends TestBase{
 	@FindBy(xpath = "(//div[contains(@Class,'break-words whitespace-normal flex just')])[1]")
 	WebElement verifyCreatedDonationCat;
 
+	//Logout
+	@FindBy(xpath = "//p[text()='Super Admin']")
+	WebElement clickOnSuperAdmintxt;
+	@FindBy(xpath = "//button[text()='Log Out']")
+	WebElement logouttxt;
 
 	//constructor
 	public EasyRDonationPage() {
@@ -99,45 +104,45 @@ public class EasyRDonationPage extends TestBase{
 	public void enterOrgName(String orgName) {
 		enterOrgName.sendKeys(orgName);
 	}
-	
+
 	public void clickOnViewOrg() {
 		clickOnViewOrg.click();
 	}
-	
+
 	public String verifyOrgName() {
 		return verifyOrgName.getText();
 	}
-	
+
 	public String verifyOrgEmail() {
 		return verifyOrgEmail.getText();
 	}
-	
+
 	public void clickOnAddDonationDetails() {
 		clickOnAddDonationDetailsBtn.click();
 	}
-	
+
 	public void enterDatainEnglish(String orgTitleEng, String orgShortDescEng, String orgWhoAreWeEng, String orgWhatWeNeedEng) {
 		titleInEng.sendKeys(orgTitleEng);
 		shortDescInEng.sendKeys(orgShortDescEng);
 		whoAreWrInEng.sendKeys(orgWhoAreWeEng);
 		whatWeNeedInEng.sendKeys(orgWhatWeNeedEng);
 	}
-	
+
 	public void clickOnNxtForDanishBtn() {
 		nxtForDanish.click();
 	}
-	
+
 	public void enterDanishData(String orgTitleDan, String orgShortDescDan, String orgWhoAreWeDan, String orgWhatWeNeedDan) {
 		titleInDan.sendKeys(orgTitleDan);
 		shortDescInDan.sendKeys(orgShortDescDan);
 		whoAreWrInDan.sendKeys(orgWhoAreWeDan);
 		whatWeNeedInDan.sendKeys(orgWhatWeNeedDan);
 	}
-	
+
 	public void clickOnNxtForArabicBtn() {
 		nxtForArabic.click();
 	}
-	
+
 	public void enterDataInArabic(String orgTitleArab, String orgShortDescArab, String orgWhoAreWeArab, String orgWhatWeNeedArab) {
 		titleInArab.sendKeys(orgTitleArab);
 		shortDescInArab.sendKeys(orgShortDescArab);
@@ -152,39 +157,45 @@ public class EasyRDonationPage extends TestBase{
 	public void enterDonationImage(String DonationImg) {
 		chooseDonationImgFile.sendKeys(DonationImg);
 	}
-	
+
 	public void selectDonateCate(String DonateCat) throws InterruptedException {
 		act.sendKeys(donateCate, DonateCat).perform();
 		Thread.sleep(2000);
 		act.sendKeys(Keys.ARROW_DOWN, Keys.ENTER).build().perform();
 	}
-	
+
 	public void enterMinDonation(String minDonate) {
 		minDonation.sendKeys(minDonate);
 	}
-	
+
 	public void enterMaxDonation(String maxDonate) {
 		maxDonation.sendKeys(maxDonate);
 	}
-	
+
 	public void enterDonationTarget(String targetDonate) {
 		donationTarget.sendKeys(targetDonate);
 	}
-	
+
 	public void clickOnCreateDonationBtn() throws InterruptedException {
 		createDonationBtn.click();
 		Thread.sleep(5000);
 	}
-	
+
 	public String verifyDonationTitle() {
 		return verifyCreatedDonationName.getText();
 	}
-	
+
 	public String verifyDonationOrganization() {
 		return verifyCreatedDonationOrg.getText();
 	}
-	
+
 	public String verifyDonationCategory() {
 		return verifyCreatedDonationCat.getText();
+	}
+	
+	public void logout() throws InterruptedException {
+		clickOnSuperAdmintxt.click();
+		Thread.sleep(1000);
+		logouttxt.click();
 	}
 }

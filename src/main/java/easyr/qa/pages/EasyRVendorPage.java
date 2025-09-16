@@ -73,6 +73,11 @@ public class EasyRVendorPage extends TestBase{
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[4]")
 	WebElement OffersAndDeals;
 
+	//Logout
+	@FindBy(xpath = "//p[text()='Super Admin']")
+	WebElement clickOnSuperAdmintxt;
+	@FindBy(xpath = "//button[text()='Log Out']")
+	WebElement logouttxt;
 
 	public EasyRVendorPage() {
 		PageFactory.initElements(driver, this);
@@ -210,5 +215,11 @@ public class EasyRVendorPage extends TestBase{
 	public EasyROffersAndDealsPage clickOnOffersAndDeals(){
 		OffersAndDeals.click();
 		return new EasyROffersAndDealsPage();
+	}
+
+	public void logout() throws InterruptedException {
+		clickOnSuperAdmintxt.click();
+		Thread.sleep(1000);
+		logouttxt.click();
 	}
 }
