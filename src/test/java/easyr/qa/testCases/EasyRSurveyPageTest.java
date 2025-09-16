@@ -2,6 +2,8 @@ package easyr.qa.testCases;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 import easyr.qa.base.TestBase;
 import easyr.qa.pages.EasyRCatchShopPage;
 import easyr.qa.pages.EasyRDashboardPage;
@@ -41,9 +43,17 @@ public class EasyRSurveyPageTest extends TestBase{
 		survpg = donpg.clickOnSurveyTab();
 	}
 
+	@Test(priority = 1)
+	public void verifySurvey() {
+		try {
+
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
 
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+		//		driver.quit();s
 	}
 }
