@@ -1,6 +1,9 @@
 package easyr.qa.testCases;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -12,7 +15,6 @@ import easyr.qa.pages.EasyRLoginPage;
 import easyr.qa.pages.EasyROffersAndDealsPage;
 import easyr.qa.pages.EasyROrganizationPage;
 import easyr.qa.pages.EasyRVendorPage;
-import junit.framework.Assert;
 
 public class EasyRDonationPageTest extends TestBase{
 
@@ -43,8 +45,8 @@ public class EasyRDonationPageTest extends TestBase{
 	@Test(priority = 1)
 	public void createDonation() {
 		try {
-			Assert.assertEquals(donpg.verifyDonationTextOnMenuBar(), "Donations");
-			Assert.assertEquals(donpg.verifyDonationTextOnPage(), "DONATIONS");
+			AssertJUnit.assertEquals(donpg.verifyDonationTextOnMenuBar(), "Donations");
+			AssertJUnit.assertEquals(donpg.verifyDonationTextOnPage(), "DONATIONS");
 			donpg.clickOncreateDonationBtn();
 			donpg.enterOrgName(prop.getProperty("Organization_Name"));
 			donpg.clickOnViewOrg();
@@ -72,14 +74,15 @@ public class EasyRDonationPageTest extends TestBase{
 	@Test(priority = 2)
 	public void verifyCreatedDonationData() {
 		try {
-			Assert.assertEquals(donpg.verifyDonationTitle(), prop.getProperty("orgTitleEnglish"));
-			Assert.assertEquals(donpg.verifyDonationOrganization(), prop.getProperty("CreatedDonationOrg"));
-			Assert.assertEquals(donpg.verifyDonationCategory(), prop.getProperty("DonationCategory"));
+			AssertJUnit.assertEquals(donpg.verifyDonationTitle(), prop.getProperty("orgTitleEnglish"));
+			AssertJUnit.assertEquals(donpg.verifyDonationOrganization(), prop.getProperty("CreatedDonationOrg"));
+			AssertJUnit.assertEquals(donpg.verifyDonationCategory(), prop.getProperty("DonationCategory"));
 			donpg.logout();
 		} catch (Exception e){
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
+
 
 	@AfterMethod
 	public void tearDown() throws InterruptedException {

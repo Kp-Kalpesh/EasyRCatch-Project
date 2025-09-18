@@ -1,6 +1,10 @@
 package easyr.qa.testCases;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -9,7 +13,6 @@ import easyr.qa.pages.EasyRDashboardPage;
 import easyr.qa.pages.EasyRLoginPage;
 import easyr.qa.pages.EasyROffersAndDealsPage;
 import easyr.qa.pages.EasyRVendorPage;
-import junit.framework.Assert;
 
 public class EasyROffersAndDealsPageTest extends TestBase{
 	EasyRLoginPage loginpg;
@@ -33,12 +36,12 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 	@Test(priority = 1)
 	public void verifyOffersAndDealsFlow() {
 		try {
-			Assert.assertEquals(offerpg.verifyOffersAndDealsText(), "OFFERS AND DEALS");
+			AssertJUnit.assertEquals(offerpg.verifyOffersAndDealsText(), "OFFERS AND DEALS");
 			offerpg.clickOnCreateOffer();
 			offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
 			offerpg.clickOnDisplayedVendor();
-			Assert.assertEquals(offerpg.verifySelectedVendorName(), prop.getProperty("Vendor_Name"));
-			Assert.assertEquals(offerpg.verifySelectVendorCompanyName(), prop.getProperty("Vendor_company"));			
+			AssertJUnit.assertEquals(offerpg.verifySelectedVendorName(), prop.getProperty("Vendor_Name"));
+			AssertJUnit.assertEquals(offerpg.verifySelectVendorCompanyName(), prop.getProperty("Vendor_company"));			
 			offerpg.clickOnAddOfferDetailsBtn();
 			offerpg.selectOfferType(prop.getProperty("offer_Type"));
 			offerpg.selectOfferDepartment(prop.getProperty("Offer_Dept"));
@@ -73,15 +76,15 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		try {
 			String actOffTitle = offerpg.verifyOfferTitle();
 			System.out.println("actOffTitle = " + offerpg.verifyOfferTitle());
-			Assert.assertEquals(actOffTitle, prop.getProperty("OfftitleInEnglish"));
+			AssertJUnit.assertEquals(actOffTitle, prop.getProperty("OfftitleInEnglish"));
 
 			String actOffType = offerpg.verifyOfferType();
 			System.out.println("actOffType = " + offerpg.verifyOfferType());
-			Assert.assertEquals(actOffType, prop.getProperty("offer_Type"));
+			AssertJUnit.assertEquals(actOffType, prop.getProperty("offer_Type"));
 
 			String actOffVendorName = offerpg.verifyOfferVendorName();
 			System.out.println("actOffVendorName = " + offerpg.verifyOfferVendorName());
-			Assert.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));	
+			AssertJUnit.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));	
 			offerpg.logout();
 
 		}catch (Exception e) {

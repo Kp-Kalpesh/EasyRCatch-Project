@@ -1,6 +1,10 @@
 package easyr.qa.testCases;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -8,7 +12,6 @@ import easyr.qa.base.TestBase;
 import easyr.qa.pages.EasyRDashboardPage;
 import easyr.qa.pages.EasyRLoginPage;
 import easyr.qa.pages.EasyRVendorPage;
-import junit.framework.Assert;
 
 public class EasyRVendorPageTest extends TestBase{
 	EasyRLoginPage loginpg;
@@ -30,9 +33,9 @@ public class EasyRVendorPageTest extends TestBase{
 	@Test
 	public void verifyCreatVendor() {
 		try {
-			Assert.assertEquals(vendrpg.verifyPageTitle(), "EasyR Catch");
+			AssertJUnit.assertEquals(vendrpg.verifyPageTitle(), "EasyR Catch");
 			System.out.println("vendrpg.verifyPageTitle(): " + vendrpg.verifyPageTitle());
-			Assert.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
+			AssertJUnit.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
 			System.out.println("vendrpg.verifyVendorText(): " + vendrpg.verifyVendorText());
 
 			vendrpg.clickOnCreateVendorBtn(); vendrpg.clickOnVendorLogoSelectFile();
@@ -55,9 +58,9 @@ public class EasyRVendorPageTest extends TestBase{
 			vendrpg.clickOnAddVendor();
 			vendrpg.clickOnVisibleVendorDrpDwn();
 
-			Assert.assertEquals(vendrpg.CreatedVendorName(), prop.getProperty("Vendor_Name"));
-			Assert.assertEquals(vendrpg.CreatedVendorComapnyName(), prop.getProperty("Vendor_company"));
-			Assert.assertEquals(vendrpg.CreatedVendorEmail(), prop.getProperty("vEmail"));
+			AssertJUnit.assertEquals(vendrpg.CreatedVendorName(), prop.getProperty("Vendor_Name"));
+			AssertJUnit.assertEquals(vendrpg.CreatedVendorComapnyName(), prop.getProperty("Vendor_company"));
+			AssertJUnit.assertEquals(vendrpg.CreatedVendorEmail(), prop.getProperty("vEmail"));
 			vendrpg.logout();
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());

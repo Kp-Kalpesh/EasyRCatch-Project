@@ -1,6 +1,9 @@
 package easyr.qa.testCases;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -14,7 +17,6 @@ import easyr.qa.pages.EasyROffersAndDealsPage;
 import easyr.qa.pages.EasyROrganizationPage;
 import easyr.qa.pages.EasyRSurveyPage;
 import easyr.qa.pages.EasyRVendorPage;
-import junit.framework.Assert;
 
 public class EasyRSurveyPageTest extends TestBase{
 
@@ -48,7 +50,7 @@ public class EasyRSurveyPageTest extends TestBase{
 	@Test(priority = 1)
 	public void verifySurvey() {
 		try {
-			Assert.assertEquals(survpg.verifySurveyTxtOnPage(), "SURVEY");
+			AssertJUnit.assertEquals(survpg.verifySurveyTxtOnPage(), "SURVEY");
 			survpg.clickOnCreateSurveyBtn();
 			survpg.verifyCreateSurveyTxt();
 			survpg.enterTitleInEng(prop.getProperty("SurveyTitle_English"));
@@ -92,7 +94,7 @@ public class EasyRSurveyPageTest extends TestBase{
 			survpg.clickOnSaveAndContinueForQue4();
 			survpg.clickOnCreatSurveyButton();
 			System.out.println("Message on modal: " + survpg.verifyMessageOnModalBeforeCreatingSurvey());
-			Assert.assertEquals(survpg.verifyMessageOnModalBeforeCreatingSurvey(), "Today's date selected. Start date cannot be modified after survey creation.");
+			AssertJUnit.assertEquals(survpg.verifyMessageOnModalBeforeCreatingSurvey(), "Today's date selected. Start date cannot be modified after survey creation.");
 			survpg.clickOnCreateItBtn();
 
 		}catch (Exception e) {
@@ -107,10 +109,10 @@ public class EasyRSurveyPageTest extends TestBase{
 			SoftAssert sa = new SoftAssert();
 			survpg.sendDataInSearchField(prop.getProperty("SurveyTitle_English"));
 			System.out.println("verifyCreatedSurveyTitle(): " + survpg.verifyCreatedSurveyTitle());
-			sa.assertEquals(survpg.verifyCreatedSurveyTitle(), "Vehicle buying survey\r\n"
+			AssertJUnit.assertEquals(survpg.verifyCreatedSurveyTitle(), "Vehicle buying survey\r\n"
 					+ "4");
 			System.out.println("survpg.verifySelectedVendor(): " + survpg.verifySelectedVendor());
-			Assert.assertEquals(survpg.verifySelectedVendor(), "Joss Sterlin (Sterlin Industries)");
+			AssertJUnit.assertEquals(survpg.verifySelectedVendor(), "Joss Sterlin (Sterlin Industries)");
 
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
@@ -126,11 +128,11 @@ public class EasyRSurveyPageTest extends TestBase{
 			survpg.clickOnTargetedUserBox();
 			survpg.enterDataInSearchField();
 			System.out.println("survpg.verifyUserName(): "+ survpg.verifyUserName());
-			Assert.assertEquals(survpg.verifyUserName(), "Kalpesh Patil");
+			AssertJUnit.assertEquals(survpg.verifyUserName(), "Kalpesh Patil");
 			System.out.println("survpg.verifyUserEmail(): " + survpg.verifyUserEmail());
-			Assert.assertEquals(survpg.verifyUserEmail(), "kalpesh.p@easyr.ae");
+			AssertJUnit.assertEquals(survpg.verifyUserEmail(), "kalpesh.p@easyr.ae");
 			System.out.println("survpg.verifyUserGender(): " + survpg.verifyUserGender());
-			Assert.assertEquals(survpg.verifyUserGender(), "Male");
+			AssertJUnit.assertEquals(survpg.verifyUserGender(), "Male");
 
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());

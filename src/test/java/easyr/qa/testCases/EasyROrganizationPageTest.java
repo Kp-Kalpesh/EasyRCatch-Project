@@ -1,6 +1,9 @@
 package easyr.qa.testCases;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -11,7 +14,6 @@ import easyr.qa.pages.EasyRLoginPage;
 import easyr.qa.pages.EasyROffersAndDealsPage;
 import easyr.qa.pages.EasyROrganizationPage;
 import easyr.qa.pages.EasyRVendorPage;
-import junit.framework.Assert;
 
 public class EasyROrganizationPageTest extends TestBase{
 
@@ -40,8 +42,8 @@ public class EasyROrganizationPageTest extends TestBase{
 	@Test(priority = 1)
 	public void createOrganization() {
 		try {
-			Assert.assertEquals(orgpg.verifyTextOnMenuBar(), "Organizations");
-			Assert.assertEquals(orgpg.verifyTextOnPage(), "ORGANIZATIONS");
+			AssertJUnit.assertEquals(orgpg.verifyTextOnMenuBar(), "Organizations");
+			AssertJUnit.assertEquals(orgpg.verifyTextOnPage(), "ORGANIZATIONS");
 
 			orgpg.clickOnCreateOrganizationBtn();
 			orgpg.clickOnSelectOrgImgFileBtn();
@@ -67,8 +69,8 @@ public class EasyROrganizationPageTest extends TestBase{
 	@Test(priority = 2)
 	public void verifyCreatedOrganization() {
 		try {
-			Assert.assertEquals(orgpg.verifyCreatedOrgName(), "People For Animals");
-			Assert.assertEquals(orgpg.verifyCreatedOrgEmail(), "peopleforanimals@easyr.ae");
+			AssertJUnit.assertEquals(orgpg.verifyCreatedOrgName(), "People For Animals");
+			AssertJUnit.assertEquals(orgpg.verifyCreatedOrgEmail(), "peopleforanimals@easyr.ae");
 			orgpg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());

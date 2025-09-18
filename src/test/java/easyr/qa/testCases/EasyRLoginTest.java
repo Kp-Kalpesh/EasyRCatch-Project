@@ -1,12 +1,15 @@
 package easyr.qa.testCases;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeMethod;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import easyr.qa.base.TestBase;
 import easyr.qa.pages.EasyRLoginPage;
-import junit.framework.Assert;
 
 public class EasyRLoginTest extends TestBase{
 
@@ -23,6 +26,7 @@ public class EasyRLoginTest extends TestBase{
 		super();
 	}
 
+	
 	@BeforeMethod
 	public void setUp() {
 		initialization();
@@ -40,9 +44,9 @@ public class EasyRLoginTest extends TestBase{
 			//			ExtentTest test = extent.createTest("Verify the enter valid login creds and click on the login button").assignAuthor("Kalpesh").assignCategory("Functional Test Case").assignDevice("Windows Machine");
 			//			test.info("Successful enter the creds and click on the Login Button");
 
-			Assert.assertEquals(loginpg.verifySignInText(), "Sign In");
+			AssertJUnit.assertEquals(loginpg.verifySignInText(), "Sign In");
 			boolean flag = loginpg.verifyEasyRLogo();
-			Assert.assertTrue(flag);
+			AssertJUnit.assertTrue(flag);
 			loginpg.enterEmail(prop.getProperty("EmailQA"));
 			loginpg.enterPass(prop.getProperty("PasswordQA"));
 			loginpg.clickOnRemembeeMe();
@@ -57,6 +61,7 @@ public class EasyRLoginTest extends TestBase{
 		}
 	}
 
+	
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();

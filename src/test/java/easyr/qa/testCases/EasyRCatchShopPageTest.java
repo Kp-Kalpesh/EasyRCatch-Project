@@ -1,6 +1,9 @@
 package easyr.qa.testCases;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -10,7 +13,6 @@ import easyr.qa.pages.EasyRDashboardPage;
 import easyr.qa.pages.EasyRLoginPage;
 import easyr.qa.pages.EasyROffersAndDealsPage;
 import easyr.qa.pages.EasyRVendorPage;
-import junit.framework.Assert;
 public class EasyRCatchShopPageTest extends TestBase{
 
 	EasyRLoginPage loginpg;
@@ -36,13 +38,13 @@ public class EasyRCatchShopPageTest extends TestBase{
 	@Test(priority = 1)
 	public void verifyInventoryStoreProduct() {
 		try {			
-			Assert.assertEquals(shoppg.verifyProductsTextOnPage(), "INVENTORY PRODUCTS");
+			AssertJUnit.assertEquals(shoppg.verifyProductsTextOnPage(), "INVENTORY PRODUCTS");
 			shoppg.clickOnCreateProductBtn();
 			shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
-			Assert.assertTrue(shoppg.verifyDisplayedVendorInDrpDwn());
+			AssertJUnit.assertTrue(shoppg.verifyDisplayedVendorInDrpDwn());
 			shoppg.clickOnDisplayedVendorName();
-			Assert.assertEquals(shoppg.verifySelectedVName(), prop.getProperty("Vendor_Name"));
-			Assert.assertEquals(shoppg.verifySelectedVCompany(), prop.getProperty("Vendor_company"));
+			AssertJUnit.assertEquals(shoppg.verifySelectedVName(), prop.getProperty("Vendor_Name"));
+			AssertJUnit.assertEquals(shoppg.verifySelectedVCompany(), prop.getProperty("Vendor_company"));
 			shoppg.clickOnAddProductDetailsBtn();
 			shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
 			shoppg.clickOnNxtForDanishBtn();
@@ -72,15 +74,16 @@ public class EasyRCatchShopPageTest extends TestBase{
 	@Test(priority = 2)
 	public void verifyCreatedProduct() {
 		try {
-			Assert.assertEquals(shoppg.verifyCreatedOfferTitle(), prop.getProperty("ProdTitleEnglish"));
-			Assert.assertEquals(shoppg.verifyCreatedOfferVName(), prop.getProperty("vendorNameAssertion"));
-			Assert.assertEquals(shoppg.verifyCreatedOfferCategory(), prop.getProperty("productCategory"));
+			AssertJUnit.assertEquals(shoppg.verifyCreatedOfferTitle(), prop.getProperty("ProdTitleEnglish"));
+			AssertJUnit.assertEquals(shoppg.verifyCreatedOfferVName(), prop.getProperty("vendorNameAssertion"));
+			AssertJUnit.assertEquals(shoppg.verifyCreatedOfferCategory(), prop.getProperty("productCategory"));
 			shoppg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
 
+	
 	@AfterMethod
 	public void tearDown()	{
 		driver.quit();
