@@ -1,0 +1,150 @@
+<html>
+<head>
+<title>TestNG:  RegressionTestSuite</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>RegressionTestSuite</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>14/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Sep 18 16:02:38 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>197 seconds (197454 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRSurveyPageTest.verifyCreatedSurveyOnListingPage()'><b>verifyCreatedSurveyOnListingPage</b><br>Test class: easyr.qa.testCases.EasyRSurveyPageTest</td>
+<td></td>
+<td>0</td>
+<td>easyr.qa.testCases.EasyRSurveyPageTest@496bc455</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRCatchShopPageTest.verifyInventoryStoreProduct()'><b>verifyInventoryStoreProduct</b><br>Test class: easyr.qa.testCases.EasyRCatchShopPageTest</td>
+<td></td>
+<td>21</td>
+<td>easyr.qa.testCases.EasyRCatchShopPageTest@24569dba</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRCatchShopPageTest.verifyCreatedProduct()'><b>verifyCreatedProduct</b><br>Test class: easyr.qa.testCases.EasyRCatchShopPageTest</td>
+<td></td>
+<td>1</td>
+<td>easyr.qa.testCases.EasyRCatchShopPageTest@24569dba</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRDonationPageTest.createDonation()'><b>createDonation</b><br>Test class: easyr.qa.testCases.EasyRDonationPageTest</td>
+<td></td>
+<td>9</td>
+<td>easyr.qa.testCases.EasyRDonationPageTest@70ed52de</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRSurveyPageTest.verifySurvey()'><b>verifySurvey</b><br>Test class: easyr.qa.testCases.EasyRSurveyPageTest</td>
+<td></td>
+<td>22</td>
+<td>easyr.qa.testCases.EasyRSurveyPageTest@496bc455</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyROrganizationPageTest.createOrganization()'><b>createOrganization</b><br>Test class: easyr.qa.testCases.EasyROrganizationPageTest</td>
+<td></td>
+<td>8</td>
+<td>easyr.qa.testCases.EasyROrganizationPageTest@5ddeb7cb</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRSurveyPageTest.verifyUserOfSendSurvey()'><b>verifyUserOfSendSurvey</b><br>Test class: easyr.qa.testCases.EasyRSurveyPageTest</td>
+<td></td>
+<td>8</td>
+<td>easyr.qa.testCases.EasyRSurveyPageTest@496bc455</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRLoginTest.verifySignInText()'><b>verifySignInText</b><br>Test class: easyr.qa.testCases.EasyRLoginTest</td>
+<td></td>
+<td>1</td>
+<td>easyr.qa.testCases.EasyRLoginTest@75437611</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyROffersAndDealsPageTest.verifyOffersAndDealsFlow()'><b>verifyOffersAndDealsFlow</b><br>Test class: easyr.qa.testCases.EasyROffersAndDealsPageTest</td>
+<td></td>
+<td>30</td>
+<td>easyr.qa.testCases.EasyROffersAndDealsPageTest@8462f31</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyROrganizationPageTest.verifyCreatedOrganization()'><b>verifyCreatedOrganization</b><br>Test class: easyr.qa.testCases.EasyROrganizationPageTest</td>
+<td></td>
+<td>1</td>
+<td>easyr.qa.testCases.EasyROrganizationPageTest@5ddeb7cb</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRVendorPageTest.verifyCreatVendor()'><b>verifyCreatVendor</b><br>Test class: easyr.qa.testCases.EasyRVendorPageTest</td>
+<td></td>
+<td>35</td>
+<td>easyr.qa.testCases.EasyRVendorPageTest@4d1c005e</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRDonationPageTest.verifyCreatedDonationData()'><b>verifyCreatedDonationData</b><br>Test class: easyr.qa.testCases.EasyRDonationPageTest</td>
+<td></td>
+<td>1</td>
+<td>easyr.qa.testCases.EasyRDonationPageTest@70ed52de</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyROffersAndDealsPageTest.verifyDataAfterOfferCreation()'><b>verifyDataAfterOfferCreation</b><br>Test class: easyr.qa.testCases.EasyROffersAndDealsPageTest</td>
+<td></td>
+<td>13</td>
+<td>easyr.qa.testCases.EasyROffersAndDealsPageTest@8462f31</td></tr>
+<tr>
+<td title='easyr.qa.testCases.EasyRDashboardPageTest.verifyDahsboardPage()'><b>verifyDahsboardPage</b><br>Test class: easyr.qa.testCases.EasyRDashboardPageTest</td>
+<td></td>
+<td>14</td>
+<td>easyr.qa.testCases.EasyRDashboardPageTest@3e08ff24</td></tr>
+</table><p>
+</body>
+</html>

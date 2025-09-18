@@ -343,7 +343,7 @@ public class EasyRSurveyPage extends TestBase{
 
 	public void clickOnCreateItBtn() throws InterruptedException {
 		clickOnCreateItBtn.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 	}
 
 	public void sendDataInSearchField(String SurveyTitle) {

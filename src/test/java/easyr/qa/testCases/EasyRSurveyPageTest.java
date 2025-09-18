@@ -107,7 +107,7 @@ public class EasyRSurveyPageTest extends TestBase{
 			SoftAssert sa = new SoftAssert();
 			survpg.sendDataInSearchField(prop.getProperty("SurveyTitle_English"));
 			System.out.println("verifyCreatedSurveyTitle(): " + survpg.verifyCreatedSurveyTitle());
-			sa.assertEquals(survpg.verifyCreatedSurveyTitle(), "Car Satisfaction Survey\r\n"
+			sa.assertEquals(survpg.verifyCreatedSurveyTitle(), "Vehicle buying survey\r\n"
 					+ "4");
 			System.out.println("survpg.verifySelectedVendor(): " + survpg.verifySelectedVendor());
 			Assert.assertEquals(survpg.verifySelectedVendor(), "Joss Sterlin (Sterlin Industries)");
