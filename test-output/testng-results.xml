@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-18T14:49:01 IST" name="Default suite" finished-at="2025-09-18T14:49:26 IST" duration-ms="25249">
+  <suite started-at="2025-09-18T15:29:49 IST" name="Default suite" finished-at="2025-09-18T15:30:25 IST" duration-ms="35525">
     <groups>
     </groups>
-    <test started-at="2025-09-18T14:49:01 IST" name="Default test" finished-at="2025-09-18T14:49:26 IST" duration-ms="25249">
+    <test started-at="2025-09-18T15:29:49 IST" name="Default test" finished-at="2025-09-18T15:30:25 IST" duration-ms="35525">
       <class name="easyr.qa.testCases.EasyRSurveyPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@3b0fe47a]" started-at="2025-09-18T14:49:01 IST" name="setup" finished-at="2025-09-18T14:49:03 IST" duration-ms="2494" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@202b0582]" started-at="2025-09-18T15:29:49 IST" name="setup" finished-at="2025-09-18T15:29:52 IST" duration-ms="2414" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifySurvey()[pri:1, instance:easyr.qa.testCases.EasyRSurveyPageTest@3b0fe47a]" started-at="2025-09-18T14:49:03 IST" name="verifySurvey" finished-at="2025-09-18T14:49:24 IST" duration-ms="20428" status="PASS">
+        <test-method signature="verifySurvey()[pri:1, instance:easyr.qa.testCases.EasyRSurveyPageTest@202b0582]" started-at="2025-09-18T15:29:52 IST" name="verifySurvey" finished-at="2025-09-18T15:30:12 IST" duration-ms="20088" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySurvey -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@3b0fe47a]" started-at="2025-09-18T14:49:24 IST" name="tearDown" finished-at="2025-09-18T14:49:24 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@202b0582]" started-at="2025-09-18T15:30:12 IST" name="tearDown" finished-at="2025-09-18T15:30:12 IST" duration-ms="122" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@3b0fe47a]" started-at="2025-09-18T14:49:24 IST" name="setup" finished-at="2025-09-18T14:49:26 IST" duration-ms="2002" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@202b0582]" started-at="2025-09-18T15:30:12 IST" name="setup" finished-at="2025-09-18T15:30:14 IST" duration-ms="1871" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyCreatedSurveyOnListingPage()[pri:2, instance:easyr.qa.testCases.EasyRSurveyPageTest@3b0fe47a]" started-at="2025-09-18T14:49:26 IST" name="verifyCreatedSurveyOnListingPage" finished-at="2025-09-18T14:49:26 IST" duration-ms="297" status="PASS">
+        <test-method signature="verifyCreatedSurveyOnListingPage()[pri:2, instance:easyr.qa.testCases.EasyRSurveyPageTest@202b0582]" started-at="2025-09-18T15:30:14 IST" name="verifyCreatedSurveyOnListingPage" finished-at="2025-09-18T15:30:14 IST" duration-ms="240" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreatedSurveyOnListingPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@3b0fe47a]" started-at="2025-09-18T14:49:26 IST" name="tearDown" finished-at="2025-09-18T14:49:26 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@202b0582]" started-at="2025-09-18T15:30:14 IST" name="tearDown" finished-at="2025-09-18T15:30:14 IST" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@202b0582]" started-at="2025-09-18T15:30:14 IST" name="setup" finished-at="2025-09-18T15:30:16 IST" duration-ms="1858" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyUserOfSendSurvey()[pri:3, instance:easyr.qa.testCases.EasyRSurveyPageTest@202b0582]" started-at="2025-09-18T15:30:16 IST" name="verifyUserOfSendSurvey" finished-at="2025-09-18T15:30:25 IST" duration-ms="8706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUserOfSendSurvey -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRSurveyPageTest@202b0582]" started-at="2025-09-18T15:30:25 IST" name="tearDown" finished-at="2025-09-18T15:30:25 IST" duration-ms="95" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

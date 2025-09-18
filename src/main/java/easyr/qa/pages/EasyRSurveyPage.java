@@ -98,6 +98,23 @@ public class EasyRSurveyPage extends TestBase{
 	@FindBy(xpath = "//span[@class='text-sm font-medium break-words text-justify']")
 	WebElement vendorName;
 
+	@FindBy(xpath = "(//button[@type='button'])[3]")
+	WebElement clickOnBtn;
+	@FindBy(xpath = "//span[text()='Edit']")
+	WebElement clickOnEditBtn;
+	@FindBy(xpath = "//button[text()='Targeted App Users Overview for This Survey - 1 Users Targeted']")
+	WebElement clickOnTargetedUser;
+	@FindBy(xpath = "//input[@placeholder='Search users by Name, Code or Email...']")
+	WebElement enterTargetedUseraName;
+	@FindBy(xpath = "//span[@class='capitalize']")
+	WebElement userName;
+	@FindBy(xpath = "(//td[contains(@class,'p-2 ps-4 font-medium leadin')])[3]")
+	WebElement userEmail;
+	@FindBy(xpath = "(//td[contains(@class,'p-2 ps-4 font-medium leadin')])[4]")
+	WebElement userGender;
+
+	//veridy survey sended user
+
 
 
 	//constructor	
@@ -340,4 +357,39 @@ public class EasyRSurveyPage extends TestBase{
 	public String verifySelectedVendor() {
 		return vendorName.getText();
 	}
+
+	//Verify the user which is send the survey
+	public void clickOnSideBtn() {
+		clickOnBtn.click();
+	}
+
+	public void clickOnEditBtn() {
+		clickOnEditBtn.click();
+	}
+
+	public void clickOnTargetedUserBox() throws InterruptedException {
+		clickOnTargetedUser.click();
+		Thread.sleep(2000);
+	}
+
+	public void enterDataInSearchField() throws InterruptedException {
+		enterTargetedUseraName.sendKeys("Kalpesh");
+	}
+
+	public String verifyUserName() throws InterruptedException {
+		Thread.sleep(1000);
+		return userName.getText();
+	}
+
+	public String verifyUserEmail() throws InterruptedException {
+		Thread.sleep(1000);
+		return userEmail.getText();
+	}
+
+	public String verifyUserGender() throws InterruptedException {
+		Thread.sleep(1000);
+		return userGender.getText();
+	}
+
+
 }

@@ -5,8 +5,7 @@
     <classes>
       <class name="easyr.qa.testCases.EasyRSurveyPageTest">
         <methods>
-          <include name="verifyCreatedSurveyOnListingPage"/>
-          <include name="verifySurvey"/>
+          <include name="verifyUserOfSendSurvey"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>

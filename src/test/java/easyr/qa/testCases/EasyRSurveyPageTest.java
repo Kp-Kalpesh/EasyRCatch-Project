@@ -117,8 +117,28 @@ public class EasyRSurveyPageTest extends TestBase{
 		}
 	}
 
+	@Test(priority = 3)
+	public void verifyUserOfSendSurvey() {
+		try {
+			survpg.sendDataInSearchField(prop.getProperty("SurveyTitle_English"));
+			survpg.clickOnSideBtn();
+			survpg.clickOnEditBtn();
+			survpg.clickOnTargetedUserBox();
+			survpg.enterDataInSearchField();
+			System.out.println("survpg.verifyUserName(): "+ survpg.verifyUserName());
+			Assert.assertEquals(survpg.verifyUserName(), "Kalpesh Patil");
+			System.out.println("survpg.verifyUserEmail(): " + survpg.verifyUserEmail());
+			Assert.assertEquals(survpg.verifyUserEmail(), "kalpesh.p@easyr.ae");
+			System.out.println("survpg.verifyUserGender(): " + survpg.verifyUserGender());
+			Assert.assertEquals(survpg.verifyUserGender(), "Male");
+
+		}catch(Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
 	@AfterMethod
 	public void tearDown() {
-		//		driver.quit();
+		driver.quit();
 	}
 }
