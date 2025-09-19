@@ -38,7 +38,7 @@ public class EasyRSurveyPageTest extends TestBase{
 	public void setup() {
 		initialization();
 		loginpg = new EasyRLoginPage();
-		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("EmailQA"), prop.getProperty("PasswordQA"));
+		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("ValidEmail"), prop.getProperty("ValidPassword"));
 		vendrpg = dashpg.clickOnVendors();
 		offerpg = vendrpg.clickOnOffersAndDeals();
 		shoppg = offerpg.clickOnProductStore();

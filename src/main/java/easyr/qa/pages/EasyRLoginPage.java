@@ -104,9 +104,8 @@ public class EasyRLoginPage extends TestBase{
 		return requiredEmail.getText();
 	}
 
-
 	public boolean superAdminTextIsDisplayed() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(1000);
 		return clickOnSuperAdmintxt.isDisplayed();
 	}
 
@@ -115,39 +114,15 @@ public class EasyRLoginPage extends TestBase{
 	}
 
 	public boolean LogoutTextisDisplayed() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		return logouttxt.isDisplayed();
 	}
 
 	public void logout() throws InterruptedException {
-		Thread.sleep(1000);
 		logouttxt.click();
+		Thread.sleep(1000);
+
 	}
 }
-
-
-
-
-//LoginTC
-//- valid cred
-//- invalid id valid pwd
-//- invalid id invalid pwd
-//- valid id invalid pwd
-//- all blank space in both fields  sdcscdcdscdssssssssssssssssssssssssssssssssssssssss case pending
-//- blank space in id and enter valid pwd
-//- blank space in pwd and enter valid id
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

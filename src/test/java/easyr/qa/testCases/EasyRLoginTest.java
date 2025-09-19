@@ -23,7 +23,6 @@ public class EasyRLoginTest extends TestBase{
 		super();
 	}
 
-
 	@BeforeMethod
 	public void setUp() {
 		initialization();
@@ -45,8 +44,8 @@ public class EasyRLoginTest extends TestBase{
 	//Test login with valid credentials
 	@Test(priority = 2)
 	public void verifyLoginFunctionality() throws InterruptedException {
-		loginpg.enterEmail(prop.getProperty("EmailQA"));
-		loginpg.enterPass(prop.getProperty("PasswordQA"));
+		loginpg.enterEmail(prop.getProperty("ValidEmail"));
+		loginpg.enterPass(prop.getProperty("ValidPassword"));
 		loginpg.clickOnRemembeeMe();
 		loginpg.clickOnLoginButton();
 		Assert.assertTrue(loginpg.superAdminTextIsDisplayed(), "The SuperAdmin text is not displayed");
@@ -58,8 +57,8 @@ public class EasyRLoginTest extends TestBase{
 	// Test invalid login (incorrect username)
 	@Test(priority = 3)
 	public void testInvalidUsernameValidPwd() {
-		loginpg.enterEmail("easyr_admin@easyr");
-		loginpg.enterPass(prop.getProperty("PasswordQA"));
+		loginpg.enterEmail(prop.getProperty("InvalidEmail"));
+		loginpg.enterPass(prop.getProperty("ValidPassword"));
 		loginpg.clickOnLoginButton();
 
 		// Validate error message for invalid credentials
@@ -70,8 +69,8 @@ public class EasyRLoginTest extends TestBase{
 	// Test invalid login (incorrect password)
 	@Test(priority = 4)
 	public void testInvalidPasswordValidUName() {
-		loginpg.enterEmail(prop.getProperty("EmailQA"));
-		loginpg.enterPass("123456");
+		loginpg.enterEmail(prop.getProperty("ValidEmail"));
+		loginpg.enterPass(prop.getProperty("InvalidPwd"));
 		loginpg.clickOnLoginButton();
 
 		// Validate error message for invalid credentials
@@ -82,8 +81,8 @@ public class EasyRLoginTest extends TestBase{
 	// Test empty username field
 	@Test(priority = 5)
 	public void testEmptyUsernameValidPwd() {
-		loginpg.enterEmail("");
-		loginpg.enterPass(prop.getProperty("PasswordQA"));
+		loginpg.enterEmail(prop.getProperty("BlankEmail"));
+		loginpg.enterPass(prop.getProperty("ValidPassword"));
 		loginpg.clickOnLoginButton();
 
 		// Validate that an error message is shown
@@ -94,8 +93,8 @@ public class EasyRLoginTest extends TestBase{
 	// Test empty password field
 	@Test(priority = 6)
 	public void testEmptyPasswordValidUName() throws InterruptedException {
-		loginpg.enterEmail(prop.getProperty("EmailQA"));
-		loginpg.enterPass("");
+		loginpg.enterEmail(prop.getProperty("ValidEmail"));
+		loginpg.enterPass(prop.getProperty("BlankPwd"));
 		loginpg.clickOnLoginButton();
 
 		// Validate that an error message is shown
@@ -107,8 +106,8 @@ public class EasyRLoginTest extends TestBase{
 	//Invalid id and Invalid pwd
 	@Test(priority = 7)
 	public void invalidUNameInvalidPwd() {
-		loginpg.enterEmail("easyr_admin@easyr");
-		loginpg.enterPass("dcsdccsdf");
+		loginpg.enterEmail(prop.getProperty("InvalidEmail"));
+		loginpg.enterPass(prop.getProperty("InvalidPwd"));
 		loginpg.clickOnLoginButton();
 
 		// Validate that an error message is shown
@@ -119,8 +118,8 @@ public class EasyRLoginTest extends TestBase{
 	//click On Login without enter data
 	@Test(priority = 8)
 	public void clickOnLoginWithoutEnterCreds() {
-		loginpg.enterEmail("");
-		loginpg.enterPass("");
+		loginpg.enterEmail(prop.getProperty("BlankEmail"));
+		loginpg.enterPass(prop.getProperty("BlankPwd"));
 		loginpg.clickOnLoginButton();
 
 		// Validate that an error message is shown
