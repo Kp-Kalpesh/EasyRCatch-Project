@@ -20,12 +20,20 @@ public class EasyRLoginPage extends TestBase{
 	WebElement rememberMeToggle;
 	@FindBy(xpath = "//button[text()='Login']")
 	WebElement LoginBtn;
-
+	@FindBy(xpath = "//div[text()='Invalid email/password combination provided, please try again']")
+	WebElement loginErrorMessage;
+	@FindBy(xpath = "//div[text()='Invalid email address']")
+	WebElement invalidEmail;
+	@FindBy(xpath = "//div[text()='Password is required!']")
+	WebElement invalidPwd;
+	@FindBy(xpath = "//div[text()='Email is required!']")
+	WebElement requiredEmail;
 	//Logout
 	@FindBy(xpath = "//p[text()='Super Admin']")
 	WebElement clickOnSuperAdmintxt;
 	@FindBy(xpath = "//button[text()='Log Out']")
 	WebElement logouttxt;
+
 
 	//Constructor
 	public EasyRLoginPage() {
@@ -52,7 +60,7 @@ public class EasyRLoginPage extends TestBase{
 	public void clickOnRemembeeMe() {
 		rememberMeToggle.click();
 	}
-	
+
 	public void clickOnLoginButton() {
 		LoginBtn.click();
 	}
@@ -64,10 +72,82 @@ public class EasyRLoginPage extends TestBase{
 		return new EasyRDashboardPage();
 	}
 
-	public void logout() throws InterruptedException {
+	public boolean errorMessageIsDisplayed() {
+		return loginErrorMessage.isDisplayed();
+	}
+
+	public String verifyErrorMessage() {
+		return loginErrorMessage.getText();
+	}
+
+	public boolean invalidEmailIsDisplayed() {
+		return invalidEmail.isDisplayed();
+	}
+
+	public String verifyInvalidEmail() {
+		return invalidEmail.getText();
+	}
+
+	public boolean invalidPwdIsDisplayed() {
+		return invalidPwd.isDisplayed();
+	}
+
+	public String verifyPwdErrorMessage() {
+		return invalidPwd.getText();
+	}
+
+	public boolean displayedEmailValidation() {
+		return requiredEmail.isDisplayed();
+	}
+
+	public String verifyEmailValidation() {
+		return requiredEmail.getText();
+	}
+
+
+	public boolean superAdminTextIsDisplayed() throws InterruptedException {
+		Thread.sleep(3000);
+		return clickOnSuperAdmintxt.isDisplayed();
+	}
+
+	public void clickOnSuperAdminTxt() {
 		clickOnSuperAdmintxt.click();
+	}
+
+	public boolean LogoutTextisDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		return logouttxt.isDisplayed();
+	}
+
+	public void logout() throws InterruptedException {
 		Thread.sleep(1000);
 		logouttxt.click();
 	}
 }
+
+
+
+
+//LoginTC
+//- valid cred
+//- invalid id valid pwd
+//- invalid id invalid pwd
+//- valid id invalid pwd
+//- all blank space in both fields  sdcscdcdscdssssssssssssssssssssssssssssssssssssssss case pending
+//- blank space in id and enter valid pwd
+//- blank space in pwd and enter valid id
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
