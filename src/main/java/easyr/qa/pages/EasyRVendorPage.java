@@ -12,6 +12,49 @@ import easyr.qa.base.TestBase;
 public class EasyRVendorPage extends TestBase{
 
 	Actions act;
+
+	//Create Vendor Validation Text messages
+	@FindBy(xpath = "//span[text()='Please upload vendor logo!']")
+	WebElement vendorLogoValidation;	
+	@FindBy(xpath = "//span[text()='Please upload vendor image!']")
+	WebElement vendorProfileValidation;		
+	@FindBy(xpath = "//div[text()='Vendor Name is required!']")
+	WebElement vendorNameValidation;		
+	@FindBy(xpath = "//div[text()='Company Name is required!']")
+	WebElement CompanyNameValidation;		
+	@FindBy(xpath = "//div[text()='Email address is required']")
+	WebElement vendorBlankEmailValidation;		
+	@FindBy(xpath = "//div[text()='Invalid email address']")
+	WebElement vendorInvalidEmailValidation;		
+	@FindBy(xpath = "//div[text()='Mobile number is required']")
+	WebElement vendorBlankMobileNoValidation;		
+	@FindBy(xpath = "//div[text()='Please enter valid phone number']")
+	WebElement MobileBlankSpaceValidation;		
+	@FindBy(xpath = "//div[text()='Mobile number can only contain numbers']")
+	WebElement InvalidMobileNoValidation;		
+	@FindBy(xpath = "//div[text()='Please select suggested address only!']")
+	WebElement selectAddressValidation;		
+	@FindBy(xpath = "//div[text()='Vendor Category is required']")
+	WebElement vendorCategoryValidation;		
+	@FindBy(xpath = "//div[text()='Company website is required']")
+	WebElement CompanyBlankWebsiteFieldValidation;		
+	@FindBy(xpath = "//div[text()='Enter correct url!']")
+	WebElement InvalidCompanyWebsiteValidation;		
+	@FindBy(xpath = "//label[text()='Sub Vendor']")
+	WebElement vendorTypeSubVendor;		
+	@FindBy(xpath = "//div[text()='Parent vendor is required when vendor type is sub vendor']")
+	WebElement ParentVendorValidation;		
+	@FindBy(xpath = "//div[text()='Description in English is required']")
+	WebElement DescInEnglishValidation;		
+	@FindBy(xpath = "//div[text()='Description in Danish is required']")
+	WebElement DescInDanishValidation;		
+	@FindBy(xpath = "//div[text()='Description in Arabic is required']")
+	WebElement DescInArabicValidation;
+	@FindBy(xpath = "//div[text()='At least one tag must be specified!']")
+	WebElement searchTagValidation;		
+
+
+
 	@FindBy(xpath = "//span[@class='uppercase tracking-wider hover:scale-102 cursor-pointer']")
 	WebElement vendorPageText;
 	@FindBy(xpath="//button[contains(text(),'Create Vendor')]")
@@ -79,11 +122,166 @@ public class EasyRVendorPage extends TestBase{
 	@FindBy(xpath = "//button[text()='Log Out']")
 	WebElement logouttxt;
 
+
+
+	//constructor
 	public EasyRVendorPage() {
 		PageFactory.initElements(driver, this);
 		act = new Actions(driver);
 	}
 
+	//Validation Methods
+	public boolean displayedVendorLogo() {
+		return vendorLogoValidation.isDisplayed();
+	}
+
+	public String verifyVendorLogoFieldValidation() {
+		return vendorLogoValidation.getText();
+	}
+
+	public boolean displayedVendorProfile() {
+		return vendorProfileValidation.isDisplayed();
+	}
+
+	public String verifyVendorProfileFieldValidation() {
+		return vendorProfileValidation.getText();
+	}
+
+	public boolean displayedVendorNameFieldValidation() {
+		return vendorNameValidation.isDisplayed();
+	}
+
+	public String verifyVendorNameFieldValidation() {
+		return vendorNameValidation.getText();
+	}
+
+	public boolean displayedCompanyNameFieldValidation() {
+		return CompanyNameValidation.isDisplayed();
+	}
+
+	public String verifyCompanyNameFieldValidation() {
+		return CompanyNameValidation.getText();
+	}
+
+	public boolean displayedVendorBlankEmailValidation() {
+		return vendorBlankEmailValidation.isDisplayed();
+	}
+
+	public String verifyVendorEmailBlankFieldValidation() {
+		return vendorBlankEmailValidation.getText();
+	}
+
+	public boolean displayedVendorInvalidEmailValidation() {
+		return vendorInvalidEmailValidation.isDisplayed();
+	}
+
+	public String verifyVendorInvalidEmailFieldValidation() {
+		return vendorInvalidEmailValidation.getText();
+	}
+
+	public boolean displayedBlankMobileNoValidation() {
+		return vendorBlankMobileNoValidation.isDisplayed();
+	}
+
+	public String verifyMobileNoBlankFieldValidation() {
+		return vendorBlankMobileNoValidation.getText();
+	}
+
+	public boolean displayedMobileNoBlankSpaceValidation() {
+		return MobileBlankSpaceValidation.isDisplayed();
+	}
+
+	public String verifyMobileNoBlankSpaceFieldValidation() {
+		return MobileBlankSpaceValidation.getText();
+	}
+
+	public boolean displayedInvalidMobileNoValidation() {
+		return InvalidMobileNoValidation.isDisplayed();
+	}
+
+	public String verifyInvalidMobileNoFieldValidation() {
+		return InvalidMobileNoValidation.getText();
+	}
+
+	public boolean displayedSelectAddressFieldValidation() {
+		return selectAddressValidation.isDisplayed();
+	}
+
+	public String verifySelectAddressFieldValidation() {
+		return selectAddressValidation.getText();
+	}
+
+	public boolean displayedVendorCategoryValidation() {
+		return vendorCategoryValidation.isDisplayed();
+	}
+
+	public String verifyVendorCategoryFieldValidation() {
+		return vendorCategoryValidation.getText();
+	}
+
+	public boolean displayedCompanyWebsiteBlankFieldValidation() {
+		return CompanyBlankWebsiteFieldValidation.isDisplayed();
+	}
+
+	public String verifyCompanyWebsiteBlankFieldValidation() {
+		return CompanyBlankWebsiteFieldValidation.getText();
+	}
+
+	public boolean displayedInvalidCompanyWebsiteValidation() {
+		return InvalidCompanyWebsiteValidation.isDisplayed();
+	}
+
+	public String verifyInvalidCompanyWebsiteFieldValidation() {
+		return InvalidCompanyWebsiteValidation.getText();
+	}
+
+	public void clickOnvendortypeAsSubVendorToggle() {
+		vendorTypeSubVendor.click();
+	}
+
+	public boolean displayedParentVendorValidation() {
+		return ParentVendorValidation.isDisplayed();
+	}
+
+	public String verifyParentVendorFieldValidation() {
+		return ParentVendorValidation.getText();
+	}
+
+	public boolean displayedDescInEnglishValidation() {
+		return DescInEnglishValidation.isDisplayed();
+	}
+
+	public String verifyDescInEnglishFieldValidation() {
+		return DescInEnglishValidation.getText();
+	}
+
+	public boolean displayedDescInDanishValidation() {
+		return DescInDanishValidation.isDisplayed();
+	}
+
+	public String verifyDescInDanishFieldValidation() {
+		return DescInDanishValidation.getText();
+	}
+
+	public boolean displayedDescInArabicValidation() {
+		return DescInArabicValidation.isDisplayed();
+	}
+
+	public String verifyDescInArabicFieldValidation() {
+		return DescInArabicValidation.getText();
+	}	
+
+	public boolean displayedSearchTagsFieldValidation() {
+		return searchTagValidation.isDisplayed();
+	}
+
+	public String verifySearchTagFieldValidation() {
+		return searchTagValidation.getText();
+	}
+	
+	
+
+	//Actions
 	public String verifyPageTitle() {
 		return driver.getTitle();
 	}

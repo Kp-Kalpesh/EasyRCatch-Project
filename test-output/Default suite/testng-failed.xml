@@ -5,9 +5,6 @@
     <classes>
       <class name="easyr.qa.testCases.EasyRLoginTest">
         <methods>
-          <include name="testInvalidPasswordValidUName"/>
-          <include name="testEmptyUsernameValidPwd"/>
-          <include name="testInvalidUsernameValidPwd"/>
           <include name="testEmptyPasswordValidUName"/>
           <include name="setUp"/>
           <include name="tearDown"/>
