@@ -439,9 +439,9 @@ public class EasyRVendorPage extends TestBase{
 	}
 
 	public void clickOnVisibleVendorDrpDwn() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		act.click(vendorDrpDwn).perform();
-		Thread.sleep(2000);		
+		Thread.sleep(1000);		
 		act.sendKeys("invisible", Keys.ENTER).perform();
 	}
 
@@ -491,7 +491,8 @@ public class EasyRVendorPage extends TestBase{
 		return deleteVendorActionsIcon.isDisplayed();
 	}
 	
-	public void clickOnViewActionicon() {
+	public void clickOnViewActionicon() throws InterruptedException {
+		Thread.sleep(3000);
 		clickOnViewVendor.click();
 	}
 	

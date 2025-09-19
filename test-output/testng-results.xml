@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-19T17:59:14 IST" name="Default suite" finished-at="2025-09-19T17:59:27 IST" duration-ms="12556">
+  <suite started-at="2025-09-19T18:06:24 IST" name="Default suite" finished-at="2025-09-19T18:06:34 IST" duration-ms="9747">
     <groups>
     </groups>
-    <test started-at="2025-09-19T17:59:14 IST" name="Default test" finished-at="2025-09-19T17:59:27 IST" duration-ms="12556">
+    <test started-at="2025-09-19T18:06:24 IST" name="Default test" finished-at="2025-09-19T18:06:34 IST" duration-ms="9747">
       <class name="easyr.qa.testCases.EasyRVendorPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@196a42c3]" started-at="2025-09-19T17:59:14 IST" name="setUp" finished-at="2025-09-19T17:59:17 IST" duration-ms="2137" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@196a42c3]" started-at="2025-09-19T18:06:24 IST" name="setUp" finished-at="2025-09-19T18:06:26 IST" duration-ms="2415" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyDisplayedVendorActiveStatusToggle()[pri:20, instance:easyr.qa.testCases.EasyRVendorPageTest@196a42c3]" started-at="2025-09-19T17:59:17 IST" name="verifyDisplayedVendorActiveStatusToggle" finished-at="2025-09-19T17:59:27 IST" duration-ms="10288" status="PASS">
+        <test-method signature="clickOnViewVendorIcon()[pri:27, instance:easyr.qa.testCases.EasyRVendorPageTest@196a42c3]" started-at="2025-09-19T18:06:26 IST" name="clickOnViewVendorIcon" finished-at="2025-09-19T18:06:34 IST" duration-ms="7304" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDisplayedVendorActiveStatusToggle -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@196a42c3]" started-at="2025-09-19T17:59:27 IST" name="tearDown" finished-at="2025-09-19T17:59:27 IST" duration-ms="104" status="PASS">
+        </test-method> <!-- clickOnViewVendorIcon -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@196a42c3]" started-at="2025-09-19T18:06:34 IST" name="tearDown" finished-at="2025-09-19T18:06:34 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
