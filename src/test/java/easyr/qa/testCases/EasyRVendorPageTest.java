@@ -184,7 +184,7 @@ public class EasyRVendorPageTest extends TestBase{
 
 
 	//Create Vendor
-//	@Test
+//	@Test(priority = 19)
 //	public void verifyCreatVendor() {
 //		try {
 //			AssertJUnit.assertEquals(vendrpg.verifyPageTitle(), "EasyR Catch");
