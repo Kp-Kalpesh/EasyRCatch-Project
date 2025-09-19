@@ -139,7 +139,7 @@ public class EasyRVendorPage extends TestBase{
 		return vendorLogoValidation.getText();
 	}
 
-	public boolean displayedVendorProfile() {
+	public boolean displayedVendorProfileValidation() {
 		return vendorProfileValidation.isDisplayed();
 	}
 
@@ -255,12 +255,21 @@ public class EasyRVendorPage extends TestBase{
 		return DescInEnglishValidation.getText();
 	}
 
+	public void clickOnDanishBt() {
+		danishBtn.click();
+	}
+
+
 	public boolean displayedDescInDanishValidation() {
 		return DescInDanishValidation.isDisplayed();
 	}
 
 	public String verifyDescInDanishFieldValidation() {
 		return DescInDanishValidation.getText();
+	}
+
+	public void clickOnArabicBt() {
+		arabicBtn.click();
 	}
 
 	public boolean displayedDescInArabicValidation() {
@@ -278,8 +287,8 @@ public class EasyRVendorPage extends TestBase{
 	public String verifySearchTagFieldValidation() {
 		return searchTagValidation.getText();
 	}
-	
-	
+
+
 
 	//Actions
 	public String verifyPageTitle() {

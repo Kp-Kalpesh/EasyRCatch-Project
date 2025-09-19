@@ -1,109 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
+<testng-results ignored="0" total="18" passed="18" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-19T12:38:44 IST" name="Default suite" finished-at="2025-09-19T12:38:58 IST" duration-ms="13975">
+  <suite started-at="2025-09-19T15:06:26 IST" name="Default suite" finished-at="2025-09-19T15:07:06 IST" duration-ms="39648">
     <groups>
     </groups>
-    <test started-at="2025-09-19T12:38:44 IST" name="Default test" finished-at="2025-09-19T12:38:58 IST" duration-ms="13975">
-      <class name="easyr.qa.testCases.EasyRLoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:44 IST" name="setUp" finished-at="2025-09-19T12:38:46 IST" duration-ms="1325" status="PASS">
+    <test started-at="2025-09-19T15:06:26 IST" name="Default test" finished-at="2025-09-19T15:07:06 IST" duration-ms="39648">
+      <class name="easyr.qa.testCases.EasyRVendorPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:26 IST" name="setUp" finished-at="2025-09-19T15:06:28 IST" duration-ms="2102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyFieldAndLogoOnLoginPage()[pri:1, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:46 IST" name="verifyFieldAndLogoOnLoginPage" finished-at="2025-09-19T12:38:46 IST" duration-ms="64" status="PASS">
+        <test-method signature="verifyVendorLogoValidation()[pri:1, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:28 IST" name="verifyVendorLogoValidation" finished-at="2025-09-19T15:06:28 IST" duration-ms="240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyFieldAndLogoOnLoginPage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:46 IST" name="tearDown" finished-at="2025-09-19T12:38:46 IST" duration-ms="86" status="PASS">
+        </test-method> <!-- verifyVendorLogoValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:28 IST" name="tearDown" finished-at="2025-09-19T15:06:29 IST" duration-ms="103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:46 IST" name="setUp" finished-at="2025-09-19T12:38:47 IST" duration-ms="890" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:29 IST" name="setUp" finished-at="2025-09-19T15:06:30 IST" duration-ms="1571" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyLoginFunctionality()[pri:2, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:47 IST" name="verifyLoginFunctionality" finished-at="2025-09-19T12:38:50 IST" duration-ms="3393" status="PASS">
+        <test-method signature="verifyVendorProfileValidation()[pri:2, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:30 IST" name="verifyVendorProfileValidation" finished-at="2025-09-19T15:06:30 IST" duration-ms="218" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:50 IST" name="tearDown" finished-at="2025-09-19T12:38:50 IST" duration-ms="106" status="PASS">
+        </test-method> <!-- verifyVendorProfileValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:30 IST" name="tearDown" finished-at="2025-09-19T15:06:30 IST" duration-ms="79" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:50 IST" name="setUp" finished-at="2025-09-19T12:38:51 IST" duration-ms="950" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:30 IST" name="setUp" finished-at="2025-09-19T15:06:32 IST" duration-ms="1608" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testInvalidUsernameValidPwd()[pri:3, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:51 IST" name="testInvalidUsernameValidPwd" finished-at="2025-09-19T12:38:52 IST" duration-ms="348" status="PASS">
+        <test-method signature="verifyVendorNameValidation()[pri:3, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:32 IST" name="verifyVendorNameValidation" finished-at="2025-09-19T15:06:32 IST" duration-ms="230" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testInvalidUsernameValidPwd -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:52 IST" name="tearDown" finished-at="2025-09-19T12:38:52 IST" duration-ms="92" status="PASS">
+        </test-method> <!-- verifyVendorNameValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:32 IST" name="tearDown" finished-at="2025-09-19T15:06:32 IST" duration-ms="101" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:52 IST" name="setUp" finished-at="2025-09-19T12:38:52 IST" duration-ms="874" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:32 IST" name="setUp" finished-at="2025-09-19T15:06:34 IST" duration-ms="1549" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testInvalidPasswordValidUName()[pri:4, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:52 IST" name="testInvalidPasswordValidUName" finished-at="2025-09-19T12:38:53 IST" duration-ms="674" status="PASS">
+        <test-method signature="verifyCompanyNameFieldValidation()[pri:4, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:34 IST" name="verifyCompanyNameFieldValidation" finished-at="2025-09-19T15:06:34 IST" duration-ms="220" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testInvalidPasswordValidUName -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:53 IST" name="tearDown" finished-at="2025-09-19T12:38:53 IST" duration-ms="95" status="PASS">
+        </test-method> <!-- verifyCompanyNameFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:34 IST" name="tearDown" finished-at="2025-09-19T15:06:34 IST" duration-ms="107" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:53 IST" name="setUp" finished-at="2025-09-19T12:38:54 IST" duration-ms="920" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:34 IST" name="setUp" finished-at="2025-09-19T15:06:36 IST" duration-ms="1593" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testEmptyUsernameValidPwd()[pri:5, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:54 IST" name="testEmptyUsernameValidPwd" finished-at="2025-09-19T12:38:54 IST" duration-ms="203" status="PASS">
+        <test-method signature="verifyEmailFieldValidation()[pri:5, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:36 IST" name="verifyEmailFieldValidation" finished-at="2025-09-19T15:06:36 IST" duration-ms="223" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testEmptyUsernameValidPwd -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:54 IST" name="tearDown" finished-at="2025-09-19T12:38:54 IST" duration-ms="92" status="PASS">
+        </test-method> <!-- verifyEmailFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:36 IST" name="tearDown" finished-at="2025-09-19T15:06:36 IST" duration-ms="97" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:54 IST" name="setUp" finished-at="2025-09-19T12:38:55 IST" duration-ms="922" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:36 IST" name="setUp" finished-at="2025-09-19T15:06:38 IST" duration-ms="1563" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testEmptyPasswordValidUName()[pri:6, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:55 IST" name="testEmptyPasswordValidUName" finished-at="2025-09-19T12:38:56 IST" duration-ms="202" status="PASS">
+        <test-method signature="verifyInvalidEmailFieldValidation()[pri:6, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:38 IST" name="verifyInvalidEmailFieldValidation" finished-at="2025-09-19T15:06:39 IST" duration-ms="1344" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testEmptyPasswordValidUName -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:56 IST" name="tearDown" finished-at="2025-09-19T12:38:56 IST" duration-ms="88" status="PASS">
+        </test-method> <!-- verifyInvalidEmailFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:39 IST" name="tearDown" finished-at="2025-09-19T15:06:39 IST" duration-ms="104" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:56 IST" name="setUp" finished-at="2025-09-19T12:38:57 IST" duration-ms="949" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:39 IST" name="setUp" finished-at="2025-09-19T15:06:41 IST" duration-ms="1696" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="invalidUNameInvalidPwd()[pri:7, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:57 IST" name="invalidUNameInvalidPwd" finished-at="2025-09-19T12:38:57 IST" duration-ms="347" status="PASS">
+        <test-method signature="verifyMobileFieldValidation()[pri:7, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:41 IST" name="verifyMobileFieldValidation" finished-at="2025-09-19T15:06:41 IST" duration-ms="234" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- invalidUNameInvalidPwd -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:57 IST" name="tearDown" finished-at="2025-09-19T12:38:57 IST" duration-ms="75" status="PASS">
+        </test-method> <!-- verifyMobileFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:41 IST" name="tearDown" finished-at="2025-09-19T15:06:41 IST" duration-ms="97" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:57 IST" name="setUp" finished-at="2025-09-19T12:38:58 IST" duration-ms="926" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:41 IST" name="setUp" finished-at="2025-09-19T15:06:43 IST" duration-ms="1557" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="clickOnLoginWithoutEnterCreds()[pri:8, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:58 IST" name="clickOnLoginWithoutEnterCreds" finished-at="2025-09-19T12:38:58 IST" duration-ms="215" status="PASS">
+        <test-method signature="verifyMobileNoFieldBlankSpaceValidation()[pri:8, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:43 IST" name="verifyMobileNoFieldBlankSpaceValidation" finished-at="2025-09-19T15:06:44 IST" duration-ms="1319" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickOnLoginWithoutEnterCreds -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRLoginTest@74e28667]" started-at="2025-09-19T12:38:58 IST" name="tearDown" finished-at="2025-09-19T12:38:58 IST" duration-ms="99" status="PASS">
+        </test-method> <!-- verifyMobileNoFieldBlankSpaceValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:44 IST" name="tearDown" finished-at="2025-09-19T15:06:44 IST" duration-ms="96" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- easyr.qa.testCases.EasyRLoginTest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:44 IST" name="setUp" finished-at="2025-09-19T15:06:46 IST" duration-ms="1684" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyInvalidMobileNoFieldValidation()[pri:9, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:46 IST" name="verifyInvalidMobileNoFieldValidation" finished-at="2025-09-19T15:06:47 IST" duration-ms="1345" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidMobileNoFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:47 IST" name="tearDown" finished-at="2025-09-19T15:06:47 IST" duration-ms="95" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:47 IST" name="setUp" finished-at="2025-09-19T15:06:49 IST" duration-ms="1627" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySelectAddressFieldValidation()[pri:10, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:49 IST" name="verifySelectAddressFieldValidation" finished-at="2025-09-19T15:06:49 IST" duration-ms="236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySelectAddressFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:49 IST" name="tearDown" finished-at="2025-09-19T15:06:49 IST" duration-ms="78" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:49 IST" name="setUp" finished-at="2025-09-19T15:06:51 IST" duration-ms="1579" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyVendorCategoryFieldValidation()[pri:11, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:51 IST" name="verifyVendorCategoryFieldValidation" finished-at="2025-09-19T15:06:51 IST" duration-ms="241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyVendorCategoryFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:51 IST" name="tearDown" finished-at="2025-09-19T15:06:51 IST" duration-ms="106" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:51 IST" name="setUp" finished-at="2025-09-19T15:06:53 IST" duration-ms="1569" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyBlankCompanyWebsiteFieldValidation()[pri:12, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:53 IST" name="verifyBlankCompanyWebsiteFieldValidation" finished-at="2025-09-19T15:06:53 IST" duration-ms="251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyBlankCompanyWebsiteFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:53 IST" name="tearDown" finished-at="2025-09-19T15:06:53 IST" duration-ms="110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:53 IST" name="setUp" finished-at="2025-09-19T15:06:55 IST" duration-ms="1716" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyInvalidCompanyWebsiteFieldValidation()[pri:13, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:55 IST" name="verifyInvalidCompanyWebsiteFieldValidation" finished-at="2025-09-19T15:06:55 IST" duration-ms="377" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyInvalidCompanyWebsiteFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:55 IST" name="tearDown" finished-at="2025-09-19T15:06:55 IST" duration-ms="89" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:55 IST" name="setUp" finished-at="2025-09-19T15:06:57 IST" duration-ms="1888" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyParentVendorFieldValidation()[pri:14, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:57 IST" name="verifyParentVendorFieldValidation" finished-at="2025-09-19T15:06:57 IST" duration-ms="313" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyParentVendorFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:57 IST" name="tearDown" finished-at="2025-09-19T15:06:58 IST" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:58 IST" name="setUp" finished-at="2025-09-19T15:06:59 IST" duration-ms="1626" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyDescInEnglishFieldValidation()[pri:15, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:59 IST" name="verifyDescInEnglishFieldValidation" finished-at="2025-09-19T15:06:59 IST" duration-ms="245" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDescInEnglishFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:06:59 IST" name="tearDown" finished-at="2025-09-19T15:07:00 IST" duration-ms="106" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:07:00 IST" name="setUp" finished-at="2025-09-19T15:07:01 IST" duration-ms="1698" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyDescInDanishFieldValidation()[pri:16, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:07:01 IST" name="verifyDescInDanishFieldValidation" finished-at="2025-09-19T15:07:02 IST" duration-ms="304" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDescInDanishFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:07:02 IST" name="tearDown" finished-at="2025-09-19T15:07:02 IST" duration-ms="83" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:07:02 IST" name="setUp" finished-at="2025-09-19T15:07:03 IST" duration-ms="1649" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyDescInArabicFieldValidation()[pri:17, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:07:03 IST" name="verifyDescInArabicFieldValidation" finished-at="2025-09-19T15:07:04 IST" duration-ms="309" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDescInArabicFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:07:04 IST" name="tearDown" finished-at="2025-09-19T15:07:04 IST" duration-ms="117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:07:04 IST" name="setUp" finished-at="2025-09-19T15:07:05 IST" duration-ms="1647" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifySearchTagsFieldValidation()[pri:18, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:07:05 IST" name="verifySearchTagsFieldValidation" finished-at="2025-09-19T15:07:06 IST" duration-ms="240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchTagsFieldValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@548d708a]" started-at="2025-09-19T15:07:06 IST" name="tearDown" finished-at="2025-09-19T15:07:06 IST" duration-ms="114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- easyr.qa.testCases.EasyRVendorPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
