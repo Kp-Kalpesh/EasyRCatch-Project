@@ -15,45 +15,43 @@ public class EasyRVendorPage extends TestBase{
 
 	//Create Vendor Validation Text messages
 	@FindBy(xpath = "//span[text()='Please upload vendor logo!']")
-	WebElement vendorLogoValidation;	
+	WebElement vendorLogoValidation;
 	@FindBy(xpath = "//span[text()='Please upload vendor image!']")
-	WebElement vendorProfileValidation;		
+	WebElement vendorProfileValidation;
 	@FindBy(xpath = "//div[text()='Vendor Name is required!']")
-	WebElement vendorNameValidation;		
+	WebElement vendorNameValidation;
 	@FindBy(xpath = "//div[text()='Company Name is required!']")
-	WebElement CompanyNameValidation;		
+	WebElement CompanyNameValidation;
 	@FindBy(xpath = "//div[text()='Email address is required']")
-	WebElement vendorBlankEmailValidation;		
+	WebElement vendorBlankEmailValidation;
 	@FindBy(xpath = "//div[text()='Invalid email address']")
-	WebElement vendorInvalidEmailValidation;		
+	WebElement vendorInvalidEmailValidation;
 	@FindBy(xpath = "//div[text()='Mobile number is required']")
-	WebElement vendorBlankMobileNoValidation;		
+	WebElement vendorBlankMobileNoValidation;
 	@FindBy(xpath = "//div[text()='Please enter valid phone number']")
-	WebElement MobileBlankSpaceValidation;		
+	WebElement MobileBlankSpaceValidation;
 	@FindBy(xpath = "//div[text()='Mobile number can only contain numbers']")
-	WebElement InvalidMobileNoValidation;		
+	WebElement InvalidMobileNoValidation;
 	@FindBy(xpath = "//div[text()='Please select suggested address only!']")
-	WebElement selectAddressValidation;		
+	WebElement selectAddressValidation;
 	@FindBy(xpath = "//div[text()='Vendor Category is required']")
-	WebElement vendorCategoryValidation;		
+	WebElement vendorCategoryValidation;
 	@FindBy(xpath = "//div[text()='Company website is required']")
-	WebElement CompanyBlankWebsiteFieldValidation;		
+	WebElement CompanyBlankWebsiteFieldValidation;
 	@FindBy(xpath = "//div[text()='Enter correct url!']")
-	WebElement InvalidCompanyWebsiteValidation;		
+	WebElement InvalidCompanyWebsiteValidation;
 	@FindBy(xpath = "//label[text()='Sub Vendor']")
-	WebElement vendorTypeSubVendor;		
+	WebElement vendorTypeSubVendor;
 	@FindBy(xpath = "//div[text()='Parent vendor is required when vendor type is sub vendor']")
-	WebElement ParentVendorValidation;		
+	WebElement ParentVendorValidation;
 	@FindBy(xpath = "//div[text()='Description in English is required']")
-	WebElement DescInEnglishValidation;		
+	WebElement DescInEnglishValidation;
 	@FindBy(xpath = "//div[text()='Description in Danish is required']")
-	WebElement DescInDanishValidation;		
+	WebElement DescInDanishValidation;
 	@FindBy(xpath = "//div[text()='Description in Arabic is required']")
 	WebElement DescInArabicValidation;
 	@FindBy(xpath = "//div[text()='At least one tag must be specified!']")
-	WebElement searchTagValidation;		
-
-
+	WebElement searchTagValidation;
 
 	@FindBy(xpath = "//span[@class='uppercase tracking-wider hover:scale-102 cursor-pointer']")
 	WebElement vendorPageText;
@@ -62,9 +60,9 @@ public class EasyRVendorPage extends TestBase{
 	@FindBy(xpath = "(//button[text()='Select File'])[1]")
 	WebElement VendorLogoSelectFile;
 	@FindBy(xpath = "//input[@id='vendor_logo']")
-	WebElement uploadVendorLogo;	
+	WebElement uploadVendorLogo;
 	@FindBy(xpath = "//button[text()='Save Image']")
-	WebElement saveImageBtn;	
+	WebElement saveImageBtn;
 	@FindBy(xpath = "(//button[text()='Select File'])[2]")
 	WebElement VendorProfileSelectFile;
 	@FindBy(xpath = "//input[@id='vendor_image']")
@@ -116,6 +114,50 @@ public class EasyRVendorPage extends TestBase{
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[4]")
 	WebElement OffersAndDeals;
 
+	//View Vendor
+	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
+	WebElement enableStatusToggle;
+	@FindBy(xpath = "(//span[@title='View Vendor'])[1]")
+	WebElement viewActionsIcon;
+	@FindBy(xpath = "(//span[@title='Offer Analysis'])[1]")
+	WebElement analyticsActionsIcon;
+	@FindBy(xpath = "(//span[@title='Vendor QR'])[1]")
+	WebElement vendorQRActionsIcon;
+	@FindBy(xpath = "(//span[@title='Update Vendor'])[1]")
+	WebElement EditVendorActionsIcon;
+	@FindBy(xpath = "(//span[@title='Change Password'])[1]")
+	WebElement changePwdActionsIcon;
+	@FindBy(xpath = "(//span[@title='Delete Vendor'])[1]")
+	WebElement deleteVendorActionsIcon;
+	@FindBy(xpath = "(//span[@title='View Vendor'])[1]")
+	WebElement clickOnViewVendor;
+	
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	@FindBy(xpath = "")
+//	WebElement enableStatusToggle;
+//	
+	
+	
+	
 	//Logout
 	@FindBy(xpath = "//p[text()='Super Admin']")
 	WebElement clickOnSuperAdmintxt;
@@ -258,7 +300,6 @@ public class EasyRVendorPage extends TestBase{
 	public void clickOnDanishBt() {
 		danishBtn.click();
 	}
-
 
 	public boolean displayedDescInDanishValidation() {
 		return DescInDanishValidation.isDisplayed();
@@ -419,6 +460,54 @@ public class EasyRVendorPage extends TestBase{
 		return vendorEmailAfterCreation.getText();
 	}
 
+	
+	//View Vendor	
+	public boolean displayedActiveStatusToggle() throws InterruptedException {
+		Thread.sleep(3000);
+		return enableStatusToggle.isDisplayed();
+	}
+	
+	public boolean displayedViewActionicon() {
+		return viewActionsIcon.isDisplayed();
+	}
+	
+	public boolean displayedAnalyticsActionIcon() {
+		return analyticsActionsIcon.isDisplayed();
+	}
+	
+	public boolean displayedVendorQrActionIcon() {
+		return vendorQRActionsIcon.isDisplayed();
+	}
+	
+	public boolean displayedEditVendorActionIcon() {
+		return EditVendorActionsIcon.isDisplayed();
+	}
+	
+	public boolean displayedChangePwdActionIcon() {
+		return changePwdActionsIcon.isDisplayed();
+	}
+	
+	public boolean displayedDeleteActionIcon() {
+		return deleteVendorActionsIcon.isDisplayed();
+	}
+	
+	public void clickOnViewActionicon() {
+		clickOnViewVendor.click();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public EasyROffersAndDealsPage clickOnOffersAndDeals(){
 		OffersAndDeals.click();
 		return new EasyROffersAndDealsPage();

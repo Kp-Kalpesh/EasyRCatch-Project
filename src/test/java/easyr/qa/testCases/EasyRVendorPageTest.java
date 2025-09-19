@@ -87,7 +87,7 @@ public class EasyRVendorPageTest extends TestBase{
 		Assert.assertTrue("The Mobile field validation is not displayed", vendrpg.displayedBlankMobileNoValidation());
 		Assert.assertEquals(vendrpg.verifyMobileNoBlankFieldValidation(), "Mobile number is required");
 	}
-	
+
 	@Test(priority = 8)
 	public void verifyMobileNoFieldBlankSpaceValidation() throws InterruptedException {
 		vendrpg.clickOnCreateVendorBtn();
@@ -96,7 +96,7 @@ public class EasyRVendorPageTest extends TestBase{
 		Assert.assertTrue("The Mobile no field with balnk space validation is not displayed", vendrpg.displayedMobileNoBlankSpaceValidation());
 		Assert.assertEquals(vendrpg.verifyMobileNoBlankSpaceFieldValidation(), "Please enter valid phone number");
 	}
-		
+
 	@Test(priority = 9)
 	public void verifyInvalidMobileNoFieldValidation() throws InterruptedException {
 		vendrpg.clickOnCreateVendorBtn();
@@ -105,7 +105,7 @@ public class EasyRVendorPageTest extends TestBase{
 		Assert.assertTrue("The Invalid mobile no field validation is not displayed", vendrpg.displayedInvalidMobileNoValidation());
 		Assert.assertEquals(vendrpg.verifyInvalidMobileNoFieldValidation(), "Mobile number can only contain numbers");
 	}
-		
+
 	@Test(priority = 10)
 	public void verifySelectAddressFieldValidation() throws InterruptedException {
 		vendrpg.clickOnCreateVendorBtn();
@@ -113,7 +113,7 @@ public class EasyRVendorPageTest extends TestBase{
 		Assert.assertTrue("The Select Address field validation is not displayed", vendrpg.displayedSelectAddressFieldValidation());
 		Assert.assertEquals(vendrpg.verifySelectAddressFieldValidation(), "Please select suggested address only!");
 	}
-		
+
 	@Test(priority = 11)
 	public void verifyVendorCategoryFieldValidation() throws InterruptedException {
 		vendrpg.clickOnCreateVendorBtn();
@@ -121,7 +121,7 @@ public class EasyRVendorPageTest extends TestBase{
 		Assert.assertTrue("The Vendor Category field validation is not displayed", vendrpg.displayedVendorCategoryValidation());
 		Assert.assertEquals(vendrpg.verifyVendorCategoryFieldValidation(), "Vendor Category is required");
 	}
-	
+
 	@Test(priority = 12)
 	public void verifyBlankCompanyWebsiteFieldValidation() throws InterruptedException {
 		vendrpg.clickOnCreateVendorBtn();
@@ -182,44 +182,93 @@ public class EasyRVendorPageTest extends TestBase{
 		Assert.assertEquals(vendrpg.verifySearchTagFieldValidation(), "At least one tag must be specified!");
 	}
 
-
 	//Create Vendor
-//	@Test(priority = 19)
-//	public void verifyCreatVendor() {
-//		try {
-//			AssertJUnit.assertEquals(vendrpg.verifyPageTitle(), "EasyR Catch");
-//			System.out.println("vendrpg.verifyPageTitle(): " + vendrpg.verifyPageTitle());
-//			AssertJUnit.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
-//			System.out.println("vendrpg.verifyVendorText(): " + vendrpg.verifyVendorText());
-//
-//			vendrpg.clickOnCreateVendorBtn(); vendrpg.clickOnVendorLogoSelectFile();
-//			vendrpg.sendFileToVendorLogoField(prop.getProperty("Vendor_logo"));
-//			vendrpg.clickOnSaveImageBtn(); vendrpg.clickOnProfileSelectFile();
-//			vendrpg.sendVendorProfileField(prop.getProperty("Vendor_profile"));
-//			vendrpg.clickOnSaveImageVendorProfile();
-//			vendrpg.enterVendorName(prop.getProperty("Vendor_Name"));
-//			vendrpg.enterCName(prop.getProperty("Vendor_company"));
-//			vendrpg.enterEmail(prop.getProperty("vEmail"));
-//			vendrpg.enterPhone(prop.getProperty("vPhone"));
-//			vendrpg.selectAddress(prop.getProperty("vAddress"));
-//			vendrpg.selectCategory(prop.getProperty("Category"));
-//			vendrpg.selectSubCategory(prop.getProperty("SubCategory"));
-//			vendrpg.enterCompanyWebsite(prop.getProperty("CompWebsite"));
-//			vendrpg.enterDisplayLink(prop.getProperty("DisplayLink"));
-//			vendrpg.enterDescription(prop.getProperty("EnglishDesc"),
-//					prop.getProperty("DanishDesc"), prop.getProperty("Arabicdesc"));
-//			vendrpg.enterTags(prop.getProperty("Tags"));
-//			vendrpg.clickOnAddVendor();
-//			vendrpg.clickOnVisibleVendorDrpDwn();
-//
-//			AssertJUnit.assertEquals(vendrpg.CreatedVendorName(), prop.getProperty("Vendor_Name"));
-//			AssertJUnit.assertEquals(vendrpg.CreatedVendorComapnyName(), prop.getProperty("Vendor_company"));
-//			AssertJUnit.assertEquals(vendrpg.CreatedVendorEmail(), prop.getProperty("vEmail"));
-//			vendrpg.logout();
-//		}catch(Exception e) {
-//			System.out.println("Element not found within timeout: " + e.getMessage());
-//		}
-//	}
+	@Test(priority = 19)
+	public void verifyCreatVendor() {
+		try {
+			AssertJUnit.assertEquals(vendrpg.verifyPageTitle(), "EasyR Catch");
+			System.out.println("vendrpg.verifyPageTitle(): " + vendrpg.verifyPageTitle());
+			AssertJUnit.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
+			System.out.println("vendrpg.verifyVendorText(): " + vendrpg.verifyVendorText());
+
+			vendrpg.clickOnCreateVendorBtn(); vendrpg.clickOnVendorLogoSelectFile();
+			vendrpg.sendFileToVendorLogoField(prop.getProperty("Vendor_logo"));
+			vendrpg.clickOnSaveImageBtn(); vendrpg.clickOnProfileSelectFile();
+			vendrpg.sendVendorProfileField(prop.getProperty("Vendor_profile"));
+			vendrpg.clickOnSaveImageVendorProfile();
+			vendrpg.enterVendorName(prop.getProperty("Vendor_Name"));
+			vendrpg.enterCName(prop.getProperty("Vendor_company"));
+			vendrpg.enterEmail(prop.getProperty("vEmail"));
+			vendrpg.enterPhone(prop.getProperty("vPhone"));
+			vendrpg.selectAddress(prop.getProperty("vAddress"));
+			vendrpg.selectCategory(prop.getProperty("Category"));
+			vendrpg.selectSubCategory(prop.getProperty("SubCategory"));
+			vendrpg.enterCompanyWebsite(prop.getProperty("CompWebsite"));
+			vendrpg.enterDisplayLink(prop.getProperty("DisplayLink"));
+			vendrpg.enterDescription(prop.getProperty("EnglishDesc"),
+					prop.getProperty("DanishDesc"), prop.getProperty("Arabicdesc"));
+			vendrpg.enterTags(prop.getProperty("Tags"));
+			vendrpg.clickOnAddVendor();
+			vendrpg.clickOnVisibleVendorDrpDwn();
+
+			AssertJUnit.assertEquals(vendrpg.CreatedVendorName(), prop.getProperty("Vendor_Name"));
+			AssertJUnit.assertEquals(vendrpg.CreatedVendorComapnyName(), prop.getProperty("Vendor_company"));
+			AssertJUnit.assertEquals(vendrpg.CreatedVendorEmail(), prop.getProperty("vEmail"));
+			vendrpg.logout();
+		}catch(Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
+	}
+
+	//View Vendor
+	@Test(priority = 20)
+	public void verifyDisplayedVendorActiveStatusToggle() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		Assert.assertTrue("The Vendor Active status toggle is not displayed", vendrpg.displayedActiveStatusToggle());
+	}
+
+	@Test(priority = 21)
+	public void verifyDisplayedVendorViewIcon() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		Assert.assertTrue("The Vendro View Icon is not displayed", vendrpg.displayedViewActionicon());
+	}
+
+	@Test(priority = 22)
+	public void verifyDisplayedVendorAnalystIcon() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		Assert.assertTrue("The Vendro Analyst Icon is not displayed", vendrpg.displayedAnalyticsActionIcon());
+	}
+
+	@Test(priority = 23)
+	public void verifyDisplayedVendorQRCodeIcon() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		Assert.assertTrue("The Vendro QR Code Icon is not displayed", vendrpg.displayedVendorQrActionIcon());
+	}
+
+	@Test(priority = 24)
+	public void verifyDisplayedVendorEditIcon() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		Assert.assertTrue("The Vendro Edit Icon is not displayed", vendrpg.displayedEditVendorActionIcon());
+	}
+
+	@Test(priority = 25)
+	public void verifyDisplayedChangePwdIcon() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		Assert.assertTrue("The Vendro Change Password Icon is not displayed", vendrpg.displayedChangePwdActionIcon());
+	}
+
+	@Test(priority = 26)
+	public void verifyDisplayedDeleteIcon() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		Assert.assertTrue("The Vendro Delete Icon is not displayed", vendrpg.displayedDeleteActionIcon());
+	}
+
+	@Test(priority = 27)
+	public void clickOnViewVendorIcon() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+	}
+
 
 	@AfterMethod
 	public void tearDown() {

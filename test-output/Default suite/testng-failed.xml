@@ -6,7 +6,7 @@
       <class name="easyr.qa.testCases.EasyRVendorPageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="verifyDescInDanishFieldValidation"/>
+          <include name="verifyDisplayedVendorActiveStatusToggle"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- easyr.qa.testCases.EasyRVendorPageTest -->
