@@ -270,8 +270,63 @@ public class EasyRVendorPageTest extends TestBase{
 	}
 
 
+	//verify vendor details sc reen data
+	@Test(priority = 28)
+	public void verifyVendorDetailsPageVendorName() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		Assert.assertEquals(vendrpg.verifyVendorNameInvendorDetails(), prop.getProperty("Vendor_Name"));
+	}
+
+	@Test(priority = 29)
+	public void verifyVendorDetailsPageCompanyName() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		Assert.assertEquals(vendrpg.verifyVendorCompanyInvendorDetails(), prop.getProperty("Vendor_company"));
+	}
+
+	@Test(priority = 30)
+	public void verifyVendorDetailsPageVendorEmail() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		Assert.assertEquals(vendrpg.verifyVendorEmailInvendorDetails(), prop.getProperty("vEmail"));
+	}
+
+	@Test(priority = 31)
+	public void verifyVendorDetailsPageVendorCode() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		Assert.assertEquals(vendrpg.verifyVendorCodeInvendorDetails(), "Cr673B");
+	}
+
+	@Test(priority = 32)
+	public void verifyVendorDetailsDescInEng() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		Assert.assertEquals(vendrpg.verifyVendorDescEngInvendorDetails(), prop.getProperty("EnglishDesc"));
+	}
+
+	@Test(priority = 33)
+	public void verifyVendorDetailsDescInDan() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		vendrpg.clickOnDanishBtnInvendorDetails();
+		Assert.assertEquals(vendrpg.verifyDescInDanInvendorDetails(), prop.getProperty("DanishDesc"));
+	}
+
+	@Test(priority = 34)
+	public void verifyVendorDetailsDescInArab() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		vendrpg.clickOnArabicBtnInvendorDetails();
+		Assert.assertEquals(vendrpg.verifyDescInArabicInvendorDetails(), prop.getProperty("Arabicdesc"));
+	}
+
+
+
+
 	@AfterMethod
 	public void tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 }

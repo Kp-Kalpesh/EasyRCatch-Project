@@ -131,33 +131,29 @@ public class EasyRVendorPage extends TestBase{
 	WebElement deleteVendorActionsIcon;
 	@FindBy(xpath = "(//span[@title='View Vendor'])[1]")
 	WebElement clickOnViewVendor;
-	
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	@FindBy(xpath = "")
-//	WebElement enableStatusToggle;
-//	
-	
-	
-	
+
+	//Vendor details page	
+	@FindBy(xpath = "//h5[text()='Joss Sterlin']")
+	WebElement vendorName;
+	@FindBy(xpath = "//p[text()='Sterlin Industries']")
+	WebElement companyName;
+	@FindBy(xpath = "//p[text()='joss.s@easyr.ae']")
+	WebElement vendorEmail;
+	@FindBy(xpath = "//div[text()='Cr673B']")
+	WebElement vendorCode;
+	@FindBy(xpath = "//p[contains(text(),'Sports are a broad cate')]")
+	WebElement DescInEng;
+	@FindBy(xpath = "//span[text()='Danish']")
+	WebElement DanishBtn;
+	@FindBy(xpath = "//p[contains(text(),'Sport er en bred kategori af ')]")
+	WebElement DescInDan;
+	@FindBy(xpath = "//span[text()='Arabic']")
+	WebElement ArabicBtn;
+	@FindBy(xpath = "//p[contains(text(),'Sports are a broad category ')]")
+	WebElement DescInArabics;
+	//vendor details screen vendor reports are pending
+
+
 	//Logout
 	@FindBy(xpath = "//p[text()='Super Admin']")
 	WebElement clickOnSuperAdmintxt;
@@ -460,55 +456,88 @@ public class EasyRVendorPage extends TestBase{
 		return vendorEmailAfterCreation.getText();
 	}
 
-	
+
 	//View Vendor	
 	public boolean displayedActiveStatusToggle() throws InterruptedException {
 		Thread.sleep(3000);
 		return enableStatusToggle.isDisplayed();
 	}
-	
+
 	public boolean displayedViewActionicon() {
 		return viewActionsIcon.isDisplayed();
 	}
-	
+
 	public boolean displayedAnalyticsActionIcon() {
 		return analyticsActionsIcon.isDisplayed();
 	}
-	
+
 	public boolean displayedVendorQrActionIcon() {
 		return vendorQRActionsIcon.isDisplayed();
 	}
-	
+
 	public boolean displayedEditVendorActionIcon() {
 		return EditVendorActionsIcon.isDisplayed();
 	}
-	
+
 	public boolean displayedChangePwdActionIcon() {
 		return changePwdActionsIcon.isDisplayed();
 	}
-	
+
 	public boolean displayedDeleteActionIcon() {
 		return deleteVendorActionsIcon.isDisplayed();
 	}
-	
+
 	public void clickOnViewActionicon() throws InterruptedException {
 		Thread.sleep(3000);
 		clickOnViewVendor.click();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+	//vendor details data verified
+	public String verifyVendorNameInvendorDetails() {
+		return vendorName.getText();
+	}
+
+	public String verifyVendorCompanyInvendorDetails() {
+		return companyName.getText();
+	}
+
+	public String verifyVendorEmailInvendorDetails() {
+		return vendorEmail.getText();
+	}
+
+	public String verifyVendorCodeInvendorDetails() {
+		return vendorCode.getText();
+	}
+
+	public String verifyVendorDescEngInvendorDetails() {
+		return DescInEng.getText();
+	}
+
+	public void clickOnDanishBtnInvendorDetails() {
+		DanishBtn.click();
+	}
+
+	public String verifyDescInDanInvendorDetails() {
+		return DescInDan.getText();
+	}
+
+	public void clickOnArabicBtnInvendorDetails() {
+		ArabicBtn.click();
+	}
+
+	public String verifyDescInArabicInvendorDetails() {
+		return DescInArabics.getText();
+	}
+
+
+
+
+
+
+
+
+
 	public EasyROffersAndDealsPage clickOnOffersAndDeals(){
 		OffersAndDeals.click();
 		return new EasyROffersAndDealsPage();
