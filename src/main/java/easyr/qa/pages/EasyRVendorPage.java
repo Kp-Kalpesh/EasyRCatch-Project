@@ -151,7 +151,23 @@ public class EasyRVendorPage extends TestBase{
 	WebElement ArabicBtn;
 	@FindBy(xpath = "//p[contains(text(),'Sports are a broad category ')]")
 	WebElement DescInArabics;
+
 	//vendor details screen vendor reports are pending
+	@FindBy(xpath = "//span[contains(text(),'Report')]")
+	WebElement vendorReportsTxt;
+	@FindBy(xpath = "//span[contains(text(),'Feedback')]")
+	WebElement vendorFeedbackTxt;
+	@FindBy(xpath = "//span[contains(text(),'Data Not Found')]")
+	WebElement vendorReportsData;
+	@FindBy(xpath = "//span[contains(text(),'Users Review')]")
+	WebElement clickUserReviews;
+	@FindBy(xpath = "//span[contains(text(),'Users Review')]")
+	WebElement userReviewsTxt;
+	@FindBy(xpath = "//span[contains(text(),'Data Not Found!')]")
+	WebElement userReviewsData;
+	@FindBy(xpath = "//button[contains(text(),'Update Vendor')]")
+	WebElement updateVendorBtn;
+
 
 
 	//Logout
@@ -530,6 +546,36 @@ public class EasyRVendorPage extends TestBase{
 		return DescInArabics.getText();
 	}
 
+	//verify reports and User review and click on Update vendor btn
+	public String verifyVendorReportTxt() {
+		return vendorReportsTxt.getText();
+	}
+
+	public String verifyVendorFeedbacktxt() {
+		return vendorFeedbackTxt.getText();
+	}
+
+	public String vendorReportsData() {
+		return vendorReportsData.getText();
+	}
+
+	public void clickOnVendorReviews() {
+		clickUserReviews.click();
+	}
+
+	public String verifyVendorReviewsTxt() {
+		return userReviewsTxt.getText();
+	}
+
+	public String verifyUserReviewsData() {
+		act.sendKeys(userReviewsData,Keys.PAGE_DOWN).perform();
+		return userReviewsData.getText();
+	}
+
+	public void clickOnUpdateVendorBtn() throws InterruptedException {
+		Thread.sleep(1000);
+		updateVendorBtn.click();
+	}
 
 
 

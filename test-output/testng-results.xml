@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-19T18:46:43 IST" name="Default suite" finished-at="2025-09-19T18:46:53 IST" duration-ms="9703">
+  <suite started-at="2025-10-03T11:48:10 IST" name="Default suite" finished-at="2025-10-03T11:48:24 IST" duration-ms="14559">
     <groups>
     </groups>
-    <test started-at="2025-09-19T18:46:43 IST" name="Default test" finished-at="2025-09-19T18:46:53 IST" duration-ms="9703">
+    <test started-at="2025-10-03T11:48:10 IST" name="Default test" finished-at="2025-10-03T11:48:24 IST" duration-ms="14559">
       <class name="easyr.qa.testCases.EasyRVendorPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@28261e8e]" started-at="2025-09-19T18:46:43 IST" name="setUp" finished-at="2025-09-19T18:46:45 IST" duration-ms="2132" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@3f191845]" started-at="2025-10-03T11:48:10 IST" name="setUp" finished-at="2025-10-03T11:48:12 IST" duration-ms="2130" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyVendorDetailsDescInArab()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@28261e8e]" started-at="2025-09-19T18:46:45 IST" name="verifyVendorDetailsDescInArab" finished-at="2025-09-19T18:46:52 IST" duration-ms="7441" status="PASS">
+        <test-method signature="verifyClickOnUpdateVendorBtn()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@3f191845]" started-at="2025-10-03T11:48:12 IST" name="verifyClickOnUpdateVendorBtn" finished-at="2025-10-03T11:48:24 IST" duration-ms="12403" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyVendorDetailsDescInArab -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@28261e8e]" started-at="2025-09-19T18:46:52 IST" name="tearDown" finished-at="2025-09-19T18:46:53 IST" duration-ms="104" status="PASS">
+        </test-method> <!-- verifyClickOnUpdateVendorBtn -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@3f191845]" started-at="2025-10-03T11:48:24 IST" name="tearDown" finished-at="2025-10-03T11:48:24 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

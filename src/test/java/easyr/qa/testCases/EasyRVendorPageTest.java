@@ -270,7 +270,7 @@ public class EasyRVendorPageTest extends TestBase{
 	}
 
 
-	//verify vendor details sc reen data
+	//verify Invisible vendor details screen data
 	@Test(priority = 28)
 	public void verifyVendorDetailsPageVendorName() throws InterruptedException {
 		vendrpg.clickOnVisibleVendorDrpDwn();
@@ -322,11 +322,55 @@ public class EasyRVendorPageTest extends TestBase{
 		Assert.assertEquals(vendrpg.verifyDescInArabicInvendorDetails(), prop.getProperty("Arabicdesc"));
 	}
 
+	//verify reports and User review and click on Update vendor btn
+	@Test(priority = 35)
+	public void verrifyVendorDetailsVendorReportsTxt() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		Assert.assertEquals(vendrpg.verifyVendorReportTxt(), "Vendor'S Report");
+	}
+	
+	@Test(priority = 36)
+	public void verifyVendorDetailsVendorFeedbackTxt() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		Assert.assertEquals(vendrpg.verifyVendorFeedbacktxt(), "Vendor's Feedback");
+	}
+	
+	@Test(priority = 37)
+	public void veirfyVendorDetailsVendorReportData() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		Assert.assertEquals(vendrpg.vendorReportsData(), "Data Not Found!");
+	}
+	
+	@Test(priority = 38)
+	public void clickAndVerifyVendorDetailsUserReviews() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		vendrpg.clickOnVendorReviews();
+		Assert.assertEquals(vendrpg.verifyVendorReviewsTxt(), "Users Review");
+	}
 
-
+	@Test(priority = 39)
+	public void verifyVendorDetailsUserReviewsData() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		vendrpg.clickOnVendorReviews();
+		Assert.assertEquals(vendrpg.verifyUserReviewsData(), "Data Not Found!");
+	}
+	
+	@Test(priority = 40)
+	public void verifyClickOnUpdateVendorBtn() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		vendrpg.clickOnUpdateVendorBtn();
+	}
+	
+	
 
 	@AfterMethod
 	public void tearDown() {
-		driver.quit();
+		//		driver.quit();
 	}
 }
