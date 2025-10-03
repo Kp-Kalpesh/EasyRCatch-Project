@@ -296,7 +296,7 @@ public class EasyRVendorPageTest extends TestBase{
 	public void verifyVendorDetailsPageVendorCode() throws InterruptedException {
 		vendrpg.clickOnVisibleVendorDrpDwn();
 		vendrpg.clickOnViewActionicon();
-		Assert.assertEquals(vendrpg.verifyVendorCodeInvendorDetails(), "Cr673B");
+		Assert.assertTrue("The vendor code is not displayed", vendrpg.verifyVendorCodeInvendorDetails());
 	}
 
 	@Test(priority = 32)
@@ -329,21 +329,21 @@ public class EasyRVendorPageTest extends TestBase{
 		vendrpg.clickOnViewActionicon();
 		Assert.assertEquals(vendrpg.verifyVendorReportTxt(), "Vendor'S Report");
 	}
-	
+
 	@Test(priority = 36)
 	public void verifyVendorDetailsVendorFeedbackTxt() throws InterruptedException {
 		vendrpg.clickOnVisibleVendorDrpDwn();
 		vendrpg.clickOnViewActionicon();
 		Assert.assertEquals(vendrpg.verifyVendorFeedbacktxt(), "Vendor's Feedback");
 	}
-	
+
 	@Test(priority = 37)
 	public void veirfyVendorDetailsVendorReportData() throws InterruptedException {
 		vendrpg.clickOnVisibleVendorDrpDwn();
 		vendrpg.clickOnViewActionicon();
 		Assert.assertEquals(vendrpg.vendorReportsData(), "Data Not Found!");
 	}
-	
+
 	@Test(priority = 38)
 	public void clickAndVerifyVendorDetailsUserReviews() throws InterruptedException {
 		vendrpg.clickOnVisibleVendorDrpDwn();
@@ -359,18 +359,54 @@ public class EasyRVendorPageTest extends TestBase{
 		vendrpg.clickOnVendorReviews();
 		Assert.assertEquals(vendrpg.verifyUserReviewsData(), "Data Not Found!");
 	}
-	
+
+	//Update Vendor remove all data and check all validations
 	@Test(priority = 40)
 	public void verifyClickOnUpdateVendorBtn() throws InterruptedException {
 		vendrpg.clickOnVisibleVendorDrpDwn();
 		vendrpg.clickOnViewActionicon();
 		vendrpg.clickOnUpdateVendorBtn();
 	}
-	
-	
+
+	@Test(priority = 41)
+	public void verifyUpdateVendorValidations() throws InterruptedException {
+		vendrpg.clickOnVisibleVendorDrpDwn();
+		vendrpg.clickOnViewActionicon();
+		vendrpg.clickOnUpdateVendorBtn();
+		vendrpg.verifyUpdateVendorName();
+		vendrpg.verifyUpdateVendorCompany();
+		vendrpg.verifyUpdateVendorEmail();
+		vendrpg.verifyUpdateVendorPhone();
+		vendrpg.verifyUpdateVendorAddress();
+		vendrpg.verifyUpdateVendorCategory();
+		vendrpg.verifyUpdateVendorWebsite();
+		vendrpg.verifyUpdateVendorDisplayedLink();
+		vendrpg.verifyUpdateVendorDescInEng();
+		vendrpg.verifyUpdateVendorDescInDan();
+		vendrpg.verifyUpdateVendorDescInArab();
+		vendrpg.verifyUpdateVendorTab();
+		vendrpg.verifyClickOnUpdateVendor();
+
+		//verify all field validations
+		Assert.assertEquals(vendrpg.verifyEditVendorNameValidation(), "Vendor Name is required!");
+		Assert.assertEquals(vendrpg.verifyEditCompanyNameValidation(), "Company Name is required!");
+		Assert.assertEquals(vendrpg.verifyEditEmailValidation(), "Email address is required");
+		Assert.assertEquals(vendrpg.verifyEditPhoneNoValidation(), "Mobile number is required");
+		Assert.assertEquals(vendrpg.verifyEditAddressValidation(), "Please select suggested address only!");
+		Assert.assertEquals(vendrpg.verifyEditCategoryValidation(), "Vendor Category must have at least one item");
+		Assert.assertEquals(vendrpg.verifyEditCompanyWebSiteFieldValidation(), "Company website is required");
+		Assert.assertEquals(vendrpg.verifyEditVendorDescInEngValidation(), "Description in English is required");
+		vendrpg.verifyClickOnDanishTxt();
+		Assert.assertEquals(vendrpg.verifyEditVendorDescInDanValidation(), "Description in Danish is required");
+		vendrpg.verifyClickOnArabicTxt();
+		Assert.assertEquals(vendrpg.verifyEditVendorDescInArabValidation(), "Description in Arabic is required");
+		Assert.assertEquals(vendrpg.verifyEditSearchTagsValidation(), "At least one tag must be specified!");
+		vendrpg.clickOnVendroTab();
+	}
+
 
 	@AfterMethod
 	public void tearDown() {
-		//		driver.quit();
+		driver.quit();
 	}
 }

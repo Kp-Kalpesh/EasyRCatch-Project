@@ -5,9 +5,9 @@
     <classes>
       <class name="easyr.qa.testCases.EasyRVendorPageTest">
         <methods>
-          <include name="veirfyVendorDetailsVendorReportData"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="verifyUpdateVendorValidations"/>
         </methods>
       </class> <!-- easyr.qa.testCases.EasyRVendorPageTest -->
     </classes>

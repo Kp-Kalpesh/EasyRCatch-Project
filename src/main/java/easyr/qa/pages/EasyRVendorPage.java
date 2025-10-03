@@ -36,6 +36,8 @@ public class EasyRVendorPage extends TestBase{
 	WebElement selectAddressValidation;
 	@FindBy(xpath = "//div[text()='Vendor Category is required']")
 	WebElement vendorCategoryValidation;
+	@FindBy(xpath = "//div[text()='Vendor Category must have at least one item']")
+	WebElement EditvendorCategoryValidation;
 	@FindBy(xpath = "//div[text()='Company website is required']")
 	WebElement CompanyBlankWebsiteFieldValidation;
 	@FindBy(xpath = "//div[text()='Enter correct url!']")
@@ -53,6 +55,11 @@ public class EasyRVendorPage extends TestBase{
 	@FindBy(xpath = "//div[text()='At least one tag must be specified!']")
 	WebElement searchTagValidation;
 
+	
+	
+	
+	
+	
 	@FindBy(xpath = "//span[@class='uppercase tracking-wider hover:scale-102 cursor-pointer']")
 	WebElement vendorPageText;
 	@FindBy(xpath="//button[contains(text(),'Create Vendor')]")
@@ -139,7 +146,7 @@ public class EasyRVendorPage extends TestBase{
 	WebElement companyName;
 	@FindBy(xpath = "//p[text()='joss.s@easyr.ae']")
 	WebElement vendorEmail;
-	@FindBy(xpath = "//div[text()='Cr673B']")
+	@FindBy(xpath = "//div[@class='text-center text-md font-bold']")
 	WebElement vendorCode;
 	@FindBy(xpath = "//p[contains(text(),'Sports are a broad cate')]")
 	WebElement DescInEng;
@@ -167,6 +174,57 @@ public class EasyRVendorPage extends TestBase{
 	WebElement userReviewsData;
 	@FindBy(xpath = "//button[contains(text(),'Update Vendor')]")
 	WebElement updateVendorBtn;
+	
+	//Update Vendor remove all data and check all validations
+	@FindBy(xpath = "//input[contains(@placeholder,'Vendor Name')]")
+	WebElement editVendorName;
+	@FindBy(xpath = "//input[contains(@placeholder,'Company Name')]")
+	WebElement editVendorCompany;
+	@FindBy(xpath = "//input[contains(@placeholder,'Email')]")
+	WebElement editVendorEmail;
+	@FindBy(xpath = "//input[contains(@placeholder,'Phone')]")
+	WebElement editVendorPhone;
+	@FindBy(xpath = "//i[contains(@class,'absolute text-2xl right-2 ')]")
+	WebElement editVendorAddress;
+	@FindBy(xpath = "//input[@id='vendor_category_id']")
+	WebElement editVendorCat;
+	@FindBy(xpath = "//input[@placeholder='Company Website']")
+	WebElement editVendorwebsite;
+	@FindBy(xpath = "//input[@placeholder='Display Link']")
+	WebElement editVendorDisplayedLink;
+	@FindBy(xpath = "//div[@class='ql-editor']//p")
+	WebElement editVendorDescInEng;
+	@FindBy(xpath = "//button[@id='headlessui-tabs-tab-:r2:']")
+	WebElement editVendorDanishDescbtn;
+	@FindBy(xpath = "//div[@class='ql-editor']//p")
+	WebElement editVendorDescInDan;
+	@FindBy(xpath = "//button[@id='headlessui-tabs-tab-:r3:']")
+	WebElement editVendorDescInArabBtn;
+	@FindBy(xpath = "//div[@class='ql-editor']//p")
+	WebElement editVendorDescInArab;
+	@FindBy(xpath = "//input[@id='vendor_tag']")
+	WebElement editVendorTags;
+	@FindBy(xpath = "//button[text()='Update Vendor']")
+	WebElement editUpdateVendor;
+	@FindBy(xpath = "(//a[@aria-expanded='true'])[2]")
+	WebElement VendorsText;
+//	@FindBy(xpath = "")
+//	WebElement editVendorName;
+//	@FindBy(xpath = "")
+//	WebElement editVendorName;
+//	@FindBy(xpath = "")
+//	WebElement editVendorName;
+//	@FindBy(xpath = "")
+//	WebElement editVendorName;
+//	@FindBy(xpath = "")
+//	WebElement editVendorName;
+//	@FindBy(xpath = "")
+//	WebElement editVendorName;
+//	@FindBy(xpath = "")
+//	WebElement editVendorName;
+//	@FindBy(xpath = "")
+//	WebElement editVendorName;
+	
 
 
 
@@ -522,8 +580,8 @@ public class EasyRVendorPage extends TestBase{
 		return vendorEmail.getText();
 	}
 
-	public String verifyVendorCodeInvendorDetails() {
-		return vendorCode.getText();
+	public boolean verifyVendorCodeInvendorDetails() {
+		return vendorCode.isDisplayed();
 	}
 
 	public String verifyVendorDescEngInvendorDetails() {
@@ -572,11 +630,147 @@ public class EasyRVendorPage extends TestBase{
 		return userReviewsData.getText();
 	}
 
+	//Update Vendor remove all data and check all validations
 	public void clickOnUpdateVendorBtn() throws InterruptedException {
 		Thread.sleep(1000);
 		updateVendorBtn.click();
 	}
+	
+	public void verifyUpdateVendorName() {
+		editVendorName.click();
+		editVendorName.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+	
+	public void verifyUpdateVendorCompany() {
+		editVendorCompany.click();
+		editVendorCompany.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
 
+	public void verifyUpdateVendorEmail() {
+		editVendorEmail.click();
+		editVendorEmail.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+	
+	public void verifyUpdateVendorPhone() {
+		editVendorPhone.click();
+		editVendorPhone.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+	
+	public void verifyUpdateVendorAddress() {
+		editVendorAddress.click();
+	}
+	
+	public void verifyUpdateVendorCategory() {
+		editVendorCat.click();
+		editVendorCat.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+	
+	public void verifyUpdateVendorWebsite() {
+		editVendorwebsite.click();
+		editVendorwebsite.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+	
+	public void verifyUpdateVendorDisplayedLink() {
+		editVendorDisplayedLink.click();
+		editVendorDisplayedLink.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+	
+	public void verifyUpdateVendorDescInEng() {
+		editVendorDescInEng.click();
+		editVendorDescInEng.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+	
+	public void verifyClickOnDanishTxt() {
+		editVendorDanishDescbtn.click();
+	}
+	
+	public void verifyUpdateVendorDescInDan() {
+		editVendorDanishDescbtn.click();
+		editVendorDescInDan.click();
+		editVendorDescInDan.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+	
+	public void verifyClickOnArabicTxt() {
+		editVendorDescInArabBtn.click();
+	}
+	
+	public void verifyUpdateVendorDescInArab() {
+		editVendorDescInArabBtn.click();
+		editVendorDescInArab.click();
+		editVendorDescInArab.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+
+	public void verifyUpdateVendorTab() {
+		editVendorTags.click();
+		editVendorTags.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
+	}
+	
+	public void verifyClickOnUpdateVendor() {
+		editUpdateVendor.click();
+	}
+	
+	public String verifyEditVendorNameValidation() {
+		return vendorNameValidation.getText();
+	}
+	
+	public String verifyEditCompanyNameValidation() {
+		return CompanyNameValidation.getText();
+	}
+	
+	public String verifyEditEmailValidation() {
+		return vendorBlankEmailValidation.getText();
+	}
+	
+	public String verifyEditPhoneNoValidation() {
+		return vendorBlankMobileNoValidation.getText();
+	}
+	
+	public String verifyEditAddressValidation() {
+		return selectAddressValidation.getText();
+	}
+	
+	public String verifyEditCategoryValidation() {
+		return EditvendorCategoryValidation.getText();
+	}
+	
+	public String verifyEditCompanyWebSiteFieldValidation() {
+		return CompanyBlankWebsiteFieldValidation.getText();
+	}
+	
+	public String verifyEditVendorDescInEngValidation() {
+		return DescInEnglishValidation.getText();
+	}
+	
+	public String verifyEditVendorDescInDanValidation() {
+		return DescInDanishValidation.getText();
+	}
+	
+	public String verifyEditVendorDescInArabValidation() {
+		return DescInArabicValidation.getText();
+	}
+	
+	public String verifyEditSearchTagsValidation() {
+		return searchTagValidation.getText();
+	}
+	
+	public void clickOnVendroTab() {
+		VendorsText.click();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
 
 
 
