@@ -35,7 +35,7 @@ public class EasyROrganizationPageTest extends TestBase{
 		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("ValidEmail"), prop.getProperty("ValidPassword"));
 		vendrpg = dashpg.clickOnVendors();
 		offerpg = vendrpg.clickOnOffersAndDeals();
-		shoppg = offerpg.clickOnProductStore();
+//		shoppg = offerpg.clickOnProductStore();
 		orgpg = shoppg.clickOnOrganization();
 	}
 
