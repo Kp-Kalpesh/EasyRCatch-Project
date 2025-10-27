@@ -42,7 +42,7 @@ public class EasyRVendorPage extends TestBase{
 	WebElement CompanyBlankWebsiteFieldValidation;
 	@FindBy(xpath = "//div[text()='Enter correct url!']")
 	WebElement InvalidCompanyWebsiteValidation;
-	@FindBy(xpath = "//label[text()='Sub Vendor']")
+	@FindBy(xpath = "//label[text()='Sub']")
 	WebElement vendorTypeSubVendor;
 	@FindBy(xpath = "//div[text()='Parent vendor is required when vendor type is sub vendor']")
 	WebElement ParentVendorValidation;
@@ -410,6 +410,7 @@ public class EasyRVendorPage extends TestBase{
 		return vendorPageText.getText();
 	}
 
+	//create vendor
 	public void clickOnCreateVendorBtn() {
 		createVendor.click();
 	}
@@ -508,6 +509,7 @@ public class EasyRVendorPage extends TestBase{
 		addVendorBtn.click();
 	}
 
+	//check vendor is created or not
 	public void clickOnVisibleVendorDrpDwn() throws InterruptedException {
 		Thread.sleep(3000);
 		act.click(vendorDrpDwn).perform();
@@ -531,7 +533,7 @@ public class EasyRVendorPage extends TestBase{
 	}
 
 
-	//View Vendor	
+	//View Vendor
 	public boolean displayedActiveStatusToggle() throws InterruptedException {
 		Thread.sleep(3000);
 		return enableStatusToggle.isDisplayed();
