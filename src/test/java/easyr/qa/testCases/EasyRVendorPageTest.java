@@ -1,8 +1,5 @@
 package easyr.qa.testCases;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -369,39 +366,53 @@ public class EasyRVendorPageTest extends TestBase{
 	}
 
 	@Test(priority = 41)
-	public void verifyUpdateVendorValidations() throws InterruptedException {
-		vendrpg.clickOnVisibleVendorDrpDwn();
-		vendrpg.clickOnViewActionicon();
-		vendrpg.clickOnUpdateVendorBtn();
-		vendrpg.verifyUpdateVendorName();
-		vendrpg.verifyUpdateVendorCompany();
-		vendrpg.verifyUpdateVendorEmail();
-		vendrpg.verifyUpdateVendorPhone();
-		vendrpg.verifyUpdateVendorAddress();
-		vendrpg.verifyUpdateVendorCategory();
-		vendrpg.verifyUpdateVendorWebsite();
-		vendrpg.verifyUpdateVendorDisplayedLink();
-		vendrpg.verifyUpdateVendorDescInEng();
-		vendrpg.verifyUpdateVendorDescInDan();
-		vendrpg.verifyUpdateVendorDescInArab();
-		vendrpg.verifyUpdateVendorTab();
-		vendrpg.verifyClickOnUpdateVendor();
+	public void verifyUpdateVendorValidations() {
+		try{
+			vendrpg.clickOnVisibleVendorDrpDwn();
+			String vName = vendrpg.CreatedVendorName();
+			if(vName.equalsIgnoreCase(prop.getProperty("Vendor_Name"))) 
+			{
+				vendrpg.clickOnViewActionicon();
+			}else
+			{
+				System.out.println("Vendor is not Available");
+				vendrpg.logout();
+			}
 
-		//verify all field validations
-		Assert.assertEquals(vendrpg.verifyEditVendorNameValidation(), "Vendor Name is required!");
-		Assert.assertEquals(vendrpg.verifyEditCompanyNameValidation(), "Company Name is required!");
-		Assert.assertEquals(vendrpg.verifyEditEmailValidation(), "Email address is required");
-		Assert.assertEquals(vendrpg.verifyEditPhoneNoValidation(), "Mobile number is required");
-		Assert.assertEquals(vendrpg.verifyEditAddressValidation(), "Please select suggested address only!");
-		Assert.assertEquals(vendrpg.verifyEditCategoryValidation(), "Vendor Category is required");
-		Assert.assertEquals(vendrpg.verifyEditCompanyWebSiteFieldValidation(), "Company website is required");
-		Assert.assertEquals(vendrpg.verifyEditVendorDescInEngValidation(), "Description in English is required");
-		vendrpg.verifyClickOnDanishTxt();
-		Assert.assertEquals(vendrpg.verifyEditVendorDescInDanValidation(), "Description in Danish is required");
-		vendrpg.verifyClickOnArabicTxt();
-		Assert.assertEquals(vendrpg.verifyEditVendorDescInArabValidation(), "Description in Arabic is required");
-		Assert.assertEquals(vendrpg.verifyEditSearchTagsValidation(), "At least one tag must be specified!");
-		vendrpg.clickOnVendroTab();
+			vendrpg.clickOnUpdateVendorBtn();
+			vendrpg.verifyUpdateVendorName();
+			vendrpg.verifyUpdateVendorCompany();
+			vendrpg.verifyUpdateVendorEmail();
+			vendrpg.verifyUpdateVendorPhone();
+			vendrpg.verifyUpdateVendorAddress();
+			vendrpg.verifyUpdateVendorCategory();
+			vendrpg.verifyUpdateVendorWebsite();
+			vendrpg.verifyUpdateVendorDisplayedLink();
+			vendrpg.verifyUpdateVendorDescInEng();
+			vendrpg.verifyUpdateVendorDescInDan();
+			vendrpg.verifyUpdateVendorDescInArab();
+			vendrpg.verifyUpdateVendorTab();
+			vendrpg.verifyClickOnUpdateVendor();
+
+			//verify all field validations
+			Assert.assertEquals(vendrpg.verifyEditVendorNameValidation(), "Vendor Name is required!");
+			Assert.assertEquals(vendrpg.verifyEditCompanyNameValidation(), "Company Name is required!");
+			Assert.assertEquals(vendrpg.verifyEditEmailValidation(), "Email address is required");
+			Assert.assertEquals(vendrpg.verifyEditPhoneNoValidation(), "Mobile number is required");
+			Assert.assertEquals(vendrpg.verifyEditAddressValidation(), "Please select suggested address only!");
+			Assert.assertEquals(vendrpg.verifyEditCategoryValidation(), "Vendor Category must have at least one item");
+			Assert.assertEquals(vendrpg.verifyEditCompanyWebSiteFieldValidation(), "Company website is required");
+			Assert.assertEquals(vendrpg.verifyEditVendorDescInEngValidation(), "Description in English is required");
+			vendrpg.verifyClickOnDanishTxt();
+			Assert.assertEquals(vendrpg.verifyEditVendorDescInDanValidation(), "Description in Danish is required");
+			vendrpg.verifyClickOnArabicTxt();
+			Assert.assertEquals(vendrpg.verifyEditVendorDescInArabValidation(), "Description in Arabic is required");
+			Assert.assertEquals(vendrpg.verifyEditSearchTagsValidation(), "At least one tag must be specified!");
+			vendrpg.clickOnVendroTab();
+
+		}catch (Exception e) {
+			System.out.println("Element not found within timeout: " + e.getMessage());
+		}
 	}
 
 

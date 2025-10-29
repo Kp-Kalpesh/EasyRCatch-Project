@@ -36,7 +36,7 @@ public class EasyRVendorPage extends TestBase{
 	WebElement selectAddressValidation;
 	@FindBy(xpath = "//div[text()='Vendor Category is required']")
 	WebElement vendorCategoryValidation;
-	@FindBy(xpath = "//div[text()='Vendor Category is required']")
+	@FindBy(xpath = "//div[text()='Vendor Category must have at least one item']")
 	WebElement EditvendorCategoryValidation;
 	@FindBy(xpath = "//div[text()='Company website is required']")
 	WebElement CompanyBlankWebsiteFieldValidation;
@@ -112,7 +112,7 @@ public class EasyRVendorPage extends TestBase{
 	WebElement vendorDrpDwn;
 	@FindBy(xpath = "//input[@id='status']")
 	WebElement invisible;
-	@FindBy(xpath = "(//tbody/tr/td/div/a[contains(@class,'whitespace-normal break-words capitalize')])[1]")
+	@FindBy(xpath = "(//tbody/tr/td/div/a/span[contains(text(),'Joss Sterlin')])[1]")
 	WebElement vendorNameAfterCreation;
 	@FindBy(xpath = "(//tbody/tr/td/div)[2]")
 	WebElement vendorCompanyAfterCreation;
