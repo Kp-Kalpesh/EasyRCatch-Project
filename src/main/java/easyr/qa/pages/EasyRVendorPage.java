@@ -36,7 +36,7 @@ public class EasyRVendorPage extends TestBase{
 	WebElement selectAddressValidation;
 	@FindBy(xpath = "//div[text()='Vendor Category is required']")
 	WebElement vendorCategoryValidation;
-	@FindBy(xpath = "//div[text()='Vendor Category must have at least one item']")
+	@FindBy(xpath = "//div[text()='Vendor Category is required']")
 	WebElement EditvendorCategoryValidation;
 	@FindBy(xpath = "//div[text()='Company website is required']")
 	WebElement CompanyBlankWebsiteFieldValidation;

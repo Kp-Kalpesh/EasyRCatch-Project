@@ -5,10 +5,9 @@
     <classes>
       <class name="easyr.qa.testCases.EasyRVendorPageTest">
         <methods>
-          <include name="verifyCreatVendor"/>
           <include name="tearDown"/>
-          <include name="verifyVendorDetailsPageVendorEmail"/>
           <include name="setUp"/>
+          <include name="verifyUpdateVendorValidations"/>
         </methods>
       </class> <!-- easyr.qa.testCases.EasyRVendorPageTest -->
     </classes>

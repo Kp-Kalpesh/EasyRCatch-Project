@@ -393,7 +393,7 @@ public class EasyRVendorPageTest extends TestBase{
 		Assert.assertEquals(vendrpg.verifyEditEmailValidation(), "Email address is required");
 		Assert.assertEquals(vendrpg.verifyEditPhoneNoValidation(), "Mobile number is required");
 		Assert.assertEquals(vendrpg.verifyEditAddressValidation(), "Please select suggested address only!");
-		Assert.assertEquals(vendrpg.verifyEditCategoryValidation(), "Vendor Category must have at least one item");
+		Assert.assertEquals(vendrpg.verifyEditCategoryValidation(), "Vendor Category is required");
 		Assert.assertEquals(vendrpg.verifyEditCompanyWebSiteFieldValidation(), "Company website is required");
 		Assert.assertEquals(vendrpg.verifyEditVendorDescInEngValidation(), "Description in English is required");
 		vendrpg.verifyClickOnDanishTxt();
