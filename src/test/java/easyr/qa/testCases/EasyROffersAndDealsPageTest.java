@@ -92,6 +92,19 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		Assert.assertEquals(offerpg.verifyOfferImageVal(), "Please upload image for offer!");
 	}
 
+	@Test(priority = 6)
+	public void verifyEnterAllFieldDetailsInsubDetails() throws InterruptedException{
+		offerpg.clickOnCreateOffer();
+		offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
+		offerpg.clickOnDisplayedVendor();			
+		offerpg.clickOnAddOfferDetailsBtn();
+		offerpg.selectOfferType(prop.getProperty("offer_Type"));
+		offerpg.selectOfferDepartment(prop.getProperty("Offer_Dept"));
+		offerpg.selectOfferCategory(prop.getProperty("offer_category"));
+		offerpg.selectSubCategory(prop.getProperty("offer_subCategory"));
+		offerpg.selectStartDate();
+		offerpg.selectExpiryDate();
+	}
 
 
 
@@ -100,16 +113,10 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 
 
 
+//				offerpg.clickOnOfferSubDetails();
+				
 
 
-	//			offerpg.clickOnOfferSubDetails();
-	//			offerpg.selectOfferDepartment();
-
-	//			offerpg.selectOfferDepartment(prop.getProperty("Offer_Dept"));
-	//			offerpg.selectOfferCategory(prop.getProperty("offer_category"));
-	//			offerpg.selectSubCategory(prop.getProperty("offer_subCategory"));
-	//			offerpg.selectStartDate();
-	//			offerpg.selectExpiryDate();
 	//			offerpg.enterDonationPerRedemption(prop.getProperty("donationPer_redemption"));
 	//			offerpg.enterCommissionPerRedemption(prop.getProperty("commissionPer_redemption"));
 	//			offerpg.enterRewardCoins(prop.getProperty("Reward_coins"));

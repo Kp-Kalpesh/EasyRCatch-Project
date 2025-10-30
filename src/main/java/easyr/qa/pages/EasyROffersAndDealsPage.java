@@ -71,7 +71,7 @@ public class EasyROffersAndDealsPage extends TestBase{
 
 	@FindBy(xpath = "//div[text()='Type']")
 	WebElement selectOfferType;
-	@FindBy(xpath = "//div[text()='Department']")
+	@FindBy(xpath = "//input[@id='offer_department']")
 	WebElement selectOfferDepartment;
 	@FindBy(xpath = "//div[text()='Category']")
 	WebElement selectCategory;
@@ -174,7 +174,7 @@ public class EasyROffersAndDealsPage extends TestBase{
 	public String clickOnAddOfferDetailBtn() throws InterruptedException {
 		Thread.sleep(3000);
 		addOfferDetailsBtn.click();
-		Thread.sleep(100);
+		Thread.sleep(2000);
 		String getVal = getValidation.getText();
 		System.out.println("Create Offer Validation: " + getVal);
 		return getVal;
@@ -264,56 +264,51 @@ public class EasyROffersAndDealsPage extends TestBase{
 		clickOnNxtBtnForValidation();
 	}
 
-	public void selectOfferDepartment() throws InterruptedException {
-
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement vendorDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Department']")));
-		vendorDropdown.click();
-
-		Thread.sleep(10000);
-		//		act.click(selectOfferDepartment).perform();
-		act.sendKeys(vendorDropdown, "For All", Keys.ENTER).build().perform();
+	public void selectOfferDepartment(String offDept) throws InterruptedException {
+		act.sendKeys(selectOfferDepartment, offDept, Keys.ENTER).build().perform();
 	}
 
 	public void selectOfferCategory(String offerCat) {
 		act.sendKeys(selectCategory, offerCat, Keys.ENTER).perform();
 	}
-	//
-	//	public void selectSubCategory(String offerSubCat) {
-	//		act.sendKeys(selectSubCategory, offerSubCat, Keys.ENTER).perform();
-	//	}
-	//
-	//	public void selectStartDate() throws InterruptedException {
-	//		Thread.sleep(1000);
-	//		LocalDate today = LocalDate.now();
-	//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d"); // only day number
-	//		String currentDay = today.format(formatter);
-	//
-	//		// Click on date picker input
-	//		selectStartDate.click();
-	//		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[1]"));
-	//		todayDate.click();
-	//
-	//		boolean isPastDateDisabled = driver.findElements(By.xpath("(//span[contains(@class,'flatpickr-day') and text()='" + (today.getDayOfMonth() - 1) + "'])[1]")).size() > 0;
-	//
-	//		if (isPastDateDisabled) {
-	//			System.out.println("Past dates are disabled, only current date is selectable.");
-	//		} else {
-	//			System.out.println("Past dates are still selectable!");
-	//		}
-	//	}
-	//
-	//	public void selectExpiryDate() throws InterruptedException {
-	//		LocalDate today = LocalDate.now();
-	//		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d"); // only day number
-	//		String currentDay = today.format(formatter);
-	//
-	//		// Click on Expiry date picker input
-	//		selectExpiryDate.click();
-	//		//		Thread.sleep(4000);
-	//		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[2]"));															
-	//		todayDate.click();
-	//	}
+
+	public void selectSubCategory(String offerSubCat) {
+		act.sendKeys(selectSubCategory, offerSubCat, Keys.ENTER).perform();
+	}
+
+	public void selectStartDate() throws InterruptedException {
+		Thread.sleep(1000);
+		LocalDate today = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d"); // only day number
+		String currentDay = today.format(formatter);
+
+		// Click on date picker input
+		Thread.sleep(2000);
+		selectStartDate.click();
+		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[2]"));
+		Thread.sleep(2000);
+		todayDate.click();
+
+		boolean isPastDateDisabled = driver.findElements(By.xpath("(//span[contains(@class,'flatpickr-day') and text()='" + (today.getDayOfMonth() - 1) + "'])[1]")).size() > 0;
+
+		if (isPastDateDisabled) {
+			System.out.println("Past dates are disabled, only current date is selectable.");
+		} else {
+			System.out.println("Past dates are still selectable!");
+		}
+	}
+
+	public void selectExpiryDate() throws InterruptedException {
+		LocalDate today = LocalDate.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d"); // only day number
+		String currentDay = today.format(formatter);
+
+		// Click on Expiry date picker input
+		selectExpiryDate.click();
+		//		Thread.sleep(4000);
+		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[4]"));															
+		todayDate.click();
+	}
 	//
 	//	public void enterDonationPerRedemption(String donation) {
 	//		donationPerRedemption.sendKeys(donation);
