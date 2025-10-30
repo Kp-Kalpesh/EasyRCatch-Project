@@ -1,5 +1,6 @@
 package easyr.qa.pages;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -54,12 +55,23 @@ public class EasyROffersAndDealsPage extends TestBase{
 	@FindBy(xpath = "//span[contains(text(),'Please upload image for offer!')]")
 	WebElement getOfferImageVal;
 
+	@FindBy(xpath = "//div[contains(text(),'Donation per')]")
+	WebElement donationPerRedemptionVali;
+
+	@FindBy(xpath = "//div[contains(text(),'EasyR commission per redeem in')]")
+	WebElement commissionPerRedemptionsVali;
+
+	@FindBy(xpath = "//div[contains(text(),'Earning Reward Coins is required')]")
+	WebElement rewardCoinVali;
+
+	@FindBy(xpath = "//div[contains(text(),'At least one offer redemption limit is required')]")
+	WebElement offerRedemptionLimitVali;
 
 
 
 	@FindBy(xpath = "//div[text()='Type']")
 	WebElement selectOfferType;
-	@FindBy(xpath = "//input[@id='offer_department']")
+	@FindBy(xpath = "//div[text()='Department']")
 	WebElement selectOfferDepartment;
 	@FindBy(xpath = "//div[text()='Category']")
 	WebElement selectCategory;
@@ -151,8 +163,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 	}
 
 	//Actions
-
-
 	public String verifyOffersAndDealsText() {
 		return offersAndDealsPageText.getText();
 	}
@@ -174,7 +184,8 @@ public class EasyROffersAndDealsPage extends TestBase{
 		enterVendorName.sendKeys(vendrName);
 	}
 
-	public void clickOnDisplayedVendor() {
+	public void clickOnDisplayedVendor() throws InterruptedException {
+		Thread.sleep(2000);
 		movedAndClickOnVendorName.click();
 	}
 
@@ -186,7 +197,8 @@ public class EasyROffersAndDealsPage extends TestBase{
 		return verifyCompanyName.getText();
 	}
 
-	public void clickOnAddOfferDetailsBtn() {
+	public void clickOnAddOfferDetailsBtn() throws InterruptedException {
+		Thread.sleep(100);
 		addOfferDetailsBtn.click();
 	}
 
@@ -211,6 +223,7 @@ public class EasyROffersAndDealsPage extends TestBase{
 	}
 
 	public String verifyOfferDiscountVal() {
+		System.out.println("Message: " + getOfferDiscountTypeVal.getText());
 		return getOfferDiscountTypeVal.getText();
 	}
 
@@ -222,25 +235,49 @@ public class EasyROffersAndDealsPage extends TestBase{
 		return getOfferImageVal.getText();
 	}
 
+	public String verifyDonationPerRedemptionVal() {
+		return donationPerRedemptionVali.getText();
+	}
 
-	public void selectOfferType(String offerType) {
+	public String verifyEasyRCommissionPerRedeemVal() {
+		return commissionPerRedemptionsVali.getText();
+	}
+
+	public String verifyEarningRewardCoinVal() {
+		return rewardCoinVali.getText();
+	}
+
+	public String verifyOfferRedemptionLimitVal() {
+		return offerRedemptionLimitVali.getText();
+	}
+
+
+
+	public void selectOfferType(String offerType) throws InterruptedException {
+		Thread.sleep(2000);
 		act.sendKeys(selectOfferType, offerType, Keys.ENTER).perform();
 	}
-	
+
 	public void clickOnOfferSubDetails() throws InterruptedException {
 		act.sendKeys(Keys.PAGE_DOWN).perform();
 		Thread.sleep(3000);
-		clickOnNextBtn();
-		act.sendKeys(Keys.PAGE_UP).perform();
+		clickOnNxtBtnForValidation();
 	}
-	//
-	//	public void selectOfferDepartment(String offerDept) {
-	//		act.sendKeys(selectOfferDepartment, offerDept, Keys.ENTER).perform();
-	//	}
-	//
-	//	public void selectOfferCategory(String offerCat) {
-	//		act.sendKeys(selectCategory, offerCat, Keys.ENTER).perform();
-	//	}
+
+	public void selectOfferDepartment() throws InterruptedException {
+
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement vendorDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Department']")));
+		vendorDropdown.click();
+
+		Thread.sleep(10000);
+		//		act.click(selectOfferDepartment).perform();
+		act.sendKeys(vendorDropdown, "For All", Keys.ENTER).build().perform();
+	}
+
+	public void selectOfferCategory(String offerCat) {
+		act.sendKeys(selectCategory, offerCat, Keys.ENTER).perform();
+	}
 	//
 	//	public void selectSubCategory(String offerSubCat) {
 	//		act.sendKeys(selectSubCategory, offerSubCat, Keys.ENTER).perform();
@@ -323,23 +360,34 @@ public class EasyROffersAndDealsPage extends TestBase{
 	//		saveImageBtn.click();
 	//	}
 	//
-		public void clickOnNextBtn() throws InterruptedException {
-			WebDriverWait wait = new WebDriverWait(driver, (10));
-			act.sendKeys(upperTab, Keys.ARROW_UP).perform();
-	
-			Thread.sleep(4000);
-			try {
-				WebElement element = wait.until(
-						ExpectedConditions.visibilityOfElementLocated(By.xpath("//li//span[text()='Offer Sub Details']")));
-				//			ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Next']")));
-				act.click(element).perform();
-			} catch (TimeoutException e) {
-				System.out.println("Element was not found within the timeout period.");
-				// Optional: Take screenshot or log error
-			}
-			Thread.sleep(2000);
-			act.click(okBtn).perform();
+
+
+	public void clickOnNxtBtnForValidation() {
+		WebDriverWait wait = new WebDriverWait(driver, (10));
+		act.sendKeys(upperTab, Keys.ARROW_UP).perform();
+		act.sendKeys(Keys.PAGE_DOWN).perform();
+
+	}
+
+
+	public void clickOnNextBtn() throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, (10));
+		act.sendKeys(upperTab, Keys.ARROW_UP).perform();
+		act.sendKeys(Keys.PAGE_DOWN).perform();
+
+		Thread.sleep(4000);
+		try {
+			WebElement element = wait.until(
+					ExpectedConditions.visibilityOfElementLocated(By.xpath("//li//span[text()='Offer Sub Details']")));
+			//			ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[text()='Next']")));
+			act.click(element).perform();
+		} catch (TimeoutException e) {
+			System.out.println("Element was not found within the timeout period.");
+			// Optional: Take screenshot or log error
 		}
+		Thread.sleep(2000);
+		act.click(okBtn).perform();
+	}
 	//
 	//	public void enterSubDetailsInEnglish(String titleEng, String shortDescEng, String termsEng, String descEng) {
 	//		TitleInEnglish.sendKeys(titleEng);

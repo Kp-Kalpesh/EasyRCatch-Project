@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -57,6 +57,15 @@ public class TestBase {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 
+			//			ChromeOptions options = new ChromeOptions();
+			//			options.addArguments("--headless");              // Run in headless mode
+			//			options.addArguments("--disable-gpu");           // Recommended for headless
+			//			options.addArguments("--window-size=1920,1080"); // Set window size
+			//			options.addArguments("--no-sandbox");
+			//			options.addArguments("--disable-dev-shm-usage");
+			//
+			//			driver = new ChromeDriver(options);
+
 		} 
 		else if(browserName.equals("FF")){
 			System.setProperty("webdriver.gecko.driver", "C:/Users/wcg112/eclipse-workspace/EasyRCatch/Drivers/geckodriver.exe");
@@ -64,17 +73,15 @@ public class TestBase {
 		}
 
 		//extent report
-//		extent = new ExtentReports();
-//		spark = new ExtentSparkReporter("ExtentReport.html");		
-//		extent.attachReporter(spark);
-//		log = LogManager.getLogger(TestBase.class);
+		//		extent = new ExtentReports();
+		//		spark = new ExtentSparkReporter("ExtentReport.html");		
+		//		extent.attachReporter(spark);
+		//		log = LogManager.getLogger(TestBase.class);
 
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().pageLoadTimeout(BaseUtility.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(BaseUtility.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("Url"));
-
 	}
-
 }

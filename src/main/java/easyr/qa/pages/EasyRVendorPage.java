@@ -55,11 +55,6 @@ public class EasyRVendorPage extends TestBase{
 	@FindBy(xpath = "//div[text()='At least one tag must be specified!']")
 	WebElement searchTagValidation;
 
-	
-	
-	
-	
-	
 	@FindBy(xpath = "//span[@class='uppercase tracking-wider hover:scale-102 cursor-pointer']")
 	WebElement vendorPageText;
 	@FindBy(xpath="//button[contains(text(),'Create Vendor')]")
@@ -174,7 +169,7 @@ public class EasyRVendorPage extends TestBase{
 	WebElement userReviewsData;
 	@FindBy(xpath = "//button[contains(text(),'Update Vendor')]")
 	WebElement updateVendorBtn;
-	
+
 	//Update Vendor remove all data and check all validations
 	@FindBy(xpath = "//input[contains(@placeholder,'Vendor Name')]")
 	WebElement editVendorName;
@@ -208,25 +203,6 @@ public class EasyRVendorPage extends TestBase{
 	WebElement editUpdateVendor;
 	@FindBy(xpath = "(//a[@aria-expanded='true'])[2]")
 	WebElement VendorsText;
-//	@FindBy(xpath = "")
-//	WebElement editVendorName;
-//	@FindBy(xpath = "")
-//	WebElement editVendorName;
-//	@FindBy(xpath = "")
-//	WebElement editVendorName;
-//	@FindBy(xpath = "")
-//	WebElement editVendorName;
-//	@FindBy(xpath = "")
-//	WebElement editVendorName;
-//	@FindBy(xpath = "")
-//	WebElement editVendorName;
-//	@FindBy(xpath = "")
-//	WebElement editVendorName;
-//	@FindBy(xpath = "")
-//	WebElement editVendorName;
-	
-
-
 
 	//Logout
 	@FindBy(xpath = "//p[text()='Super Admin']")
@@ -637,12 +613,12 @@ public class EasyRVendorPage extends TestBase{
 		Thread.sleep(1000);
 		updateVendorBtn.click();
 	}
-	
+
 	public void verifyUpdateVendorName() {
 		editVendorName.click();
 		editVendorName.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
 	}
-	
+
 	public void verifyUpdateVendorCompany() {
 		editVendorCompany.click();
 		editVendorCompany.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
@@ -652,50 +628,50 @@ public class EasyRVendorPage extends TestBase{
 		editVendorEmail.click();
 		editVendorEmail.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
 	}
-	
+
 	public void verifyUpdateVendorPhone() {
 		editVendorPhone.click();
 		editVendorPhone.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
 	}
-	
+
 	public void verifyUpdateVendorAddress() {
 		editVendorAddress.click();
 	}
-	
+
 	public void verifyUpdateVendorCategory() {
 		editVendorCat.click();
 		editVendorCat.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
 	}
-	
+
 	public void verifyUpdateVendorWebsite() {
 		editVendorwebsite.click();
 		editVendorwebsite.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
 	}
-	
+
 	public void verifyUpdateVendorDisplayedLink() {
 		editVendorDisplayedLink.click();
 		editVendorDisplayedLink.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
 	}
-	
+
 	public void verifyUpdateVendorDescInEng() {
 		editVendorDescInEng.click();
 		editVendorDescInEng.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
 	}
-	
+
 	public void verifyClickOnDanishTxt() {
 		editVendorDanishDescbtn.click();
 	}
-	
+
 	public void verifyUpdateVendorDescInDan() {
 		editVendorDanishDescbtn.click();
 		editVendorDescInDan.click();
 		editVendorDescInDan.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
 	}
-	
+
 	public void verifyClickOnArabicTxt() {
 		editVendorDescInArabBtn.click();
 	}
-	
+
 	public void verifyUpdateVendorDescInArab() {
 		editVendorDescInArabBtn.click();
 		editVendorDescInArab.click();
@@ -706,78 +682,58 @@ public class EasyRVendorPage extends TestBase{
 		editVendorTags.click();
 		editVendorTags.sendKeys(Keys.CONTROL, "a",Keys.BACK_SPACE);
 	}
-	
+
 	public void verifyClickOnUpdateVendor() {
 		editUpdateVendor.click();
 	}
-	
+
 	public String verifyEditVendorNameValidation() {
 		return vendorNameValidation.getText();
 	}
-	
+
 	public String verifyEditCompanyNameValidation() {
 		return CompanyNameValidation.getText();
 	}
-	
+
 	public String verifyEditEmailValidation() {
 		return vendorBlankEmailValidation.getText();
 	}
-	
+
 	public String verifyEditPhoneNoValidation() {
 		return vendorBlankMobileNoValidation.getText();
 	}
-	
+
 	public String verifyEditAddressValidation() {
 		return selectAddressValidation.getText();
 	}
-	
+
 	public String verifyEditCategoryValidation() {
 		return EditvendorCategoryValidation.getText();
 	}
-	
+
 	public String verifyEditCompanyWebSiteFieldValidation() {
 		return CompanyBlankWebsiteFieldValidation.getText();
 	}
-	
+
 	public String verifyEditVendorDescInEngValidation() {
 		return DescInEnglishValidation.getText();
 	}
-	
+
 	public String verifyEditVendorDescInDanValidation() {
 		return DescInDanishValidation.getText();
 	}
-	
+
 	public String verifyEditVendorDescInArabValidation() {
 		return DescInArabicValidation.getText();
 	}
-	
+
 	public String verifyEditSearchTagsValidation() {
 		return searchTagValidation.getText();
 	}
-	
+
 	public void clickOnVendroTab() {
 		VendorsText.click();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-
-
-
-
-
 
 
 	public EasyROffersAndDealsPage clickOnOffersAndDeals(){

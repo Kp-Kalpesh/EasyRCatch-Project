@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-29T16:49:30 IST" name="Default suite" finished-at="2025-10-29T16:49:49 IST" duration-ms="19494">
+  <suite started-at="2025-10-30T18:46:27 IST" name="Default suite" finished-at="2025-10-30T18:46:42 IST" duration-ms="14728">
     <groups>
     </groups>
-    <test started-at="2025-10-29T16:49:30 IST" name="Default test" finished-at="2025-10-29T16:49:49 IST" duration-ms="19494">
-      <class name="easyr.qa.testCases.EasyRVendorPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@5f049ea1]" started-at="2025-10-29T16:49:30 IST" name="setUp" finished-at="2025-10-29T16:49:33 IST" duration-ms="3007" status="PASS">
+    <test started-at="2025-10-30T18:46:27 IST" name="Default test" finished-at="2025-10-30T18:46:42 IST" duration-ms="14728">
+      <class name="easyr.qa.testCases.EasyROffersAndDealsPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@7161d8d1]" started-at="2025-10-30T18:46:27 IST" name="setUp" finished-at="2025-10-30T18:46:30 IST" duration-ms="3082" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyUpdateVendorValidations()[pri:41, instance:easyr.qa.testCases.EasyRVendorPageTest@5f049ea1]" started-at="2025-10-29T16:49:33 IST" name="verifyUpdateVendorValidations" finished-at="2025-10-29T16:49:49 IST" duration-ms="16298" status="PASS">
+        <test-method signature="verifyAllFieldValidationInsubDetails()[pri:5, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@7161d8d1]" started-at="2025-10-30T18:46:30 IST" name="verifyAllFieldValidationInsubDetails" finished-at="2025-10-30T18:46:42 IST" duration-ms="11607" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUpdateVendorValidations -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRVendorPageTest@5f049ea1]" started-at="2025-10-29T16:49:49 IST" name="tearDown" finished-at="2025-10-29T16:49:49 IST" duration-ms="142" status="PASS">
+        </test-method> <!-- verifyAllFieldValidationInsubDetails -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyROffersAndDealsPageTest@7161d8d1]" started-at="2025-10-30T18:46:42 IST" name="tearDown" finished-at="2025-10-30T18:46:42 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- easyr.qa.testCases.EasyRVendorPageTest -->
+      </class> <!-- easyr.qa.testCases.EasyROffersAndDealsPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
