@@ -309,52 +309,52 @@ public class EasyROffersAndDealsPage extends TestBase{
 		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[4]"));															
 		todayDate.click();
 	}
-	//
-	//	public void enterDonationPerRedemption(String donation) {
-	//		donationPerRedemption.sendKeys(donation);
-	//	}
-	//
-	//	public void enterCommissionPerRedemption(String donationCoin) {
-	//		commissionPerRedemption.sendKeys(donationCoin);
-	//	}
-	//
-	//	public void enterRewardCoins(String rewardCoin) {
-	//		rewardCoins.sendKeys(rewardCoin);
-	//	}
-	//
-	//	public void enterRedemptionLimit(String RedeemedLimit) {
-	//		redemptionLimit.sendKeys(RedeemedLimit);
-	//	}
-	//
-	//	public void selectDiscountType(String discountType) throws InterruptedException {
-	//		act.sendKeys(selectDiscountType, discountType, Keys.ENTER).perform();
-	//		Thread.sleep(2000);
-	//	}
-	//
-	//	public void enterDiscount(String discountPrice) {
-	//		enterDiscount.sendKeys(discountPrice);
-	//	}
-	//
-	//	public void enterClickCommission(String commission) {
-	//		enterClickCommission.sendKeys(commission);
-	//	}
-	//
-	//	public void enterWebLink(String webLink) {
-	//		enterWebLink.sendKeys(webLink);
-	//	}
-	//
-	//	public void clickOnOfferimagebtn() {
-	//		offerImageBtn.click();
-	//	}
-	//
-	//	public void selectImageFile(String img) {
-	//		chooseFileInputField.sendKeys(img);
-	//	}
-	//
-	//	public void clickOnsaveImageBtn() {
-	//		saveImageBtn.click();
-	//	}
-	//
+
+	public void enterDonationPerRedemption(String donation) {
+		donationPerRedemption.sendKeys(donation);
+	}
+
+	public void enterCommissionPerRedemption(String donationCoin) {
+		commissionPerRedemption.sendKeys(donationCoin);
+	}
+
+	public void enterRewardCoins(String rewardCoin) {
+		rewardCoins.sendKeys(rewardCoin);
+	}
+
+	public void enterRedemptionLimit(String RedeemedLimit) {
+		redemptionLimit.sendKeys(RedeemedLimit);
+	}
+
+	public void selectDiscountType(String discountType) throws InterruptedException {
+		act.sendKeys(selectDiscountType, discountType, Keys.ENTER).perform();
+		Thread.sleep(2000);
+	}
+
+	public void enterDiscount(String discountPrice) {
+		enterDiscount.sendKeys(discountPrice);
+	}
+
+	public void enterClickCommission(String commission) {
+		enterClickCommission.sendKeys(commission);
+	}
+
+	public void enterWebLink(String webLink) {
+		enterWebLink.sendKeys(webLink);
+	}
+
+	public void clickOnOfferimagebtn() {
+		offerImageBtn.click();
+	}
+
+	public void selectImageFile(String img) {
+		chooseFileInputField.sendKeys(img);
+	}
+
+	public void clickOnsaveImageBtn() {
+		saveImageBtn.click();
+	}
+
 
 
 	public void clickOnNxtBtnForValidation() {

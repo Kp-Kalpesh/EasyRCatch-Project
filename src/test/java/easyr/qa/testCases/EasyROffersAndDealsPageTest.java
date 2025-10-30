@@ -104,6 +104,18 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		offerpg.selectSubCategory(prop.getProperty("offer_subCategory"));
 		offerpg.selectStartDate();
 		offerpg.selectExpiryDate();
+		offerpg.enterDonationPerRedemption(prop.getProperty("donationPer_redemption"));
+		offerpg.enterCommissionPerRedemption(prop.getProperty("commissionPer_redemption"));
+		offerpg.enterRewardCoins(prop.getProperty("Reward_coins"));
+		offerpg.enterRedemptionLimit(prop.getProperty("redemption_limit"));
+		offerpg.selectDiscountType(prop.getProperty("discount_Type"));
+		offerpg.enterDiscount(prop.getProperty("discount_Price"));
+		offerpg.enterClickCommission(prop.getProperty("click_commission"));
+		offerpg.enterWebLink(prop.getProperty("offer_Link"));
+		offerpg.clickOnOfferimagebtn();
+		offerpg.selectImageFile(prop.getProperty("offer_Img"));
+		offerpg.clickOnsaveImageBtn();
+		offerpg.clickOnNextBtn();
 	}
 
 
@@ -113,22 +125,11 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 
 
 
-//				offerpg.clickOnOfferSubDetails();
 				
 
 
-	//			offerpg.enterDonationPerRedemption(prop.getProperty("donationPer_redemption"));
-	//			offerpg.enterCommissionPerRedemption(prop.getProperty("commissionPer_redemption"));
-	//			offerpg.enterRewardCoins(prop.getProperty("Reward_coins"));
-	//			offerpg.enterRedemptionLimit(prop.getProperty("redemption_limit"));
-	//			offerpg.selectDiscountType(prop.getProperty("discount_Type"));
-	//			offerpg.enterDiscount(prop.getProperty("discount_Price"));
-	//			offerpg.enterClickCommission(prop.getProperty("click_commission"));
-	//			offerpg.enterWebLink(prop.getProperty("offer_Link"));
-	//			offerpg.clickOnOfferimagebtn();
-	//			offerpg.selectImageFile(prop.getProperty("offer_Img"));
-	//			offerpg.clickOnsaveImageBtn();
-	//			offerpg.clickOnNextBtn();
+				
+
 	//			offerpg.enterSubDetailsInEnglish(prop.getProperty("OfftitleInEnglish"), prop.getProperty("OffshortDescInEnglish"), prop.getProperty("OfftermsInEnglish"), prop.getProperty("OffdescInEnglish"));
 	//			offerpg.enterSubDetailsInDanish(prop.getProperty("OfftitleInDanish"), prop.getProperty("OffshortDescInDanish"), prop.getProperty("OfftermsInDanish"), prop.getProperty("OffdescInDanish"));
 	//			offerpg.enterSubDetailsInArabic(prop.getProperty("OfftitleInArabic"), prop.getProperty("OffshortDescInArabic"), prop.getProperty("OfftermsInArabic"), prop.getProperty("OffdescInArabic"));
