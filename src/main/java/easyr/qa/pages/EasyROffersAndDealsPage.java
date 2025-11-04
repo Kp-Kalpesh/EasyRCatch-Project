@@ -18,8 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import easyr.qa.base.TestBase;
 
 public class EasyROffersAndDealsPage extends TestBase{
-
 	Actions act;
+
 	@FindBy(xpath = "//span[text()='offers and deals']")
 	WebElement offersAndDealsPageText;
 	@FindBy(xpath = "//button[text()='Create Offer']")
@@ -54,21 +54,14 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement getOfferCommissionPerClickVal;
 	@FindBy(xpath = "//span[contains(text(),'Please upload image for offer!')]")
 	WebElement getOfferImageVal;
-
 	@FindBy(xpath = "//div[contains(text(),'Donation per')]")
 	WebElement donationPerRedemptionVali;
-
 	@FindBy(xpath = "//div[contains(text(),'EasyR commission per redeem in')]")
 	WebElement commissionPerRedemptionsVali;
-
 	@FindBy(xpath = "//div[contains(text(),'Earning Reward Coins is required')]")
 	WebElement rewardCoinVali;
-
 	@FindBy(xpath = "//div[contains(text(),'At least one offer redemption limit is required')]")
 	WebElement offerRedemptionLimitVali;
-
-
-
 	@FindBy(xpath = "//div[text()='Type']")
 	WebElement selectOfferType;
 	@FindBy(xpath = "//input[@id='offer_department']")
@@ -107,10 +100,47 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement nextBtn;
 	@FindBy(xpath = "(//span[@aria-current='step'])[3]")
 	WebElement upperTab;
-	//span[text()='Offer Sub Details']
-
 	@FindBy(xpath = "//button[text()='OK']")
 	WebElement okBtn;
+
+	@FindBy(xpath = "//div[text()='Offer title is required']")
+	WebElement englishTitleVal;
+	@FindBy(xpath = "//div[text()='Short Description is required']")
+	WebElement englishShortDescVal;
+	@FindBy(xpath = "//div[text()='Terms and condition is required']")
+	WebElement englishTermsAndConditionVal;
+	@FindBy(xpath = "//div[text()='Description is required']")
+	WebElement englishDescriptionVal;
+
+	@FindBy(xpath = "//button[text()='Danish']")
+	WebElement DanishTxt;
+
+	@FindBy(xpath = "//div[text()='Offer title is required']")
+	WebElement DanishTitleVal;
+	@FindBy(xpath = "//div[text()='Short Description is required']")
+	WebElement DanishShortDescVal;
+	@FindBy(xpath = "//div[text()='Terms and condition is required']")
+	WebElement DanishTermsAndConditionVal;
+	@FindBy(xpath = "//div[text()='Description is required']")
+	WebElement DanishDescriptionVal;
+
+	@FindBy(xpath = "//button[text()='Arabic']")
+	WebElement ArabicTxt;
+
+
+	@FindBy(xpath = "//div[text()='Offer title is required']")
+	WebElement ArabicTitleVal;
+	@FindBy(xpath = "//div[text()='Short Description is required']")
+	WebElement ArabicShortDescVal;
+	@FindBy(xpath = "//div[text()='Terms and condition is required']")
+	WebElement ArabicTermsAndConditionVal;
+	@FindBy(xpath = "//div[text()='Description is required']")
+	WebElement ArabicDescriptionVal;
+
+
+
+
+
 	@FindBy(xpath = "//input[@placeholder='Offer Title in English']")
 	WebElement TitleInEnglish;
 	@FindBy(xpath = "//textarea[@placeholder='Short Description in English']")
@@ -286,8 +316,17 @@ public class EasyROffersAndDealsPage extends TestBase{
 		Thread.sleep(2000);
 		selectStartDate.click();
 		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[2]"));
-		Thread.sleep(2000);
-		todayDate.click();
+
+		if(todayDate.isDisplayed() == true) {
+			WebElement todayDate1 = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[1]"));
+			Thread.sleep(2000);
+			todayDate1.click();
+		}else
+		{
+			WebElement todayDate2 = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[2]"));
+			Thread.sleep(2000);
+			todayDate2.click();
+		}
 
 		boolean isPastDateDisabled = driver.findElements(By.xpath("(//span[contains(@class,'flatpickr-day') and text()='" + (today.getDayOfMonth() - 1) + "'])[1]")).size() > 0;
 
@@ -310,7 +349,8 @@ public class EasyROffersAndDealsPage extends TestBase{
 		todayDate.click();
 	}
 
-	public void enterDonationPerRedemption(String donation) {
+	public void enterDonationPerRedemption(String donation) throws InterruptedException {
+		Thread.sleep(2000);
 		donationPerRedemption.sendKeys(donation);
 	}
 
@@ -380,61 +420,129 @@ public class EasyROffersAndDealsPage extends TestBase{
 			System.out.println("Element was not found within the timeout period.");
 			// Optional: Take screenshot or log error
 		}
+		act.sendKeys(Keys.PAGE_DOWN).perform();
 		Thread.sleep(2000);
 		act.click(okBtn).perform();
 	}
-	//
-	//	public void enterSubDetailsInEnglish(String titleEng, String shortDescEng, String termsEng, String descEng) {
-	//		TitleInEnglish.sendKeys(titleEng);
-	//		shortDescinEnglish.sendKeys(shortDescEng);
-	//		termsInEnglish.sendKeys(termsEng);
-	//		DescInEnglish.sendKeys(descEng);
-	//		nextForDanish.click();
-	//	}
-	//
-	//	public void enterSubDetailsInDanish(String titleDan, String shortDescDan, String termsDan, String descDan) {
-	//		TitleInDanish.sendKeys(titleDan);
-	//		shortDescInDanish.sendKeys(shortDescDan);
-	//		termsInDanish.sendKeys(termsDan);
-	//		descInDanish.sendKeys(descDan);
-	//		nextForArabic.click();
-	//	}
-	//
-	//	public void enterSubDetailsInArabic(String titleAra, String shortDescAra, String termsAra, String descAra) {
-	//		TitleInArabic.sendKeys(titleAra);
-	//		shortDescInArabic.sendKeys(shortDescAra);
-	//		termsInArabic.sendKeys(termsAra);
-	//		descInArabic.sendKeys(descAra);
-	//	}
-	//
-	//	public void clickOnCreateOfferbtn() throws InterruptedException {
-	//		createOffer.click();
-	//		Thread.sleep(5000);
-	//	}
-	//
-	//	public String verifyOfferTitle() throws InterruptedException {
-	//		Thread.sleep(2000);
-	//		return createdOfferTitle.getText();
-	//	}
-	//
-	//	public String verifyOfferType() throws InterruptedException {
-	//		Thread.sleep(2000);
-	//		return createdOfferType.getText();
-	//	}
-	//
-	//	public String verifyOfferVendorName() throws InterruptedException {
-	//		Thread.sleep(2000);
-	//		return createdVendorName.getText();
-	//	}
-	//
-	//	public EasyRCatchShopPage clickOnProductStore() {
-	//		EasyRCatchShop.click();
-	//		return new EasyRCatchShopPage();
-	//	}
-	//
-	//	public void logout() throws InterruptedException {
-	//		clickOnSuperAdmintxt.click();
-	//		Thread.sleep(1000);
-	//		logouttxt.click();
-	//	}
+
+
+
+	//title validation of Offer third phase sub details 
+
+	public void clickOnNextForDanLang() {
+		nextForDanish.click();
+	}
+
+	public String checkTitleValidationsInEnglish() {
+		return englishTitleVal.getText();
+	}
+	public String checkShortDescValidationsInEnglish() {
+		return englishShortDescVal.getText();
+	}
+	public String checkTermsAndConditionValidationsInEnglish() {
+		return englishTermsAndConditionVal.getText();
+	}
+	public String checkDescriptionValidationsInEnglish() {
+		return englishDescriptionVal.getText();
+	}
+
+	public void clickOnDanishTxtOnThirdPhase() {
+		DanishTxt.click();
+	}
+	public void clickOnNxtForArabicBtn() {
+		nextForArabic.click();
+	}
+
+	public String checkTitleValidationsInDanish() {
+		return DanishTitleVal.getText();
+	}
+	public String checkShortDescValidationsInDanish() {
+		return DanishShortDescVal.getText();
+	}
+	public String checkTermsAndConditionValidationsInDanish() {
+		return DanishTermsAndConditionVal.getText();
+	}
+	public String checkDescriptionValidationsInDanish() {
+		return DanishDescriptionVal.getText();
+	}
+
+	public void clickOnArabicTxtOnthirdPhase() {
+		ArabicTxt.click();
+	}
+
+	public void clickOnCreateOfferBtn() {
+		createOffer.click();
+	}
+
+	public String checkTitleValidationsInArabic() {
+		return ArabicTitleVal.getText();
+	}
+	public String checkShortDescValidationsInArabic() {
+		return ArabicShortDescVal.getText();
+	}
+	public String checkTermsAndConditionValidationsInArabic() {
+		return ArabicTermsAndConditionVal.getText();
+	}
+	public String checkDescriptionValidationsInArabic() {
+		return ArabicDescriptionVal.getText();
+	}
+
+
+
+
+	public void enterSubDetailsInEnglish(String titleEng, String shortDescEng, String termsEng, String descEng) {
+		TitleInEnglish.sendKeys(titleEng);
+		shortDescinEnglish.sendKeys(shortDescEng);
+		termsInEnglish.sendKeys(termsEng);
+		DescInEnglish.sendKeys(descEng);
+		nextForDanish.click();
+	}
+
+
+	public void enterSubDetailsInDanish(String titleDan, String shortDescDan, String termsDan, String descDan) {
+		TitleInDanish.sendKeys(titleDan);
+		shortDescInDanish.sendKeys(shortDescDan);
+		termsInDanish.sendKeys(termsDan);
+		descInDanish.sendKeys(descDan);
+		nextForArabic.click();
+	}
+
+	public void enterSubDetailsInArabic(String titleAra, String shortDescAra, String termsAra, String descAra) {
+		TitleInArabic.sendKeys(titleAra);
+		shortDescInArabic.sendKeys(shortDescAra);
+		termsInArabic.sendKeys(termsAra);
+		descInArabic.sendKeys(descAra);
+
+	}
+
+	public void clickOnCreateOfferbtn() throws InterruptedException {
+		createOffer.click();
+		Thread.sleep(5000);
+	}
+
+	public String verifyOfferTitle() throws InterruptedException {
+		Thread.sleep(2000);
+		return createdOfferTitle.getText();
+	}
+
+	public String verifyOfferType() throws InterruptedException {
+		Thread.sleep(2000);
+		return createdOfferType.getText();
+	}
+
+	public String verifyOfferVendorName() throws InterruptedException {
+		Thread.sleep(2000);
+		return createdVendorName.getText();
+	}
+
+	public EasyRCatchShopPage clickOnProductStore() {
+		EasyRCatchShop.click();
+		return new EasyRCatchShopPage();
+	}
+
+	public void logout() throws InterruptedException {
+		clickOnSuperAdmintxt.click();
+		Thread.sleep(1000);
+		logouttxt.click();
+	}
 }

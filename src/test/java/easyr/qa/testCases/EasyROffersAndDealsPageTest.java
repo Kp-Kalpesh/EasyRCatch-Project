@@ -1,13 +1,9 @@
 package easyr.qa.testCases;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Test;
-import org.testng.annotations.BeforeMethod;
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import easyr.qa.base.TestBase;
 import easyr.qa.pages.EasyRDashboardPage;
 import easyr.qa.pages.EasyRLoginPage;
@@ -36,17 +32,15 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 
 	@Test(priority = 1)
 	public void verifyOffersAndDealsPage() throws InterruptedException {
-
 		AssertJUnit.assertEquals(offerpg.verifyOffersAndDealsText(), "OFFERS AND DEALS");
-
+		offerpg.logout();
 	}
-
 
 	@Test(priority = 2)
-	public void verifyCreateOfferPage(){
+	public void verifyCreateOfferPage() throws InterruptedException{
 		offerpg.clickOnCreateOffer();
+		offerpg.logout();
 	}
-
 
 	@Test(priority = 3)
 	public void verifyEnterVendorNameAndVerifyDetails() throws InterruptedException{
@@ -55,9 +49,8 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		offerpg.clickOnDisplayedVendor();
 		AssertJUnit.assertEquals(offerpg.verifySelectedVendorName(), prop.getProperty("Vendor_Name"));
 		AssertJUnit.assertEquals(offerpg.verifySelectVendorCompanyName(), prop.getProperty("Vendor_company"));			
-
+		offerpg.logout();
 	}
-
 
 	@Test(priority = 4)
 	public void verifyNavigateToSubDetailsOfOffer() throws InterruptedException{
@@ -65,8 +58,8 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
 		offerpg.clickOnDisplayedVendor();
 		offerpg.clickOnAddOfferDetailsBtn();
+		offerpg.logout();
 	}
-
 
 	@Test(priority = 5)
 	public void verifyAllFieldValidationInsubDetails() throws InterruptedException{
@@ -90,6 +83,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		Assert.assertEquals(offerpg.verifyOfferDiscountVal(), "Please select the type of discount");
 		Assert.assertEquals(offerpg.verifyOfferCommissionPerClickVal(), "EasyR commission per click is required");
 		Assert.assertEquals(offerpg.verifyOfferImageVal(), "Please upload image for offer!");
+		offerpg.logout();
 	}
 
 	@Test(priority = 6)
@@ -116,51 +110,167 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		offerpg.selectImageFile(prop.getProperty("offer_Img"));
 		offerpg.clickOnsaveImageBtn();
 		offerpg.clickOnNextBtn();
+		offerpg.logout();
 	}
 
+	@Test(priority = 7)
+	public void verifyValidationMessageInThirdPhaseSubDetailsInEnglish() throws InterruptedException{
+		offerpg.clickOnCreateOffer();
+		offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
+		offerpg.clickOnDisplayedVendor();			
+		offerpg.clickOnAddOfferDetailsBtn();
+		offerpg.selectOfferType(prop.getProperty("offer_Type"));
+		offerpg.selectOfferDepartment(prop.getProperty("Offer_Dept"));
+		offerpg.selectOfferCategory(prop.getProperty("offer_category"));
+		offerpg.selectSubCategory(prop.getProperty("offer_subCategory"));
+		offerpg.selectStartDate();
+		offerpg.selectExpiryDate();
+		offerpg.enterDonationPerRedemption(prop.getProperty("donationPer_redemption"));
+		offerpg.enterCommissionPerRedemption(prop.getProperty("commissionPer_redemption"));
+		offerpg.enterRewardCoins(prop.getProperty("Reward_coins"));
+		offerpg.enterRedemptionLimit(prop.getProperty("redemption_limit"));
+		offerpg.selectDiscountType(prop.getProperty("discount_Type"));
+		offerpg.enterDiscount(prop.getProperty("discount_Price"));
+		offerpg.enterClickCommission(prop.getProperty("click_commission"));
+		offerpg.enterWebLink(prop.getProperty("offer_Link"));
+		offerpg.clickOnOfferimagebtn();
+		offerpg.selectImageFile(prop.getProperty("offer_Img"));
+		offerpg.clickOnsaveImageBtn();
+		offerpg.clickOnNextBtn();
+		offerpg.clickOnNextForDanLang();
+		Assert.assertEquals(offerpg.checkTitleValidationsInEnglish(), "Offer title is required");
+		Assert.assertEquals(offerpg.checkShortDescValidationsInEnglish(), "Short Description is required");
+		Assert.assertEquals(offerpg.checkTermsAndConditionValidationsInEnglish(), "Terms and condition is required");
+		Assert.assertEquals(offerpg.checkDescriptionValidationsInEnglish(), "Description is required");
+		offerpg.enterSubDetailsInEnglish(prop.getProperty("OfftitleInEnglish"), prop.getProperty("OffshortDescInEnglish"), prop.getProperty("OfftermsInEnglish"), prop.getProperty("OffdescInEnglish"));
+		offerpg.logout();
+	}
 
+	@Test(priority = 8)
+	public void verifyValidationMessageInThirdPhaseSubDetailsInDanish() throws InterruptedException{
+		offerpg.clickOnCreateOffer();
+		offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
+		offerpg.clickOnDisplayedVendor();			
+		offerpg.clickOnAddOfferDetailsBtn();
+		offerpg.selectOfferType(prop.getProperty("offer_Type"));
+		offerpg.selectOfferDepartment(prop.getProperty("Offer_Dept"));
+		offerpg.selectOfferCategory(prop.getProperty("offer_category"));
+		offerpg.selectSubCategory(prop.getProperty("offer_subCategory"));
+		offerpg.selectStartDate();
+		offerpg.selectExpiryDate();
+		offerpg.enterDonationPerRedemption(prop.getProperty("donationPer_redemption"));
+		offerpg.enterCommissionPerRedemption(prop.getProperty("commissionPer_redemption"));
+		offerpg.enterRewardCoins(prop.getProperty("Reward_coins"));
+		offerpg.enterRedemptionLimit(prop.getProperty("redemption_limit"));
+		offerpg.selectDiscountType(prop.getProperty("discount_Type"));
+		offerpg.enterDiscount(prop.getProperty("discount_Price"));
+		offerpg.enterClickCommission(prop.getProperty("click_commission"));
+		offerpg.enterWebLink(prop.getProperty("offer_Link"));
+		offerpg.clickOnOfferimagebtn();
+		offerpg.selectImageFile(prop.getProperty("offer_Img"));
+		offerpg.clickOnsaveImageBtn();
+		offerpg.clickOnNextBtn();
+		offerpg.clickOnDanishTxtOnThirdPhase();
+		offerpg.clickOnNxtForArabicBtn();
+		Assert.assertEquals(offerpg.checkTitleValidationsInDanish(), "Offer title is required");
+		Assert.assertEquals(offerpg.checkShortDescValidationsInDanish(), "Short Description is required");
+		Assert.assertEquals(offerpg.checkTermsAndConditionValidationsInDanish(), "Terms and condition is required");
+		Assert.assertEquals(offerpg.checkDescriptionValidationsInDanish(), "Description is required");
+		offerpg.enterSubDetailsInDanish(prop.getProperty("OfftitleInDanish"), prop.getProperty("OffshortDescInDanish"), prop.getProperty("OfftermsInDanish"), prop.getProperty("OffdescInDanish"));
+		offerpg.logout();
+	}
 
+	@Test(priority = 9)
+	public void verifyValidationMessageInThirdPhaseSubDetailsInArabic() throws InterruptedException{
+		offerpg.clickOnCreateOffer();
+		offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
+		offerpg.clickOnDisplayedVendor();			
+		offerpg.clickOnAddOfferDetailsBtn();
+		offerpg.selectOfferType(prop.getProperty("offer_Type"));
+		offerpg.selectOfferDepartment(prop.getProperty("Offer_Dept"));
+		offerpg.selectOfferCategory(prop.getProperty("offer_category"));
+		offerpg.selectSubCategory(prop.getProperty("offer_subCategory"));
+		offerpg.selectStartDate();
+		offerpg.selectExpiryDate();
+		offerpg.enterDonationPerRedemption(prop.getProperty("donationPer_redemption"));
+		offerpg.enterCommissionPerRedemption(prop.getProperty("commissionPer_redemption"));
+		offerpg.enterRewardCoins(prop.getProperty("Reward_coins"));
+		offerpg.enterRedemptionLimit(prop.getProperty("redemption_limit"));
+		offerpg.selectDiscountType(prop.getProperty("discount_Type"));
+		offerpg.enterDiscount(prop.getProperty("discount_Price"));
+		offerpg.enterClickCommission(prop.getProperty("click_commission"));
+		offerpg.enterWebLink(prop.getProperty("offer_Link"));
+		offerpg.clickOnOfferimagebtn();
+		offerpg.selectImageFile(prop.getProperty("offer_Img"));
+		offerpg.clickOnsaveImageBtn();
+		offerpg.clickOnNextBtn();
+		offerpg.clickOnArabicTxtOnthirdPhase();
+		offerpg.clickOnCreateOfferBtn();
+		Assert.assertEquals(offerpg.checkTitleValidationsInArabic(), "Offer title is required");
+		Assert.assertEquals(offerpg.checkShortDescValidationsInArabic(), "Short Description is required");
+		Assert.assertEquals(offerpg.checkTermsAndConditionValidationsInArabic(), "Terms and condition is required");
+		Assert.assertEquals(offerpg.checkDescriptionValidationsInArabic(), "Description is required");
+		offerpg.enterSubDetailsInArabic(prop.getProperty("OfftitleInArabic"), prop.getProperty("OffshortDescInArabic"), prop.getProperty("OfftermsInArabic"), prop.getProperty("OffdescInArabic"));
+		offerpg.logout();
+	}
 
+	@Test(priority = 10)
+	public void createOffer() throws InterruptedException{
+		offerpg.clickOnCreateOffer();
+		offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
+		offerpg.clickOnDisplayedVendor();			
+		offerpg.clickOnAddOfferDetailsBtn();
+		offerpg.selectOfferType(prop.getProperty("offer_Type"));
+		offerpg.selectOfferDepartment(prop.getProperty("Offer_Dept"));
+		offerpg.selectOfferCategory(prop.getProperty("offer_category"));
+		offerpg.selectSubCategory(prop.getProperty("offer_subCategory"));
+		offerpg.selectStartDate();
+		offerpg.selectExpiryDate();
+		offerpg.enterDonationPerRedemption(prop.getProperty("donationPer_redemption"));
+		offerpg.enterCommissionPerRedemption(prop.getProperty("commissionPer_redemption"));
+		offerpg.enterRewardCoins(prop.getProperty("Reward_coins"));
+		offerpg.enterRedemptionLimit(prop.getProperty("redemption_limit"));
+		offerpg.selectDiscountType(prop.getProperty("discount_Type"));
+		offerpg.enterDiscount(prop.getProperty("discount_Price"));
+		offerpg.enterClickCommission(prop.getProperty("click_commission"));
+		offerpg.enterWebLink(prop.getProperty("offer_Link"));
+		offerpg.clickOnOfferimagebtn();
+		offerpg.selectImageFile(prop.getProperty("offer_Img"));
+		offerpg.clickOnsaveImageBtn();
+		offerpg.clickOnNextBtn();
+		offerpg.enterSubDetailsInEnglish(prop.getProperty("OfftitleInEnglish"), prop.getProperty("OffshortDescInEnglish"), prop.getProperty("OfftermsInEnglish"), prop.getProperty("OffdescInEnglish"));
+		offerpg.enterSubDetailsInDanish(prop.getProperty("OfftitleInDanish"), prop.getProperty("OffshortDescInDanish"), prop.getProperty("OfftermsInDanish"), prop.getProperty("OffdescInDanish"));
+		offerpg.enterSubDetailsInArabic(prop.getProperty("OfftitleInArabic"), prop.getProperty("OffshortDescInArabic"), prop.getProperty("OfftermsInArabic"), prop.getProperty("OffdescInArabic"));
+		offerpg.clickOnCreateOfferbtn();
+		offerpg.logout();
+	}
 
+	@Test(priority = 11)
+	public void verifyOfferTitleAfterOfferCreation() throws InterruptedException {
+		String actOffTitle = offerpg.verifyOfferTitle();
+		System.out.println("actOffTitle = " + offerpg.verifyOfferTitle());
+		AssertJUnit.assertEquals(actOffTitle, prop.getProperty("OfftitleInEnglish"));
+		offerpg.logout();
+	}
 
+	@Test(priority = 12)
+	public void verifyOfferTypeAfterOfferCreation() throws InterruptedException {
+		String actOffType = offerpg.verifyOfferType();
+		System.out.println("actOffType = " + offerpg.verifyOfferType());
+		AssertJUnit.assertEquals(actOffType, prop.getProperty("offer_Type"));
+		offerpg.logout();
+	}
 
-
-				
-
-
-				
-
-	//			offerpg.enterSubDetailsInEnglish(prop.getProperty("OfftitleInEnglish"), prop.getProperty("OffshortDescInEnglish"), prop.getProperty("OfftermsInEnglish"), prop.getProperty("OffdescInEnglish"));
-	//			offerpg.enterSubDetailsInDanish(prop.getProperty("OfftitleInDanish"), prop.getProperty("OffshortDescInDanish"), prop.getProperty("OfftermsInDanish"), prop.getProperty("OffdescInDanish"));
-	//			offerpg.enterSubDetailsInArabic(prop.getProperty("OfftitleInArabic"), prop.getProperty("OffshortDescInArabic"), prop.getProperty("OfftermsInArabic"), prop.getProperty("OffdescInArabic"));
-	//			offerpg.clickOnCreateOfferbtn();
-	//			offerpg.logout();
-
-	//	}
-
-	//	@Test(priority = 2)
-	//	public void verifyDataAfterOfferCreation() {
-	//		try {
-	//			String actOffTitle = offerpg.verifyOfferTitle();
-	//			System.out.println("actOffTitle = " + offerpg.verifyOfferTitle());
-	//			AssertJUnit.assertEquals(actOffTitle, prop.getProperty("OfftitleInEnglish"));
-	//
-	//			String actOffType = offerpg.verifyOfferType();
-	//			System.out.println("actOffType = " + offerpg.verifyOfferType());
-	//			AssertJUnit.assertEquals(actOffType, prop.getProperty("offer_Type"));
-	//
-	//			String actOffVendorName = offerpg.verifyOfferVendorName();
-	//			System.out.println("actOffVendorName = " + offerpg.verifyOfferVendorName());
-	//			AssertJUnit.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));	
-	//			offerpg.logout();
-	//
-	//		}catch (Exception e) {
-	//			System.out.println("Element not found within timeout: " + e.getMessage());
-	//		}
-	//	}
+	@Test(priority = 13)
+	public void verifyVendorNameAfterOfferCreation() throws InterruptedException {
+		String actOffVendorName = offerpg.verifyOfferVendorName();
+		System.out.println("actOffVendorName = " + offerpg.verifyOfferVendorName());
+		AssertJUnit.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));	
+		offerpg.logout();
+	}
 
 	@AfterMethod
 	public void tearDown() {
-		//		driver.quit();
+		driver.quit();
 	}
 }
