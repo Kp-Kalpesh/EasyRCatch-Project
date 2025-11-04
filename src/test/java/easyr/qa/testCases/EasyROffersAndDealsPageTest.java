@@ -32,7 +32,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 
 	@Test(priority = 1)
 	public void verifyOffersAndDealsPage() throws InterruptedException {
-		AssertJUnit.assertEquals(offerpg.verifyOffersAndDealsText(), "OFFERS AND DEALS");
+		Assert.assertEquals(offerpg.verifyOffersAndDealsText(), "OFFERS AND DEALS");
 		offerpg.logout();
 	}
 
@@ -47,8 +47,8 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		offerpg.clickOnCreateOffer();
 		offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
 		offerpg.clickOnDisplayedVendor();
-		AssertJUnit.assertEquals(offerpg.verifySelectedVendorName(), prop.getProperty("Vendor_Name"));
-		AssertJUnit.assertEquals(offerpg.verifySelectVendorCompanyName(), prop.getProperty("Vendor_company"));			
+		Assert.assertEquals(offerpg.verifySelectedVendorName(), prop.getProperty("Vendor_Name"));
+		Assert.assertEquals(offerpg.verifySelectVendorCompanyName(), prop.getProperty("Vendor_company"));			
 		offerpg.logout();
 	}
 
@@ -63,7 +63,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 
 	@Test(priority = 5)
 	public void verifyAllFieldValidationInsubDetails() throws InterruptedException{
-		AssertJUnit.assertEquals(offerpg.verifyOffersAndDealsText(), "OFFERS AND DEALS");
+		Assert.assertEquals(offerpg.verifyOffersAndDealsText(), "OFFERS AND DEALS");
 		offerpg.clickOnCreateOffer();
 		Assert.assertEquals(offerpg.clickOnAddOfferDetailBtn(), "Please select vendor for offer");
 		offerpg.enterVendorName(prop.getProperty("Vendor_Name"));
@@ -249,7 +249,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 	public void verifyOfferTitleAfterOfferCreation() throws InterruptedException {
 		String actOffTitle = offerpg.verifyOfferTitle();
 		System.out.println("actOffTitle = " + offerpg.verifyOfferTitle());
-		AssertJUnit.assertEquals(actOffTitle, prop.getProperty("OfftitleInEnglish"));
+		Assert.assertEquals(actOffTitle, prop.getProperty("OfftitleInEnglish"));
 		offerpg.logout();
 	}
 
@@ -257,7 +257,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 	public void verifyOfferTypeAfterOfferCreation() throws InterruptedException {
 		String actOffType = offerpg.verifyOfferType();
 		System.out.println("actOffType = " + offerpg.verifyOfferType());
-		AssertJUnit.assertEquals(actOffType, prop.getProperty("offer_Type"));
+		Assert.assertEquals(actOffType, prop.getProperty("offer_Type"));
 		offerpg.logout();
 	}
 
@@ -265,7 +265,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 	public void verifyVendorNameAfterOfferCreation() throws InterruptedException {
 		String actOffVendorName = offerpg.verifyOfferVendorName();
 		System.out.println("actOffVendorName = " + offerpg.verifyOfferVendorName());
-		AssertJUnit.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));	
+		Assert.assertEquals(actOffVendorName, prop.getProperty("vendorNameAssertion"));	
 		offerpg.logout();
 	}
 

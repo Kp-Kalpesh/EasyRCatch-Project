@@ -102,7 +102,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement upperTab;
 	@FindBy(xpath = "//button[text()='OK']")
 	WebElement okBtn;
-
 	@FindBy(xpath = "//div[text()='Offer title is required']")
 	WebElement englishTitleVal;
 	@FindBy(xpath = "//div[text()='Short Description is required']")
@@ -111,10 +110,8 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement englishTermsAndConditionVal;
 	@FindBy(xpath = "//div[text()='Description is required']")
 	WebElement englishDescriptionVal;
-
 	@FindBy(xpath = "//button[text()='Danish']")
 	WebElement DanishTxt;
-
 	@FindBy(xpath = "//div[text()='Offer title is required']")
 	WebElement DanishTitleVal;
 	@FindBy(xpath = "//div[text()='Short Description is required']")
@@ -123,11 +120,8 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement DanishTermsAndConditionVal;
 	@FindBy(xpath = "//div[text()='Description is required']")
 	WebElement DanishDescriptionVal;
-
 	@FindBy(xpath = "//button[text()='Arabic']")
 	WebElement ArabicTxt;
-
-
 	@FindBy(xpath = "//div[text()='Offer title is required']")
 	WebElement ArabicTitleVal;
 	@FindBy(xpath = "//div[text()='Short Description is required']")
@@ -136,10 +130,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 	WebElement ArabicTermsAndConditionVal;
 	@FindBy(xpath = "//div[text()='Description is required']")
 	WebElement ArabicDescriptionVal;
-
-
-
-
 
 	@FindBy(xpath = "//input[@placeholder='Offer Title in English']")
 	WebElement TitleInEnglish;
@@ -281,8 +271,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 		return offerRedemptionLimitVali.getText();
 	}
 
-
-
 	public void selectOfferType(String offerType) throws InterruptedException {
 		Thread.sleep(2000);
 		act.sendKeys(selectOfferType, offerType, Keys.ENTER).perform();
@@ -395,15 +383,11 @@ public class EasyROffersAndDealsPage extends TestBase{
 		saveImageBtn.click();
 	}
 
-
-
 	public void clickOnNxtBtnForValidation() {
 		WebDriverWait wait = new WebDriverWait(driver, (10));
 		act.sendKeys(upperTab, Keys.ARROW_UP).perform();
 		act.sendKeys(Keys.PAGE_DOWN).perform();
-
 	}
-
 
 	public void clickOnNextBtn() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, (10));
@@ -425,14 +409,10 @@ public class EasyROffersAndDealsPage extends TestBase{
 		act.click(okBtn).perform();
 	}
 
-
-
 	//title validation of Offer third phase sub details 
-
 	public void clickOnNextForDanLang() {
 		nextForDanish.click();
 	}
-
 	public String checkTitleValidationsInEnglish() {
 		return englishTitleVal.getText();
 	}
@@ -469,7 +449,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 	public void clickOnArabicTxtOnthirdPhase() {
 		ArabicTxt.click();
 	}
-
 	public void clickOnCreateOfferBtn() {
 		createOffer.click();
 	}
@@ -487,9 +466,7 @@ public class EasyROffersAndDealsPage extends TestBase{
 		return ArabicDescriptionVal.getText();
 	}
 
-
-
-
+	//verifications after offer creation
 	public void enterSubDetailsInEnglish(String titleEng, String shortDescEng, String termsEng, String descEng) {
 		TitleInEnglish.sendKeys(titleEng);
 		shortDescinEnglish.sendKeys(shortDescEng);
@@ -497,7 +474,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 		DescInEnglish.sendKeys(descEng);
 		nextForDanish.click();
 	}
-
 
 	public void enterSubDetailsInDanish(String titleDan, String shortDescDan, String termsDan, String descDan) {
 		TitleInDanish.sendKeys(titleDan);
@@ -512,7 +488,6 @@ public class EasyROffersAndDealsPage extends TestBase{
 		shortDescInArabic.sendKeys(shortDescAra);
 		termsInArabic.sendKeys(termsAra);
 		descInArabic.sendKeys(descAra);
-
 	}
 
 	public void clickOnCreateOfferbtn() throws InterruptedException {
