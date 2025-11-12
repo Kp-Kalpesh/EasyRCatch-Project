@@ -214,6 +214,7 @@ public class EasyROffersAndDealsPageTest extends TestBase{
 		offerpg.logout();
 	}
 
+	//Create New Offer
 	@Test(priority = 10)
 	public void createOffer() throws InterruptedException{
 		offerpg.clickOnCreateOffer();

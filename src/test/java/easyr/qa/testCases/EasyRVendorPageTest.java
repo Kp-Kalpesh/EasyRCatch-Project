@@ -1,6 +1,5 @@
 package easyr.qa.testCases;
 
-import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -183,9 +182,9 @@ public class EasyRVendorPageTest extends TestBase{
 	@Test(priority = 19)
 	public void verifyCreatVendor() {
 		try {
-			AssertJUnit.assertEquals(vendrpg.verifyPageTitle(), "EasyR Catch");
+			Assert.assertEquals(vendrpg.verifyPageTitle(), "EasyR Catch");
 			System.out.println("vendrpg.verifyPageTitle(): " + vendrpg.verifyPageTitle());
-			AssertJUnit.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
+			Assert.assertEquals(vendrpg.verifyVendorText(), "VENDORS");
 			System.out.println("vendrpg.verifyVendorText(): " + vendrpg.verifyVendorText());
 
 			vendrpg.clickOnCreateVendorBtn(); vendrpg.clickOnVendorLogoSelectFile();
@@ -208,9 +207,9 @@ public class EasyRVendorPageTest extends TestBase{
 			vendrpg.clickOnAddVendor();
 			vendrpg.clickOnVisibleVendorDrpDwn();
 
-			AssertJUnit.assertEquals(vendrpg.CreatedVendorName(), prop.getProperty("Vendor_Name"));
-			AssertJUnit.assertEquals(vendrpg.CreatedVendorComapnyName(), prop.getProperty("Vendor_company"));
-			AssertJUnit.assertEquals(vendrpg.CreatedVendorEmail(), prop.getProperty("vEmail"));
+			Assert.assertEquals(vendrpg.CreatedVendorName(), prop.getProperty("Vendor_Name"));
+			Assert.assertEquals(vendrpg.CreatedVendorComapnyName(), prop.getProperty("Vendor_company"));
+			Assert.assertEquals(vendrpg.CreatedVendorEmail(), prop.getProperty("vEmail"));
 			vendrpg.logout();
 		}catch(Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());

@@ -299,11 +299,12 @@ public class EasyROffersAndDealsPage extends TestBase{
 		LocalDate today = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d"); // only day number
 		String currentDay = today.format(formatter);
+		System.out.println("Current date: " + currentDay);
 
 		// Click on date picker input
 		Thread.sleep(2000);
 		selectStartDate.click();
-		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[2]"));
+		WebElement todayDate = driver.findElement(By.xpath("//span[text()='" + currentDay + "']"));
 
 		if(todayDate.isDisplayed() == true) {
 			WebElement todayDate1 = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[1]"));
@@ -328,13 +329,24 @@ public class EasyROffersAndDealsPage extends TestBase{
 	public void selectExpiryDate() throws InterruptedException {
 		LocalDate today = LocalDate.now();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d"); // only day number
-		String currentDay = today.format(formatter);
+		String currentExpiryDay = today.format(formatter);
 
 		// Click on Expiry date picker input
 		selectExpiryDate.click();
 		//		Thread.sleep(4000);
-		WebElement todayDate = driver.findElement(By.xpath("(//span[text()='" + currentDay + "'])[4]"));															
-		todayDate.click();
+		WebElement todayExpiryDate = driver.findElement(By.xpath("//span[text()='" + currentExpiryDay + "']"));															
+
+		if(todayExpiryDate.isDisplayed() == true)
+		{
+			WebElement ExpiryDate1 = driver.findElement(By.xpath("(//span[text()='" + currentExpiryDay + "'])[1]"));
+			Thread.sleep(2000);
+			ExpiryDate1.click();
+		}else {
+			WebElement ExpiryDate2 = driver.findElement(By.xpath("(//span[text()='" + currentExpiryDay + "'])[2]"));
+			Thread.sleep(2000);
+			ExpiryDate2.click();
+		}
+//		todayDate.click();
 	}
 
 	public void enterDonationPerRedemption(String donation) throws InterruptedException {
