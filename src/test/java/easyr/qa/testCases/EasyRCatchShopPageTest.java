@@ -48,17 +48,17 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.logout();
 	}
 
-	@Test()//(need to fix this test method issue)
+	@Test()
 	public void verifyVendorSelectionValidation() throws InterruptedException {
 		shoppg.clickOnCreateProductBtn();
 		shoppg.clickOnAddProductDetailsBtn();
 		Assert.assertEquals(shoppg.verifySelectVendorValidation(), "Please select vendor for product");
 		System.out.println("Vendor selection validation: " + shoppg.verifySelectVendorValidation());
 		shoppg.logout();
-
 	}
 
-
+	
+	//(need to fix this test method issue)
 	@Test(priority = 3)
 	public void verifyCreateProductPageEnterVendorName() throws InterruptedException {
 		shoppg.clickOnCreateProductBtn();
