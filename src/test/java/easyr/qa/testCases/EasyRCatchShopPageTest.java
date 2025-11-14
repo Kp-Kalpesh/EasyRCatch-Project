@@ -53,6 +53,7 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.clickOnCreateProductBtn();
 		shoppg.clickOnAddProductDetailsBtn();
 		Assert.assertEquals(shoppg.verifySelectVendorValidation(), "Please select vendor for product");
+		System.out.println("Vendor selection validation: " + shoppg.verifySelectVendorValidation());
 		shoppg.logout();
 
 	}

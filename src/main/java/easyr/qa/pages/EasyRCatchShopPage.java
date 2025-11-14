@@ -119,7 +119,7 @@ public class EasyRCatchShopPage extends TestBase{
 	}
 
 	public void clickOnCreateProductBtn() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		createProductBtn.click();
 	}
 
@@ -132,7 +132,7 @@ public class EasyRCatchShopPage extends TestBase{
 	}
 
 	public String verifySelectVendorValidation() throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(1000);
 		return productSelectVendorVal.getText();
 	}
 	
@@ -148,7 +148,8 @@ public class EasyRCatchShopPage extends TestBase{
 		return verifyVendorCompany.getText();
 	}
 
-	public void clickOnAddProductDetailsBtn() {
+	public void clickOnAddProductDetailsBtn() throws InterruptedException {
+		Thread.sleep(2000);
 		addProductDetailsBtn.click();
 	}
 
