@@ -1,7 +1,6 @@
 package easyr.qa.testCases;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.Test;
+import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -32,8 +31,53 @@ public class EasyRCatchShopPageTest extends TestBase{
 		dashpg = loginpg.clickOnLoginbtn(prop.getProperty("ValidEmail"), prop.getProperty("ValidPassword"));
 		vendrpg = dashpg.clickOnVendors();
 		offerpg = vendrpg.clickOnOffersAndDeals();
-//		shoppg = offerpg.clickOnProductStore();
+		shoppg = offerpg.clickOnProductStore();
 	}
+
+
+
+	@Test(priority = 1)
+	public void verifyProductPage() throws InterruptedException {
+		AssertJUnit.assertEquals(shoppg.verifyProductsTextOnPage(), "INVENTORY PRODUCTS");
+		shoppg.logout();
+	}
+
+	@Test(priority = 2)
+	public void verifyCreateProductPage() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.logout();
+	}
+
+	@Test()//(need to fix this test method issue)
+	public void verifyVendorSelectionValidation() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.clickOnAddProductDetailsBtn();
+		Assert.assertEquals(shoppg.verifySelectVendorValidation(), "Please select vendor for product");
+		shoppg.logout();
+
+	}
+
+
+	@Test(priority = 3)
+	public void verifyCreateProductPageEnterVendorName() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		Assert.assertTrue(shoppg.verifyDisplayedVendorInDrpDwn());
+		shoppg.logout();
+	}
+
+	@Test(priority = 4)
+	public void verifyCreateProductPageSelectVendor() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		Assert.assertEquals(shoppg.verifySelectedVName(), prop.getProperty("Vendor_Name"));
+		Assert.assertEquals(shoppg.verifySelectedVCompany(), prop.getProperty("Vendor_company"));
+		shoppg.logout();
+	}
+
+
+
 
 	@Test(priority = 1)
 	public void verifyInventoryStoreProduct() {
@@ -83,7 +127,7 @@ public class EasyRCatchShopPageTest extends TestBase{
 		}
 	}
 
-	
+
 	@AfterMethod
 	public void tearDown()	{
 		driver.quit();

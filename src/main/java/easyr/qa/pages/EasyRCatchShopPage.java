@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import easyr.qa.base.TestBase;
 
 public class EasyRCatchShopPage extends TestBase{
@@ -19,6 +18,9 @@ public class EasyRCatchShopPage extends TestBase{
 	WebElement enterVendorName;
 	@FindBy(xpath = "//span[contains(@class,'text-easyRPrimary/')]")
 	WebElement clickOnDisplayedVendorName;
+	
+	@FindBy(xpath = "//div[text()='Please select vendor for product']")
+	WebElement productSelectVendorVal;
 	@FindBy(xpath = "(//span[contains(@class,'font-semibold text-sla')])[1]")
 	WebElement verifyVendorName;
 	@FindBy(xpath = "(//span[contains(@class,'font-semibold text-sla')])[2]")
@@ -116,7 +118,8 @@ public class EasyRCatchShopPage extends TestBase{
 		return shopTextOnPage.getText();
 	}
 
-	public void clickOnCreateProductBtn() {
+	public void clickOnCreateProductBtn() throws InterruptedException {
+		Thread.sleep(2000);
 		createProductBtn.click();
 	}
 
@@ -128,6 +131,11 @@ public class EasyRCatchShopPage extends TestBase{
 		return  clickOnDisplayedVendorName.isDisplayed();
 	}
 
+	public String verifySelectVendorValidation() throws InterruptedException {
+		Thread.sleep(5000);
+		return productSelectVendorVal.getText();
+	}
+	
 	public void clickOnDisplayedVendorName() {
 		clickOnDisplayedVendorName.click();
 	}

@@ -1,6 +1,5 @@
 package easyr.qa.pages;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -12,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import easyr.qa.base.TestBase;
@@ -334,7 +332,7 @@ public class EasyROffersAndDealsPage extends TestBase{
 		// Click on Expiry date picker input
 		selectExpiryDate.click();
 		//		Thread.sleep(4000);
-		WebElement todayExpiryDate = driver.findElement(By.xpath("//span[text()='" + currentExpiryDay + "']"));															
+		WebElement todayExpiryDate = driver.findElement(By.xpath("(//span[text()='" + currentExpiryDay + "']"));															
 
 		if(todayExpiryDate.isDisplayed() == true)
 		{
@@ -346,7 +344,7 @@ public class EasyROffersAndDealsPage extends TestBase{
 			Thread.sleep(2000);
 			ExpiryDate2.click();
 		}
-//		todayDate.click();
+		//		todayDate.click();
 	}
 
 	public void enterDonationPerRedemption(String donation) throws InterruptedException {
