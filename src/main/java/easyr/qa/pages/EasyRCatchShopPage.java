@@ -18,7 +18,7 @@ public class EasyRCatchShopPage extends TestBase{
 	WebElement enterVendorName;
 	@FindBy(xpath = "//span[contains(@class,'text-easyRPrimary/')]")
 	WebElement clickOnDisplayedVendorName;
-	
+
 	@FindBy(xpath = "//div[text()='Please select vendor for product']")
 	WebElement productSelectVendorVal;
 	@FindBy(xpath = "(//span[contains(@class,'font-semibold text-sla')])[1]")
@@ -27,6 +27,46 @@ public class EasyRCatchShopPage extends TestBase{
 	WebElement verifyVendorCompany;
 	@FindBy(xpath = "//button[text()='Add Product Details']")
 	WebElement addProductDetailsBtn;
+
+	//check validation in English
+	@FindBy(xpath = "//div[text()='Title is required.']")
+	WebElement inventoryTitleInEngl;
+	@FindBy(xpath = "//div[text()='Short description is required.']")
+	WebElement shortDescInEngl;
+	@FindBy(xpath = "//div[text()='Description is required.']")
+	WebElement DescInEngl;
+	@FindBy(xpath = "//div[text()='Terms is required.']")
+	WebElement termsAndConditionInEngl;
+	@FindBy(xpath = "//div[text()='Instruction is required.']")
+	WebElement instructionInEngl;
+
+	//check validation in Danish
+	@FindBy(xpath = "//button[@id='headlessui-tabs-tab-:r2:']")
+	WebElement DanishBtnTabBar;
+	@FindBy(xpath = "//div[text()='Title is required.']")
+	WebElement inventoryTitleInDans;
+	@FindBy(xpath = "//div[text()='Short description is required.']")
+	WebElement shortDescInDans;
+	@FindBy(xpath = "//div[text()='Description is required.']")
+	WebElement DescInDans;
+	@FindBy(xpath = "//div[text()='Terms is required.']")
+	WebElement termsAndConditionInDans;
+	@FindBy(xpath = "//div[text()='Instruction is required.']")
+	WebElement instructionInDans;
+	//check validation in Arabic
+	@FindBy(xpath = "//button[@id='headlessui-tabs-tab-:r3:']")
+	WebElement ArabicBtnTabBar;
+	@FindBy(xpath = "//div[text()='Title is required.']")
+	WebElement inventoryTitleInArabi;
+	@FindBy(xpath = "//div[text()='Short description is required.']")
+	WebElement shortDescInArabi;
+	@FindBy(xpath = "//div[text()='Description is required.']")
+	WebElement DescInArabi;
+	@FindBy(xpath = "//div[text()='Terms is required.']")
+	WebElement termsAndConditionInArabi;
+	@FindBy(xpath = "//div[text()='Instruction is required.']")
+	WebElement instructionInArabi;
+
 	@FindBy(xpath = "//input[contains(@placeholder,'Inventory Title in English')]")
 	WebElement titleInEng;
 	@FindBy(xpath = "//textarea[@placeholder='Short Description in English']")
@@ -135,7 +175,7 @@ public class EasyRCatchShopPage extends TestBase{
 		Thread.sleep(1000);
 		return productSelectVendorVal.getText();
 	}
-	
+
 	public void clickOnDisplayedVendorName() {
 		clickOnDisplayedVendorName.click();
 	}
@@ -152,6 +192,78 @@ public class EasyRCatchShopPage extends TestBase{
 		Thread.sleep(2000);
 		addProductDetailsBtn.click();
 	}
+
+	public String checkInventoryTitleValInEngl() {
+		return inventoryTitleInEngl.getText();
+	}
+
+	public String checkshortDescValInEngl() {
+		return shortDescInEngl.getText();
+	}
+
+	public String checkDescValInEngl() {
+		return DescInEngl.getText();
+	}
+
+	public String checkTermsAndCondValInEngl() {
+		return termsAndConditionInEngl.getText();
+	}
+
+	public String checkInstructionInEngl() {
+		return instructionInEngl.getText();
+	}
+
+	public void clickOnDanishTabBar() {
+		DanishBtnTabBar.click();	
+	}
+
+	public String checkInventoryTitleValInDani() {
+		return inventoryTitleInDans.getText();
+	}
+
+	public String checkshortDescValInDani() {
+		return shortDescInDans.getText();
+	}
+
+	public String checkDescValInDani() {
+		return DescInDans.getText();
+	}
+
+	public String checkTermsAndCondValInDani() {
+		return termsAndConditionInDans.getText();
+	}
+
+	public String checkInstructionInDani() {
+		return instructionInDans.getText();
+	}
+
+	public void clickOnArabicTabBar() {
+		ArabicBtnTabBar.click();
+	}
+
+	public String checkInventoryTitleValInArabi() {
+		return inventoryTitleInArabi.getText();
+	}
+
+	public String checkshortDescValInArabi() {
+		return shortDescInArabi.getText();
+	}
+
+	public String checkDescValInArabi() {
+		return DescInArabi.getText();
+	}
+
+	public String checkTermsAndCondValInArabi() {
+		return termsAndConditionInArabi.getText();
+	}
+
+	public String checkInstructionInArabi() {
+		return instructionInArabi.getText();
+	}
+
+
+
+
 
 	public void enterValidDataInEnglish(String ProdTitleEng, String ProdShortDescEng, String ProdDescEng, String ProdTermsEng, String ProdInstructEng) {
 		titleInEng.sendKeys(ProdTitleEng);

@@ -48,7 +48,7 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.logout();
 	}
 
-	@Test()
+	@Test(priority = 3)
 	public void verifyVendorSelectionValidation() throws InterruptedException {
 		shoppg.clickOnCreateProductBtn();
 		shoppg.clickOnAddProductDetailsBtn();
@@ -57,9 +57,8 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.logout();
 	}
 
-	
-	//(need to fix this test method issue)
-	@Test(priority = 3)
+
+	@Test(priority = 4)
 	public void verifyCreateProductPageEnterVendorName() throws InterruptedException {
 		shoppg.clickOnCreateProductBtn();
 		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
@@ -67,7 +66,7 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.logout();
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 5)
 	public void verifyCreateProductPageSelectVendor() throws InterruptedException {
 		shoppg.clickOnCreateProductBtn();
 		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
@@ -78,9 +77,90 @@ public class EasyRCatchShopPageTest extends TestBase{
 	}
 
 
+	@Test(priority = 6)
+	public void verifySubmitFirstPhase() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.logout();
+	}
 
 
-	@Test(priority = 1)
+	//(need to fix this test method issue)
+
+	@Test(priority = 7)
+	public void verifySecondPageValidationsInEnglish() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.clickOnNxtForDanishBtn();
+		Assert.assertEquals(shoppg.checkInventoryTitleValInEngl(), "Title is required.");
+		Assert.assertEquals(shoppg.checkshortDescValInEngl(), "Short description is required.");
+		Assert.assertEquals(shoppg.checkDescValInEngl(), "Description is required.");
+		Assert.assertEquals(shoppg.checkTermsAndCondValInEngl(), "Terms is required.");
+		Assert.assertEquals(shoppg.checkInstructionInEngl(), "Instruction is required.");
+		shoppg.logout();
+	}
+
+	@Test(priority = 8)
+	public void verifySecondPageValidationsInDanish() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.clickOnDanishTabBar();
+		shoppg.clickOnNextForArabicBtn();
+		Assert.assertEquals(shoppg.checkInventoryTitleValInDani(), "Title is required.");
+		Assert.assertEquals(shoppg.checkshortDescValInDani(), "Short description is required.");
+		Assert.assertEquals(shoppg.checkDescValInDani(), "Description is required.");
+		Assert.assertEquals(shoppg.checkTermsAndCondValInDani(), "Terms is required.");
+		Assert.assertEquals(shoppg.checkInstructionInDani(), "Instruction is required.");
+		shoppg.logout();
+	}
+
+
+	@Test(priority = 9)
+	public void verifySecondPageValidationsInArabic() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.clickOnArabicTabBar();
+		shoppg.clickOnNextStepBtn();
+		Assert.assertEquals(shoppg.checkInventoryTitleValInArabi(), "Title is required.");
+		Assert.assertEquals(shoppg.checkshortDescValInArabi(), "Short description is required.");
+		Assert.assertEquals(shoppg.checkDescValInArabi(), "Description is required.");
+		Assert.assertEquals(shoppg.checkTermsAndCondValInArabi(), "Terms is required.");
+		Assert.assertEquals(shoppg.checkInstructionInArabi(), "Instruction is required.");
+		shoppg.logout();
+	}
+
+
+
+	@Test(priority = 10)
+	public void verifySecondPageWithEnterData() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
+		shoppg.clickOnNxtForDanishBtn();
+		shoppg.enterValidDataInDanish(prop.getProperty("ProdTitleDanish"), prop.getProperty("ProdShortDescDanish"), prop.getProperty("ProdDescDanish"), prop.getProperty("ProdTermsDanish"), prop.getProperty("prodInstructionDanish"));
+		shoppg.clickOnNextForArabicBtn();
+		shoppg.enterValidDataInArabic(prop.getProperty("ProdTitleArabic"), prop.getProperty("ProdShortDescArabic"), prop.getProperty("ProdDescArabic"), prop.getProperty("ProdTermsArabic"), prop.getProperty("prodInstructionArabic"));
+		shoppg.clickOnNextStepBtn();
+		shoppg.logout();
+	}
+
+
+
+
+
+
+	//pending
+	@Test(priority = 10)
 	public void verifyInventoryStoreProduct() {
 		try {			
 			AssertJUnit.assertEquals(shoppg.verifyProductsTextOnPage(), "INVENTORY PRODUCTS");

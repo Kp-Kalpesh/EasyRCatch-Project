@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="verifyVendorSelectionValidation"/>
+          <include name="verifySecondPageValidationsInDanish"/>
         </methods>
       </class> <!-- easyr.qa.testCases.EasyRCatchShopPageTest -->
     </classes>
