@@ -129,6 +129,20 @@ public class EasyRCatchShopPage extends TestBase{
 	WebElement validatiyOfProductInDays;
 	@FindBy(xpath = "//button[text()='Create Product']")
 	WebElement createProduct;
+	
+	@FindBy(xpath = "//span[text()='Please upload a product image!']")
+	WebElement uploadImageVal;
+	@FindBy(xpath = "//div[text()='Please select category']")
+	WebElement categoryVal;
+	@FindBy(xpath = "//div[text()='Quantity is must be required.']")
+	WebElement quantityVal;
+	@FindBy(xpath = "//div[text()='Per unit purchase cost is must be required']")
+	WebElement purchaseCostVal;
+	@FindBy(xpath = "//div[text()='Per unit sell cost is must be required']")
+	WebElement sellCostVal;
+	@FindBy(xpath = "//div[text()='User limit is required for limited redemption type']")
+	WebElement userRedemptionLimtVal;
+	
 	//verify data
 	@FindBy(xpath = "(//a[@rel='noreferrer'])[1]")
 	WebElement createdProduct;
@@ -332,7 +346,8 @@ public class EasyRCatchShopPage extends TestBase{
 		return src;
 	}
 
-	public void selectCategory(String prodCategory) {
+	public void selectCategory(String prodCategory) throws InterruptedException {
+		Thread.sleep(1000);
 		act.sendKeys(selectCategory, prodCategory, Keys.ENTER).build().perform();
 	}
 
@@ -368,7 +383,31 @@ public class EasyRCatchShopPage extends TestBase{
 		createProduct.click();
 		Thread.sleep(4000);
 	}
+	
+	public String checkUploadImageVal() {
+		return uploadImageVal.getText();
+	}
+	
+	public String checkCategoryVal() {
+		return categoryVal.getText();
+	}
+	
+	public String checkQuantityVal() {
+		return quantityVal.getText();
+	}
 
+	public String  checkPurchaseCostVal() {
+		return purchaseCostVal.getText();
+	}
+	
+	public String checkSellCostVal() {
+		return sellCostVal.getText();
+	}
+	
+	public String checkUserRedemptionLimitVal() {
+		return userRedemptionLimtVal.getText();
+	}
+	
 	public String verifyCreatedOfferTitle() {
 		return createdProduct.getText();
 	}

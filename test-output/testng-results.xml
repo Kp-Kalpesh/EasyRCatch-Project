@@ -1,21 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="20" passed="20" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-17T18:15:10 IST" name="Default suite" finished-at="2025-11-17T18:15:27 IST" duration-ms="17270">
+  <suite started-at="2025-11-18T11:17:00 IST" name="Default suite" finished-at="2025-11-18T11:20:52 IST" duration-ms="231876">
     <groups>
     </groups>
-    <test started-at="2025-11-17T18:15:10 IST" name="Default test" finished-at="2025-11-17T18:15:27 IST" duration-ms="17270">
+    <test started-at="2025-11-18T11:17:00 IST" name="Default test" finished-at="2025-11-18T11:20:52 IST" duration-ms="231876">
       <class name="easyr.qa.testCases.EasyRCatchShopPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@3a7442c7]" started-at="2025-11-17T18:15:10 IST" name="setup" finished-at="2025-11-17T18:15:13 IST" duration-ms="2835" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:00 IST" name="setup" finished-at="2025-11-18T11:17:02 IST" duration-ms="2259" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifySecondPageWithEnterData()[pri:10, instance:easyr.qa.testCases.EasyRCatchShopPageTest@3a7442c7]" started-at="2025-11-17T18:15:13 IST" name="verifySecondPageWithEnterData" finished-at="2025-11-17T18:15:27 IST" duration-ms="14408" status="PASS">
+        <test-method signature="verifyProductPage()[pri:1, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:02 IST" name="verifyProductPage" finished-at="2025-11-18T11:17:05 IST" duration-ms="3129" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:05 IST" name="tearDown" finished-at="2025-11-18T11:17:05 IST" duration-ms="108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:05 IST" name="setup" finished-at="2025-11-18T11:17:07 IST" duration-ms="1743" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCreateProductPage()[pri:2, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:07 IST" name="verifyCreateProductPage" finished-at="2025-11-18T11:17:09 IST" duration-ms="2153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateProductPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:09 IST" name="tearDown" finished-at="2025-11-18T11:17:09 IST" duration-ms="115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:09 IST" name="setup" finished-at="2025-11-18T11:17:11 IST" duration-ms="1751" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyVendorSelectionValidation()[pri:3, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:11 IST" name="verifyVendorSelectionValidation" finished-at="2025-11-18T11:17:17 IST" duration-ms="6246" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyVendorSelectionValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:17 IST" name="tearDown" finished-at="2025-11-18T11:17:18 IST" duration-ms="84" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:18 IST" name="setup" finished-at="2025-11-18T11:17:19 IST" duration-ms="1700" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCreateProductPageEnterVendorName()[pri:4, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:19 IST" name="verifyCreateProductPageEnterVendorName" finished-at="2025-11-18T11:17:22 IST" duration-ms="2969" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateProductPageEnterVendorName -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:22 IST" name="tearDown" finished-at="2025-11-18T11:17:22 IST" duration-ms="113" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:22 IST" name="setup" finished-at="2025-11-18T11:17:24 IST" duration-ms="1716" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCreateProductPageSelectVendor()[pri:5, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:24 IST" name="verifyCreateProductPageSelectVendor" finished-at="2025-11-18T11:17:27 IST" duration-ms="3101" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateProductPageSelectVendor -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:27 IST" name="tearDown" finished-at="2025-11-18T11:17:27 IST" duration-ms="100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:27 IST" name="setup" finished-at="2025-11-18T11:17:29 IST" duration-ms="1715" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifySubmitFirstPhase()[pri:6, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:29 IST" name="verifySubmitFirstPhase" finished-at="2025-11-18T11:17:34 IST" duration-ms="5016" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubmitFirstPhase -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:34 IST" name="tearDown" finished-at="2025-11-18T11:17:34 IST" duration-ms="115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:34 IST" name="setup" finished-at="2025-11-18T11:17:36 IST" duration-ms="1729" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifySecondPageValidationsInEnglish()[pri:7, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:36 IST" name="verifySecondPageValidationsInEnglish" finished-at="2025-11-18T11:17:41 IST" duration-ms="5123" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySecondPageValidationsInEnglish -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:41 IST" name="tearDown" finished-at="2025-11-18T11:17:41 IST" duration-ms="115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:41 IST" name="setup" finished-at="2025-11-18T11:17:43 IST" duration-ms="1686" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifySecondPageValidationsInDanish()[pri:8, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:43 IST" name="verifySecondPageValidationsInDanish" finished-at="2025-11-18T11:17:48 IST" duration-ms="5205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySecondPageValidationsInDanish -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:48 IST" name="tearDown" finished-at="2025-11-18T11:17:48 IST" duration-ms="112" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:48 IST" name="setup" finished-at="2025-11-18T11:17:50 IST" duration-ms="1744" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifySecondPageValidationsInArabic()[pri:9, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:50 IST" name="verifySecondPageValidationsInArabic" finished-at="2025-11-18T11:17:55 IST" duration-ms="5225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySecondPageValidationsInArabic -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:55 IST" name="tearDown" finished-at="2025-11-18T11:17:55 IST" duration-ms="83" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:55 IST" name="setup" finished-at="2025-11-18T11:17:57 IST" duration-ms="1754" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifySecondPageWithEnterData()[pri:10, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:17:57 IST" name="verifySecondPageWithEnterData" finished-at="2025-11-18T11:18:12 IST" duration-ms="14878" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySecondPageWithEnterData -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@3a7442c7]" started-at="2025-11-17T18:15:27 IST" name="tearDown" finished-at="2025-11-17T18:15:27 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:18:12 IST" name="tearDown" finished-at="2025-11-18T11:18:12 IST" duration-ms="124" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:18:12 IST" name="setup" finished-at="2025-11-18T11:18:14 IST" duration-ms="1716" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyThirdPageValidation()[pri:11, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:18:14 IST" name="verifyThirdPageValidation" finished-at="2025-11-18T11:18:33 IST" duration-ms="19563" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThirdPageValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:18:33 IST" name="tearDown" finished-at="2025-11-18T11:18:33 IST" duration-ms="128" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:18:33 IST" name="setup" finished-at="2025-11-18T11:18:35 IST" duration-ms="1719" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyThirdPageCheckUploadImageValidation()[pri:12, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:18:35 IST" name="verifyThirdPageCheckUploadImageValidation" finished-at="2025-11-18T11:18:54 IST" duration-ms="19279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThirdPageCheckUploadImageValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:18:54 IST" name="tearDown" finished-at="2025-11-18T11:18:54 IST" duration-ms="94" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:18:54 IST" name="setup" finished-at="2025-11-18T11:18:56 IST" duration-ms="1696" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyThirdPageCheckCateAndQuantityValidation()[pri:13, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:18:56 IST" name="verifyThirdPageCheckCateAndQuantityValidation" finished-at="2025-11-18T11:19:16 IST" duration-ms="19550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThirdPageCheckCateAndQuantityValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:19:16 IST" name="tearDown" finished-at="2025-11-18T11:19:16 IST" duration-ms="112" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:19:16 IST" name="setup" finished-at="2025-11-18T11:19:17 IST" duration-ms="1709" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyThirdPageCheckPurchaseAndSellCostValidation()[pri:14, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:19:17 IST" name="verifyThirdPageCheckPurchaseAndSellCostValidation" finished-at="2025-11-18T11:19:37 IST" duration-ms="19548" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThirdPageCheckPurchaseAndSellCostValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:19:37 IST" name="tearDown" finished-at="2025-11-18T11:19:37 IST" duration-ms="127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:19:37 IST" name="setup" finished-at="2025-11-18T11:19:39 IST" duration-ms="1759" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyThirdPageUploadedImageIsDisplayed()[pri:15, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:19:39 IST" name="verifyThirdPageUploadedImageIsDisplayed" finished-at="2025-11-18T11:19:57 IST" duration-ms="17747" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThirdPageUploadedImageIsDisplayed -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:19:57 IST" name="tearDown" finished-at="2025-11-18T11:19:57 IST" duration-ms="112" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:19:57 IST" name="setup" finished-at="2025-11-18T11:19:59 IST" duration-ms="1768" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyThirdPageUserRedemptionLimitValidation()[pri:16, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:19:59 IST" name="verifyThirdPageUserRedemptionLimitValidation" finished-at="2025-11-18T11:20:18 IST" duration-ms="19772" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyThirdPageUserRedemptionLimitValidation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:18 IST" name="tearDown" finished-at="2025-11-18T11:20:18 IST" duration-ms="109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:18 IST" name="setup" finished-at="2025-11-18T11:20:20 IST" duration-ms="1774" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="createInventoryStoreProduct()[pri:17, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:20 IST" name="createInventoryStoreProduct" finished-at="2025-11-18T11:20:42 IST" duration-ms="21368" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createInventoryStoreProduct -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:42 IST" name="tearDown" finished-at="2025-11-18T11:20:42 IST" duration-ms="126" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:42 IST" name="setup" finished-at="2025-11-18T11:20:43 IST" duration-ms="1738" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCreatedProductTitle()[pri:18, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:43 IST" name="verifyCreatedProductTitle" finished-at="2025-11-18T11:20:45 IST" duration-ms="1501" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreatedProductTitle -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:45 IST" name="tearDown" finished-at="2025-11-18T11:20:45 IST" duration-ms="97" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:45 IST" name="setup" finished-at="2025-11-18T11:20:47 IST" duration-ms="1801" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCreatedProductVendorname()[pri:19, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:47 IST" name="verifyCreatedProductVendorname" finished-at="2025-11-18T11:20:48 IST" duration-ms="1506" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreatedProductVendorname -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:48 IST" name="tearDown" finished-at="2025-11-18T11:20:48 IST" duration-ms="75" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:48 IST" name="setup" finished-at="2025-11-18T11:20:50 IST" duration-ms="1805" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCreatedProductCategory()[pri:20, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:50 IST" name="verifyCreatedProductCategory" finished-at="2025-11-18T11:20:52 IST" duration-ms="1522" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreatedProductCategory -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:easyr.qa.testCases.EasyRCatchShopPageTest@53fb3dab]" started-at="2025-11-18T11:20:52 IST" name="tearDown" finished-at="2025-11-18T11:20:52 IST" duration-ms="95" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

@@ -34,8 +34,6 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg = offerpg.clickOnProductStore();
 	}
 
-
-
 	@Test(priority = 1)
 	public void verifyProductPage() throws InterruptedException {
 		AssertJUnit.assertEquals(shoppg.verifyProductsTextOnPage(), "INVENTORY PRODUCTS");
@@ -57,7 +55,6 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.logout();
 	}
 
-
 	@Test(priority = 4)
 	public void verifyCreateProductPageEnterVendorName() throws InterruptedException {
 		shoppg.clickOnCreateProductBtn();
@@ -76,7 +73,6 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.logout();
 	}
 
-
 	@Test(priority = 6)
 	public void verifySubmitFirstPhase() throws InterruptedException {
 		shoppg.clickOnCreateProductBtn();
@@ -85,9 +81,6 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.clickOnAddProductDetailsBtn();
 		shoppg.logout();
 	}
-
-
-	//(need to fix this test method issue)
 
 	@Test(priority = 7)
 	public void verifySecondPageValidationsInEnglish() throws InterruptedException {
@@ -120,7 +113,6 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.logout();
 	}
 
-
 	@Test(priority = 9)
 	public void verifySecondPageValidationsInArabic() throws InterruptedException {
 		shoppg.clickOnCreateProductBtn();
@@ -137,8 +129,6 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.logout();
 	}
 
-
-
 	@Test(priority = 10)
 	public void verifySecondPageWithEnterData() throws InterruptedException {
 		shoppg.clickOnCreateProductBtn();
@@ -154,22 +144,119 @@ public class EasyRCatchShopPageTest extends TestBase{
 		shoppg.logout();
 	}
 
+	@Test(priority = 11)
+	public void verifyThirdPageValidation() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
+		shoppg.clickOnNxtForDanishBtn();
+		shoppg.enterValidDataInDanish(prop.getProperty("ProdTitleDanish"), prop.getProperty("ProdShortDescDanish"), prop.getProperty("ProdDescDanish"), prop.getProperty("ProdTermsDanish"), prop.getProperty("prodInstructionDanish"));
+		shoppg.clickOnNextForArabicBtn();
+		shoppg.enterValidDataInArabic(prop.getProperty("ProdTitleArabic"), prop.getProperty("ProdShortDescArabic"), prop.getProperty("ProdDescArabic"), prop.getProperty("ProdTermsArabic"), prop.getProperty("prodInstructionArabic"));
+		shoppg.clickOnNextStepBtn();
+		shoppg.clickOnCreateProduct();
+		shoppg.logout();
+	}
 
+	@Test(priority = 12)
+	public void verifyThirdPageCheckUploadImageValidation() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
+		shoppg.clickOnNxtForDanishBtn();
+		shoppg.enterValidDataInDanish(prop.getProperty("ProdTitleDanish"), prop.getProperty("ProdShortDescDanish"), prop.getProperty("ProdDescDanish"), prop.getProperty("ProdTermsDanish"), prop.getProperty("prodInstructionDanish"));
+		shoppg.clickOnNextForArabicBtn();
+		shoppg.enterValidDataInArabic(prop.getProperty("ProdTitleArabic"), prop.getProperty("ProdShortDescArabic"), prop.getProperty("ProdDescArabic"), prop.getProperty("ProdTermsArabic"), prop.getProperty("prodInstructionArabic"));
+		shoppg.clickOnNextStepBtn();
+		shoppg.clickOnCreateProduct();
+		Assert.assertEquals(shoppg.checkUploadImageVal(), "Please upload a product image!");
+		shoppg.logout();
+	}
 
+	@Test(priority = 13)
+	public void verifyThirdPageCheckCateAndQuantityValidation() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
+		shoppg.clickOnNxtForDanishBtn();
+		shoppg.enterValidDataInDanish(prop.getProperty("ProdTitleDanish"), prop.getProperty("ProdShortDescDanish"), prop.getProperty("ProdDescDanish"), prop.getProperty("ProdTermsDanish"), prop.getProperty("prodInstructionDanish"));
+		shoppg.clickOnNextForArabicBtn();
+		shoppg.enterValidDataInArabic(prop.getProperty("ProdTitleArabic"), prop.getProperty("ProdShortDescArabic"), prop.getProperty("ProdDescArabic"), prop.getProperty("ProdTermsArabic"), prop.getProperty("prodInstructionArabic"));
+		shoppg.clickOnNextStepBtn();
+		shoppg.clickOnCreateProduct();
+		Assert.assertEquals(shoppg.checkCategoryVal(), "Please select category");
+		Assert.assertEquals(shoppg.checkQuantityVal(), "Quantity is must be required.");
+		shoppg.logout();
+	}
 
+	@Test(priority = 14)
+	public void verifyThirdPageCheckPurchaseAndSellCostValidation() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
+		shoppg.clickOnNxtForDanishBtn();
+		shoppg.enterValidDataInDanish(prop.getProperty("ProdTitleDanish"), prop.getProperty("ProdShortDescDanish"), prop.getProperty("ProdDescDanish"), prop.getProperty("ProdTermsDanish"), prop.getProperty("prodInstructionDanish"));
+		shoppg.clickOnNextForArabicBtn();
+		shoppg.enterValidDataInArabic(prop.getProperty("ProdTitleArabic"), prop.getProperty("ProdShortDescArabic"), prop.getProperty("ProdDescArabic"), prop.getProperty("ProdTermsArabic"), prop.getProperty("prodInstructionArabic"));
+		shoppg.clickOnNextStepBtn();
+		shoppg.clickOnCreateProduct();
+		Assert.assertEquals(shoppg.checkPurchaseCostVal(), "Per unit purchase cost is must be required");
+		Assert.assertEquals(shoppg.checkSellCostVal(), "Per unit sell cost is must be required");
+		shoppg.logout();
+	}
 
+	@Test(priority = 15)
+	public void verifyThirdPageUploadedImageIsDisplayed() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
+		shoppg.clickOnNxtForDanishBtn();
+		shoppg.enterValidDataInDanish(prop.getProperty("ProdTitleDanish"), prop.getProperty("ProdShortDescDanish"), prop.getProperty("ProdDescDanish"), prop.getProperty("ProdTermsDanish"), prop.getProperty("prodInstructionDanish"));
+		shoppg.clickOnNextForArabicBtn();
+		shoppg.enterValidDataInArabic(prop.getProperty("ProdTitleArabic"), prop.getProperty("ProdShortDescArabic"), prop.getProperty("ProdDescArabic"), prop.getProperty("ProdTermsArabic"), prop.getProperty("prodInstructionArabic"));
+		shoppg.clickOnNextStepBtn();
+		shoppg.clickOnProductImgField();
+		shoppg.enterImgInField(prop.getProperty("ProductImg_Url"));		
+		shoppg.clickOnSaveImgBtn();
+		shoppg.verifyDisplayedUploadedImg(prop.getProperty("OldSrcFile"));
+		shoppg.logout();
+	}
 
-	//pending
-	@Test(priority = 10)
-	public void verifyInventoryStoreProduct() {
+	@Test(priority = 16)
+	public void verifyThirdPageUserRedemptionLimitValidation() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
+		shoppg.clickOnNxtForDanishBtn();
+		shoppg.enterValidDataInDanish(prop.getProperty("ProdTitleDanish"), prop.getProperty("ProdShortDescDanish"), prop.getProperty("ProdDescDanish"), prop.getProperty("ProdTermsDanish"), prop.getProperty("prodInstructionDanish"));
+		shoppg.clickOnNextForArabicBtn();
+		shoppg.enterValidDataInArabic(prop.getProperty("ProdTitleArabic"), prop.getProperty("ProdShortDescArabic"), prop.getProperty("ProdDescArabic"), prop.getProperty("ProdTermsArabic"), prop.getProperty("prodInstructionArabic"));
+		shoppg.clickOnNextStepBtn();
+		shoppg.enableRedemptionLimitToggle();
+		shoppg.clickOnCreateProduct();
+		Assert.assertEquals(shoppg.checkUserRedemptionLimitVal(), "User limit is required for limited redemption type");
+		shoppg.logout();
+	}
+
+	//Create Product
+	@Test(priority = 17)
+	public void createInventoryStoreProduct() {
 		try {			
-			AssertJUnit.assertEquals(shoppg.verifyProductsTextOnPage(), "INVENTORY PRODUCTS");
 			shoppg.clickOnCreateProductBtn();
 			shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
-			AssertJUnit.assertTrue(shoppg.verifyDisplayedVendorInDrpDwn());
 			shoppg.clickOnDisplayedVendorName();
-			AssertJUnit.assertEquals(shoppg.verifySelectedVName(), prop.getProperty("Vendor_Name"));
-			AssertJUnit.assertEquals(shoppg.verifySelectedVCompany(), prop.getProperty("Vendor_company"));
 			shoppg.clickOnAddProductDetailsBtn();
 			shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
 			shoppg.clickOnNxtForDanishBtn();
@@ -180,7 +267,6 @@ public class EasyRCatchShopPageTest extends TestBase{
 			shoppg.clickOnProductImgField();
 			shoppg.enterImgInField(prop.getProperty("ProductImg_Url"));		
 			shoppg.clickOnSaveImgBtn();
-			shoppg.verifyDisplayedUploadedImg(prop.getProperty("OldSrcFile"));			
 			shoppg.selectCategory(prop.getProperty("productCategory"));
 			shoppg.enterQuantityOfProduct(prop.getProperty("ProductQuantity"));
 			shoppg.enterPerUnitPurchaseCost(prop.getProperty("purchsedCost"));
@@ -196,18 +282,28 @@ public class EasyRCatchShopPageTest extends TestBase{
 		}
 	}
 
-	@Test(priority = 2)
-	public void verifyCreatedProduct() {
+	@Test(priority = 18)
+	public void verifyCreatedProductTitle() {
 		try {
-			AssertJUnit.assertEquals(shoppg.verifyCreatedOfferTitle(), prop.getProperty("ProdTitleEnglish"));
-			AssertJUnit.assertEquals(shoppg.verifyCreatedOfferVName(), prop.getProperty("vendorNameAssertion"));
-			AssertJUnit.assertEquals(shoppg.verifyCreatedOfferCategory(), prop.getProperty("productCategory"));
+			Assert.assertEquals(shoppg.verifyCreatedOfferTitle(), prop.getProperty("ProdTitleEnglish"));
+
 			shoppg.logout();
 		}catch (Exception e) {
 			System.out.println("Element not found within timeout: " + e.getMessage());
 		}
 	}
 
+	@Test(priority = 19)
+	public void verifyCreatedProductVendorname() throws InterruptedException {
+		Assert.assertEquals(shoppg.verifyCreatedOfferVName(), prop.getProperty("vendorNameAssertion"));
+		shoppg.logout();
+	}
+
+	@Test(priority = 20)
+	public void verifyCreatedProductCategory() throws InterruptedException {
+		Assert.assertEquals(shoppg.verifyCreatedOfferCategory(), prop.getProperty("productCategory"));
+		shoppg.logout();
+	}
 
 	@AfterMethod
 	public void tearDown()	{
