@@ -66,7 +66,6 @@ public class EasyRCatchShopPage extends TestBase{
 	WebElement termsAndConditionInArabi;
 	@FindBy(xpath = "//div[text()='Instruction is required.']")
 	WebElement instructionInArabi;
-
 	@FindBy(xpath = "//input[contains(@placeholder,'Inventory Title in English')]")
 	WebElement titleInEng;
 	@FindBy(xpath = "//textarea[@placeholder='Short Description in English']")
@@ -128,8 +127,7 @@ public class EasyRCatchShopPage extends TestBase{
 	@FindBy(xpath = "//input[@placeholder='eg. 5 days']")
 	WebElement validatiyOfProductInDays;
 	@FindBy(xpath = "//button[text()='Create Product']")
-	WebElement createProduct;
-	
+	WebElement createProduct;	
 	@FindBy(xpath = "//span[text()='Please upload a product image!']")
 	WebElement uploadImageVal;
 	@FindBy(xpath = "//div[text()='Please select category']")
@@ -431,3 +429,4 @@ public class EasyRCatchShopPage extends TestBase{
 		logouttxt.click();
 	}
 }
+

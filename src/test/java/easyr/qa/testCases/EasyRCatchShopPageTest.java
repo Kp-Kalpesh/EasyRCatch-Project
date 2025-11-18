@@ -252,45 +252,36 @@ public class EasyRCatchShopPageTest extends TestBase{
 
 	//Create Product
 	@Test(priority = 17)
-	public void createInventoryStoreProduct() {
-		try {			
-			shoppg.clickOnCreateProductBtn();
-			shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
-			shoppg.clickOnDisplayedVendorName();
-			shoppg.clickOnAddProductDetailsBtn();
-			shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
-			shoppg.clickOnNxtForDanishBtn();
-			shoppg.enterValidDataInDanish(prop.getProperty("ProdTitleDanish"), prop.getProperty("ProdShortDescDanish"), prop.getProperty("ProdDescDanish"), prop.getProperty("ProdTermsDanish"), prop.getProperty("prodInstructionDanish"));
-			shoppg.clickOnNextForArabicBtn();
-			shoppg.enterValidDataInArabic(prop.getProperty("ProdTitleArabic"), prop.getProperty("ProdShortDescArabic"), prop.getProperty("ProdDescArabic"), prop.getProperty("ProdTermsArabic"), prop.getProperty("prodInstructionArabic"));
-			shoppg.clickOnNextStepBtn();
-			shoppg.clickOnProductImgField();
-			shoppg.enterImgInField(prop.getProperty("ProductImg_Url"));		
-			shoppg.clickOnSaveImgBtn();
-			shoppg.selectCategory(prop.getProperty("productCategory"));
-			shoppg.enterQuantityOfProduct(prop.getProperty("ProductQuantity"));
-			shoppg.enterPerUnitPurchaseCost(prop.getProperty("purchsedCost"));
-			shoppg.enterPerUnitSellCost(prop.getProperty("sellCost"));
-			shoppg.enableRedemptionLimitToggle();
-			shoppg.enterRedemptionLimit(prop.getProperty("Redemption_Limit"));
-			shoppg.enableAllowRedemptionLimit();
-			shoppg.enterValidityOfProductAfterPurchased(prop.getProperty("ProductValidityInDays"));
-			shoppg.clickOnCreateProduct();
-			shoppg.logout();
-		}catch (Exception e) {
-			System.out.println("Element not found within timeout: " + e.getMessage());
-		}
+	public void createInventoryStoreProduct() throws InterruptedException {
+		shoppg.clickOnCreateProductBtn();
+		shoppg.enterVendorNameInField(prop.getProperty("Vendor_Name"));
+		shoppg.clickOnDisplayedVendorName();
+		shoppg.clickOnAddProductDetailsBtn();
+		shoppg.enterValidDataInEnglish(prop.getProperty("ProdTitleEnglish"), prop.getProperty("ProdShortDescEnglish"), prop.getProperty("ProdDescEnglish"), prop.getProperty("ProdTermsEnglish"), prop.getProperty("prodInstructionEnglish"));
+		shoppg.clickOnNxtForDanishBtn();
+		shoppg.enterValidDataInDanish(prop.getProperty("ProdTitleDanish"), prop.getProperty("ProdShortDescDanish"), prop.getProperty("ProdDescDanish"), prop.getProperty("ProdTermsDanish"), prop.getProperty("prodInstructionDanish"));
+		shoppg.clickOnNextForArabicBtn();
+		shoppg.enterValidDataInArabic(prop.getProperty("ProdTitleArabic"), prop.getProperty("ProdShortDescArabic"), prop.getProperty("ProdDescArabic"), prop.getProperty("ProdTermsArabic"), prop.getProperty("prodInstructionArabic"));
+		shoppg.clickOnNextStepBtn();
+		shoppg.clickOnProductImgField();
+		shoppg.enterImgInField(prop.getProperty("ProductImg_Url"));		
+		shoppg.clickOnSaveImgBtn();
+		shoppg.selectCategory(prop.getProperty("productCategory"));
+		shoppg.enterQuantityOfProduct(prop.getProperty("ProductQuantity"));
+		shoppg.enterPerUnitPurchaseCost(prop.getProperty("purchsedCost"));
+		shoppg.enterPerUnitSellCost(prop.getProperty("sellCost"));
+		shoppg.enableRedemptionLimitToggle();
+		shoppg.enterRedemptionLimit(prop.getProperty("Redemption_Limit"));
+		shoppg.enableAllowRedemptionLimit();
+		shoppg.enterValidityOfProductAfterPurchased(prop.getProperty("ProductValidityInDays"));
+		shoppg.clickOnCreateProduct();
+		shoppg.logout();
 	}
 
 	@Test(priority = 18)
-	public void verifyCreatedProductTitle() {
-		try {
-			Assert.assertEquals(shoppg.verifyCreatedOfferTitle(), prop.getProperty("ProdTitleEnglish"));
-
-			shoppg.logout();
-		}catch (Exception e) {
-			System.out.println("Element not found within timeout: " + e.getMessage());
-		}
+	public void verifyCreatedProductTitle() throws InterruptedException {
+		Assert.assertEquals(shoppg.verifyCreatedOfferTitle(), prop.getProperty("ProdTitleEnglish"));
+		shoppg.logout();
 	}
 
 	@Test(priority = 19)
