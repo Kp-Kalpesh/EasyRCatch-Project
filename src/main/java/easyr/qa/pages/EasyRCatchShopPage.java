@@ -429,4 +429,4 @@ public class EasyRCatchShopPage extends TestBase{
 		logouttxt.click();
 	}
 }
-
+w
