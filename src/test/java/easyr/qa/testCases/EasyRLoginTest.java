@@ -12,10 +12,10 @@ public class EasyRLoginTest extends TestBase{
 
 	EasyRLoginPage loginpg;
 
-	//	Logger log;
-	//	public static ExtentReports extent = new ExtentReports();
-	//	public static ExtentSparkReporter spark = new ExtentSparkReporter("Extentreport.html");
-	//	public static ExtentTest test;
+//		Logger log;
+//		public static ExtentReports extent = new ExtentReports();
+//		public static ExtentSparkReporter spark = new ExtentSparkReporter("Extentreport.html");
+//		public static ExtentTest test;
 
 
 
